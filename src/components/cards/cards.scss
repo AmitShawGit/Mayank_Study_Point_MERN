@@ -1,11 +1,13 @@
 @import '../../mixins.scss';
 
+
 .cards {
     border: 1px solid $dark !important;
     text-align: center;
-
-    background-position: center;
-    background-size: cover;
+    position: relative !important;
+    background-position: center !important;
+    background-size: 100% 100% !important;
+    margin: 5%;
 
     .card-body {
         display: flex;
@@ -16,8 +18,47 @@
     }
 
     .title {
-        background-color: $primary;
-        font-size: 25px;
-        padding: 35px;
+        background-color: $primary;       
+        padding: 15px;
+        border-radius: 10px;
+        display: none;
+        transition: all 0.10s ease;
+        .icon{
+            font-size: 65px;
+        }
+        .text{
+            font-size: 20px;
+        }
+        p{
+            padding: 0;
+            margin: 0;
+        }
     }
+    &:hover .title{
+        display: block;
+    }
+    .pink-overlay {
+        content: "";
+        width: 200px;
+        height: 200px;
+        border-radius: 5%;
+        position: absolute;
+        z-index: -1;
+        background-color: $pink;
+        right: -6%;
+        top: -6%;
+    }
+
+    .blue-overlay {
+        content: "";
+        width: 110px;
+        height: 110px;
+        border-radius: 5%;
+        position: absolute;
+        z-index: -1;
+        background-color: #0099f5;
+        left: -6%;
+        bottom: 18px;
+    }
+
 }
