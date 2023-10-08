@@ -1,0 +1,23 @@
+@import '../../mixins.scss';
+
+.cards {
+    border: 1px solid $dark !important;
+    text-align: center;
+
+    background-position: center;
+    background-size: cover;
+
+    .card-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+        width: 100%;
+    }
+
+    .title {
+        background-color: $primary;
+        font-size: 25px;
+        padding: 35px;
+    }
+}

@@ -9,11 +9,17 @@
 }
  $primary :#ffb319;
  $dark:#4a4a4a;
-
+ $pink : #ec467e;
+ $blue: #0099f5;
  .heading{
     font-size: 30px;
     font-weight: bold;
     line-height: 0.84;
     text-align: center;
     color: $primary;
+ }
+ .btn-primary{
+    background-color: $primary !important;
+    border: $primary !important;
+    box-shadow: $primary !important;
  }

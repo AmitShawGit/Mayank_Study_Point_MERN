@@ -15,7 +15,7 @@ const Hero = () => {
             <Col md={6}>
               <h2>We are with students from starting to end</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus quam, sit repellendus dicta, nemo ex et sed quas officia, rem explicabo natus exercitationem ipsum provident Maiores corrupti et pariatur animi</p>
-            <Button variant='primary'>Contact Us</Button>
+            <Button className='btn btn-primary'>Contact Us</Button>
             </Col>
             <Col md={6} className='right-section'>
               
