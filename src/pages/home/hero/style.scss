@@ -1,0 +1,41 @@
+@import '../../../mixins.scss';
+
+.heroBg {
+    width: 100%;
+    margin-top: -70px;
+    // height: 600px;
+    // background: url(../../../assets/hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(240, 251, 255);
+    background: linear-gradient(128deg, rgba(240, 251, 255, 1) 0%, rgba(213, 244, 255, 1) 100%);
+
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 600px;
+      
+    }
+
+    .right-section {
+        // border: 1px solid black;
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        margin-bottom: -96px;
+
+        .eclipse {
+            position: absolute;
+            content: "";
+            clip-path: ellipse(50% 47% at 50% 48%);
+            background-color: $primary;
+            width: 100%;
+            height: 100%;
+            bottom: -252px;
+        }
+    }
+}

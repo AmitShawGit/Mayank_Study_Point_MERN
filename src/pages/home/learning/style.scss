@@ -1,0 +1,24 @@
+@import '../../../mixins.scss';
+
+.heading {
+    padding-top: 14%;
+}
+
+.description {
+    padding-top: 11%;
+
+    line-height: 2.1;
+    text-align: left;
+
+}
+
+.text-orange {
+    color: $primary;
+   
+}
+.text-pink{
+    color:#ec1d3f
+}
+.text-blue{
+    color: rgb(105, 19, 185);
+}
