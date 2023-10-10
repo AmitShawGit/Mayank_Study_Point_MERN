@@ -1,0 +1,16 @@
+@import '../../mixins.scss';
+.border-primary{
+    border: 1px solid $blue;
+.feature{
+    background-color: $blue !important;
+    color: #fff !important;
+    font-size: 20px;
+}
+.price{
+    color: $primary;
+    font-size: 35px;
+}
+.list-none{
+    list-style: none;
+}
+}
