@@ -4,19 +4,53 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PriceCard from '../../../components/pricecard/PriceCard';
 const Pricing = () => {
+    const output = [
+        {
+            id: 1,
+            head: "Features",
+            price: "$10",
+            features: [
+                { id: 1, name: 'Item 2' },
+                { id: 2, name: 'item2' }
+            ],
+            path: "/some-path",
+        },
+        {
+            id: 2,
+            head: "Features",
+            price: "$10",
+            features: [
+                { id: 1, name: 'Item 2' },
+                { id: 2, name: 'item2' }
+            ],
+            path: "/some-path",
+        },
+        {
+            id: 3,
+            head: "Features",
+            price: "$10",
+            features: [
+                { id: 1, name: 'Item 2' },
+                { id: 2, name: 'item2' }
+            ],
+            path: "/some-path",
+        },
+    ]
     return (
         <div>
             <ContentWrapper>
+                <h2 className='heading'>Our Services</h2>
                 <Row>
-                    <Col size={4}>
-                        <PriceCard
-                            head="Features"
-                            price="$10"
-                            list={['Item 1', 'Item 2', 'Item 3']}
-                            path="/some-path"
+                {output.map((item, index) => 
+                 <Col md={4}  key={index}>
+                         <PriceCard                         
+                            head={item.head}
+                            price={item.price}
+                            features={item.features}
+                            path={item.path}
                         />
-
-                    </Col>
+                     
+                    </Col>   )}
                 </Row>
             </ContentWrapper>
         </div>
