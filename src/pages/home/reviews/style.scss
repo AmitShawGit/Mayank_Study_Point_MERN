@@ -1,0 +1,9 @@
+@import '../../../mixins.scss';
+
+.text-20{
+font-size: 20px;
+line-height: 2;
+}
+.text-primary{
+    color: $primary !important;
+}
