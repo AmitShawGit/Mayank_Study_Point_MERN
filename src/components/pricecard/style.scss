@@ -1,22 +1,31 @@
 @import '../../mixins.scss';
-.border-primary{
+
+.border-primary {
     border: 1px solid $blue;
-.feature{
-    background-color: $blue !important;
-    color: #fff !important;
-    font-size: 20px;
-}
-.price{
-    color: $primary;
-    font-size: 35px;
-}
-.list-none{
-    list-style: none;
-    padding-left: 0;
-}
-.links{
-    text-decoration: none;
-    color: $white;
-    font-size: 20px;
-}
+    box-shadow: 5px 6px 5px silver;
+    .feature {
+        background-color: $blue !important;
+        color: #fff !important;
+        font-size: 20px;
+    }
+
+    .body-section {
+        background-color: #eafdff6b;
+    }
+
+    .price {
+        color: $primary;
+        font-size: 35px;
+    }
+
+    .list-none {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .links {
+        text-decoration: none;
+        color: $white;
+        font-size: 20px;
+    }
 }
