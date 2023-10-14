@@ -14,7 +14,7 @@ const Review = () => {
                     <Col md={4}>
                         <Img src={janta} className="img-fluid" />
                     </Col>
-                    <Col md={8}>
+                    <Col md={8} className='review'>
                         <p className='text-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cum aut, perferendis illum odio fugit sint sequi facere repellendus quos.</p>
                     <p className='text-primary text-20'>- Amit Shaw</p>
                     </Col>

@@ -2,6 +2,10 @@
 
 .heading {
     padding-top: 14%;
+    @include md{
+        padding-top: 15% !important;
+        line-height: 44px !important;
+    }
 }
 
 .description {
@@ -9,6 +13,10 @@
 
     line-height: 2.1;
     text-align: left;
+    @include md{
+        padding-top: 0% !important;
+       
+    }
 
 }
 

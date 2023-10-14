@@ -61,7 +61,7 @@ const Services = () => {
                 <Row>
                     {CardDetails.map(( item) => {
                         return (
-                            <Col key={item.id} md={4}>
+                            <Col key={item.id} md={4} >
                               
                                 <Cards bgImg={item.img} cardText={item.text} icon={item.icon}/>
                                 

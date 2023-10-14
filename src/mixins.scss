@@ -1,32 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Roboto', sans-serif;
+   font-size: 16px;
 }
- $primary :#ffb319;
- $dark:#4a4a4a;
- $pink : #ec467e;
- $blue: #0099f5;
- $white:#fff;
- $blue-dark:#054d78;
- $footer-text:#ddd;
- .heading{
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 0.84;
-    text-align: center;
-    color: $primary;
-    padding: 5%;
- }
- .btn-primary{
-    background-color: $primary !important;
-    border: $primary !important;
-    box-shadow: $primary !important;
- }
- .text-primary{
+
+$primary :#ffb319;
+$dark: #4a4a4a;
+$pink : #ec467e;
+$blue: #0099f5;
+$white: #fff;
+$blue-dark: #054d78;
+$footer-text: #ddd;
+
+.heading {
+   font-size: 30px;
+   font-weight: bold;
+   line-height: 0.84;
+   text-align: center;
+   color: $primary;
+   padding: 5%;
+}
+
+.btn-primary {
+   background-color: $primary !important;
+   border: $primary !important;
+   box-shadow: $primary !important;
+}
+
+.text-primary {
    color: $primary !important;
- }
+}
+
+@mixin lg{
+@media (max-width:992px) {
+   @content
+}};
+
+@mixin md{
+   @media (max-width:576px) {
+      @content
+   }
+};
+@mixin sm{
+   @media (max-width:414px) {
+      @content
+   }
+};

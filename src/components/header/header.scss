@@ -3,4 +3,14 @@
 .navbar{
     background: transparent;
     color: $dark;
+    @include md{
+         background-color: $blue-dark !important;
+         color: $white;
+    }
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
 }
