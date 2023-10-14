@@ -12,6 +12,8 @@
  $pink : #ec467e;
  $blue: #0099f5;
  $white:#fff;
+ $blue-dark:#054d78;
+ $footer-text:#ddd;
  .heading{
     font-size: 30px;
     font-weight: bold;
@@ -24,4 +26,7 @@
     background-color: $primary !important;
     border: $primary !important;
     box-shadow: $primary !important;
+ }
+ .text-primary{
+   color: $primary !important;
  }

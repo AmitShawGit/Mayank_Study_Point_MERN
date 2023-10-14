@@ -1,17 +1,70 @@
 @import '../../mixins.scss';
 
-.sub-footer{
+.sub-footer {
     background-color: $blue;
     display: flex;
     align-items: center;
     color: $white;
     padding: 15px;
-    .email-footer-form{
+
+    .email-footer-form {
         position: relative;
     }
-    .btn{
+
+    .btn {
         position: absolute;
         top: 1px;
         right: 1px;
+    }
+}
+
+.footer {
+    background-color: $blue-dark;
+
+    .footer-list {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .footer-head {
+        color: $primary !important;
+        font-size: 20px;
+
+    }
+
+    .footer-item {
+        color: $footer-text;
+        &:hover{
+            color: #fff;
+        }
+    }
+
+    p {
+        padding: 0;
+        margin-bottom: 0;
+        margin: 7px 0;
+        color: $white;
+    }
+
+    .footer-logo {
+        color: $white;
+    }
+
+    .footer-icon {
+        font-size: 20px;
+        background: white;
+        padding: 5px 5px;
+        border-radius: 29%;
+        
+    }
+    .footer-icon-fb {
+        color: blue;
+    }
+    .footer-icon-yt {
+        color: red;
+    }
+    .footer-icon-insta{
+        color:$pink;
     }
 }
