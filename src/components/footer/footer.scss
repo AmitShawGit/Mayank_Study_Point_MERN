@@ -1,0 +1,17 @@
+@import '../../mixins.scss';
+
+.sub-footer{
+    background-color: $blue;
+    display: flex;
+    align-items: center;
+    color: $white;
+    padding: 15px;
+    .email-footer-form{
+        position: relative;
+    }
+    .btn{
+        position: absolute;
+        top: 1px;
+        right: 1px;
+    }
+}
