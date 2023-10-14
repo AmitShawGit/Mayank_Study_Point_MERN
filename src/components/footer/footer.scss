@@ -35,6 +35,7 @@
 
     .footer-item {
         color: $footer-text;
+        margin-top: 5px;
         &:hover{
             color: #fff;
         }
@@ -49,6 +50,12 @@
 
     .footer-logo {
         color: $white;
+        .footer-list{
+            color: $footer-text;
+            &:hover{
+                color: #fff;
+            }
+        }
     }
 
     .footer-icon {

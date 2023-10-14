@@ -66,6 +66,7 @@ const footer = () => {
                 </ul>
               </Col>
             </Row>
+            <hr style={{color:"silver"}}/>
             <div className="d-flex justify-content-between">
 <p>All right reserved by Mayank Study Point <i class="ri-copyright-line"></i> {new Date().getFullYear()}</p>
 <p>Designed & Developed by Amit Shaw</p>
