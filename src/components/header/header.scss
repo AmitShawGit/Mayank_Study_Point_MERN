@@ -12,10 +12,6 @@
 
 
 
-.hide {
-    display: none !important;
-}
-
 .toggle-button {
     display: none;
 
@@ -23,10 +19,14 @@
         display: block;
     }
 }
-
+.show{
+    display: block !important;
+}
+.hide {
+    display: none !important;
+}
 .responsive {
-
-    @include lg{
+ @include lg{
         position: absolute;
         flex-direction: column !important;
         text-align: center;
@@ -36,5 +36,7 @@
         border-top: 1px solid silver;
         margin-top: 11rem;
         left: 0;
+        
     }
+  
 }
