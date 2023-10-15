@@ -34,9 +34,13 @@ $footer-text: #ddd;
 .text-primary {
    color: $primary !important;
 }
+@mixin xl{
+   @media (max-width:1200px) {
+      @content
+   }};
 
 @mixin lg{
-@media (max-width:992px) {
+@media (max-width:768px) {
    @content
 }};
 

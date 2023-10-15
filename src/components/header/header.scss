@@ -1,16 +1,40 @@
 @import '../../mixins.scss';
 
-.navbar{
+.navbar {
     background: transparent;
     color: $dark;
-    @include md{
-         background-color: $blue-dark !important;
-         color: $white;
+
+    @include lg {
+        background-color: $blue-dark !important;
+        color: $white;
     }
 }
-.show{
-    display: block;
+
+
+
+.hide {
+    display: none !important;
 }
-.hide{
+
+.toggle-button {
     display: none;
+
+    @include lg {
+        display: block;
+    }
+}
+
+.responsive {
+
+    @include lg{
+        position: absolute;
+        flex-direction: column !important;
+        text-align: center;
+        margin-top: 17%;
+        width: 100%;
+        background: $blue-dark;
+        border-top: 1px solid silver;
+        margin-top: 11rem;
+        left: 0;
+    }
 }
