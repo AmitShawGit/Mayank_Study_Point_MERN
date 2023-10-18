@@ -9,9 +9,6 @@
         color: $white;
     }
 }
-
-
-
 .toggle-button {
     display: none;
 
@@ -19,13 +16,18 @@
         display: block;
     }
 }
-.show{
-    display: block !important;
+.navbar-nav{
+    display: none;
 }
 .hide {
-    display: none !important;
+    display: none  !important;
 }
+.show{
+    display: flex !important;
+}
+
 .responsive {
+
  @include lg{
         position: absolute;
         flex-direction: column !important;
@@ -35,8 +37,10 @@
         background: $blue-dark;
         border-top: 1px solid silver;
         margin-top: 11rem;
-        left: 0;
-        
+        left: 0; 
+      
     }
-  
+ @include xl{
+display: flex ;
+ }
 }
