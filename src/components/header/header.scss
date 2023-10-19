@@ -1,46 +1,44 @@
 @import '../../mixins.scss';
 
-.navbar {
-    background: transparent;
-    color: $dark;
-
-    @include lg {
-        background-color: $blue-dark !important;
-        color: $white;
+.space-around{
+    justify-content: space-around;
+    padding: 15px !important;
+    @include lg{
+    background-color: $blue-dark;
+    color: $white;
     }
 }
-.toggle-button {
+.align-center{
+    display: flex !important;
+    align-items: center !important;
+}
+.nav-menu{
+    list-style: none;
+    display: inline-flex;
+    justify-content: space-around;
+    margin-bottom: 0;
+    @include lg{
+        display: none;
+        position: absolute;
+        background-color: #054d78;
+        width: 100%;
+        z-index: 9;
+        left: 0;
+        margin-top: 2.2rem;
+        text-align: center;
+    }
+    .nav-items{
+        margin-right: 2rem;
+        font-weight: 400;
+      
+    }
+}
+.bar-btn{
     display: none;
-
-    @include lg {
+    @include lg{
         display: block;
     }
 }
-.navbar-nav{
-    display: none;
-}
-.hide {
-    display: none  !important;
-}
 .show{
-    display: flex !important;
-}
-
-.responsive {
-
- @include lg{
-        position: absolute;
-        flex-direction: column !important;
-        text-align: center;
-        margin-top: 17%;
-        width: 100%;
-        background: $blue-dark;
-        border-top: 1px solid silver;
-        margin-top: 11rem;
-        left: 0; 
-      
-    }
- @include xl{
-display: flex ;
- }
+    display: block;
 }
