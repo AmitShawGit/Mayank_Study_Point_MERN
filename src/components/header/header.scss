@@ -1,44 +1,87 @@
 @import '../../mixins.scss';
 
-.space-around{
-    justify-content: space-around;
-    padding: 15px !important;
-    @include lg{
-    background-color: $blue-dark;
-    color: $white;
+.logo-section {
+    a {
+        font-size: 1.3rem;
+        color: $white;
+        text-decoration: none;
     }
 }
-.align-center{
+
+.navbar {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 60px;
+    top: 0%;
+    padding: 15px !important;
+    background-color: $blue;
+    color: $white;
+
+    @include lg {
+        background-color: $blue;
+        color: $white;
+    }
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.align-center {
     display: flex !important;
     align-items: center !important;
 }
-.nav-menu{
+
+.nav-menu {
     list-style: none;
     display: inline-flex;
     justify-content: space-around;
     margin-bottom: 0;
-    @include lg{
+
+    @include lg {
         display: none;
         position: absolute;
-        background-color: #054d78;
+        background-color: $blue;
         width: 100%;
         z-index: 9;
         left: 0;
         margin-top: 2.2rem;
         text-align: center;
+        border-top: 1px solid silver;
     }
-    .nav-items{
+
+    .nav-items {
         margin-right: 2rem;
         font-weight: 400;
-      
+
+        a {
+            color: $white;
+            text-decoration: none;
+        }
+
+        @include lg {
+            padding: 15px;
+
+            a {
+                color: $white;
+                text-decoration: none;
+            }
+        }
     }
 }
-.bar-btn{
+
+.bar-btn {
     display: none;
-    @include lg{
+
+    @include lg {
         display: block;
     }
 }
-.show{
-    display: block;
+
+.show {
+    display: flex;
+    @include lg{
+        display: block;
+    }
 }
