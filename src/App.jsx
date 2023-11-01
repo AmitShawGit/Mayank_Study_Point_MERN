@@ -5,6 +5,7 @@ import Services from './pages/services/Services'
 import Apps from './pages/apps/Apps'
 import Footer from './components/footer/Footer'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Contact from './pages/contact/Contact'
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Route exact path='/home' element={<Home />} />
           <Route exact path='/service' element={<Services />} />
           <Route exact path='/app' element={<Apps />} />
+          <Route exact path='/contact' element={<Contact />} />
         </Routes>
         <Footer />
       </BrowserRouter>
