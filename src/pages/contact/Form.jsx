@@ -27,13 +27,16 @@ const Form = () => {
             type: "text",
         },
     ]
-  return (
-    <div>
-      {inputElement.map((item, index) => {
+    return (
+        <>
+            <form action='/formSubmit'>
+                {inputElement.map((item, index) => {
                     return <Input key={index} placeholder={item.placeholder} label={item.label} {...item} />
                 })}
-    </div>
-  )
+                <button className='btn btn-primary'>Submit</button>
+            </form>
+        </>
+    )
 }
 
 export default Form
