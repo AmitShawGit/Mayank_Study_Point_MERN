@@ -17,8 +17,8 @@ const Contact = () => {
                     <div className="card-body p-0">
 
                         <Row>
-                            <Col><FormDesign /></Col>
-                            <Col className='p-5'><Form /></Col>
+                            <Col md={6}><FormDesign /></Col>
+                            <Col md={6} className='p-5'><Form /></Col>
                         </Row>
 
                     </div>
