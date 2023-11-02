@@ -4,7 +4,8 @@ const FormDesign = () => {
   return (
     <>
       <div className="bgForm">
-
+<div className="orange-circle"></div>
+<div className="light-blue-circle"></div>
       </div>
     </>
   )
