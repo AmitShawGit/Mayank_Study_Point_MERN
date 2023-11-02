@@ -1,11 +1,19 @@
 import React from 'react'
 import './style.scss'
-const Input = ({label,placeholder,type}) => {
+const Input = (props) => {
   return (
-  <>
-  <label htmlFor="">{label}</label>
-  <input type={type} name="" id="" className='form-control mb-3' placeholder={placeholder}/>
-  </>
+    <>
+      <label htmlFor={props.label}>{props.label}</label>
+      <input
+        type={props.type}
+        name={props.name}
+        id={props.label}
+        className='form-control mb-3'
+        placeholder={props.placeholder}
+        onChange={props.change}
+        onBlur={props.blur}
+        value={props.value} />
+    </>
   )
 }
 
