@@ -1,0 +1,74 @@
+@import '../../../mixins.scss';
+
+
+.notes-container {
+
+    .notepad-modal {
+        background-color: $blue;
+        padding: 20px;
+    }
+}
+
+.add-notes {
+    border: 1px solid silver;
+    height: 200px;
+    display: grid;
+    place-items: center;
+    box-shadow: 1px 2px 6px #d9d9d9a1;
+    border-radius: 5px;
+    cursor: pointer;
+
+    .icon-bg {
+        .add-note-plus {
+            background-color: $primary;
+            padding: 15px;
+            color: $white;
+            border-radius: 50%;
+            font-size: 30px;
+
+
+        }
+    }
+}
+
+
+.view-notes {
+    border: 1px solid silver;
+    min-height: 200px;
+    box-shadow: 1px 2px 6px #d9d9d9a1;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+
+    .notes-description {
+        .text-primary {
+            color: $primary !important;
+
+        }
+
+        margin-left: 15px;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.ri-pencil-fill{
+    color: rgba(0, 128, 0, 0.425);
+    &:hover{
+        color: green;
+    }
+}
+.ri-delete-bin-fill{
+    color: rgba(255, 0, 0, 0.589);
+    &:hover{
+        color: red;
+    }
+}
+.date-section{
+    color: rgb(158, 156, 156);
+    &:hover{
+        color: rgb(104, 104, 104);
+    }
+}

@@ -1,5 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
+import './style.scss';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const StickyNotes = () => {
     let [note, setNote] = useState({ title: " ", description: " " });
@@ -19,18 +23,55 @@ const StickyNotes = () => {
     const deleteItem = (e) => {
         console.log(e.target.id);
     }
-    let previewNote = localStorage.getItem( `key_${Date.now()}`)
+    let previewNote = localStorage.getItem(`key_${Date.now()}`)
     return (
-        <div>
-            <form action="" onSubmit={handleSubmit}>
-                <input type="text" placeholder='Heading' name='title' className='form-control' value={note.title || " "} onChange={handleChange} />
 
-                <textarea cols="30" rows="2" name="description" className='form-control' value={note.description || " "} onChange={handleChange} ></textarea>
-                <button>Save</button>
-            </form>
+        <>
+            <Container>
+                <Row className='mt-5'>
+                    <Col md={3}>
+                        <div className="add-notes">
+                            <div className="icon-bg">
+                                <i class="ri-add-line add-note-plus"></i>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col md={3}>
+                        <div className="view-notes">
+                            <div className="notes-description">
 
-            <p>{previewNote}<button onClick={deleteItem}>Delete</button></p>
-        </div>
+                                <h4 className='text-primary notes-title'><b>TItle</b></h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente minus, nemo similique error facilis assumenda animi</p>
+                                <div className="d-flex justify-content-between">
+                                    <div className='date-section'>
+
+                                        <p>29 Feb,2023</p>
+                                    </div>
+                                    <div className="action">
+                                        <i class="ri-pencil-fill pointer"></i> <i class="ri-delete-bin-fill m-3 pointer"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+            {/* notepadmodal */}
+            <div className="d-flex align-items-center justify-content-center notes-container mt-5 d-none">
+                <div className="notepad-modal">
+                    <form action="" onSubmit={handleSubmit}>
+                        <label htmlFor="" className='text-white mb-1'>Title</label>
+                        <input type="text" name='title' className='form-control mb-2' value={note.title || " "} onChange={handleChange} placeholder='Heading' />
+                        <label htmlFor="" className='text-white mb-1'>Description</label>
+                        <textarea cols="30" rows="2" name="description" className='form-control mb-3' value={note.description || " "} onChange={handleChange} ></textarea>
+                        <button className='btn btn-primary w-100'>Save</button>
+                    </form>
+                </div>
+            </div>
+
+
+        </>
     )
 }
 
