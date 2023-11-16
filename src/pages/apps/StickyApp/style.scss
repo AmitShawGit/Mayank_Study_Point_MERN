@@ -2,6 +2,11 @@
 
 
 .notes-container {
+    position: absolute;
+    top: 7%;
+    left: 40%;
+    width: 300px;
+    transition: all 0.5s;
 
     .notepad-modal {
         background-color: $blue;
@@ -54,21 +59,26 @@
     cursor: pointer;
 }
 
-.ri-pencil-fill{
+.ri-pencil-fill {
     color: rgba(0, 128, 0, 0.425);
-    &:hover{
+
+    &:hover {
         color: green;
     }
 }
-.ri-delete-bin-fill{
+
+.ri-delete-bin-fill {
     color: rgba(255, 0, 0, 0.589);
-    &:hover{
+
+    &:hover {
         color: red;
     }
 }
-.date-section{
+
+.date-section {
     color: rgb(158, 156, 156);
-    &:hover{
+
+    &:hover {
         color: rgb(104, 104, 104);
     }
 }
