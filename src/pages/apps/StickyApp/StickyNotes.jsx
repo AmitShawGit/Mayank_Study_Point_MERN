@@ -6,24 +6,46 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const StickyNotes = () => {
-    let [note, setNote] = useState({ title: " ", description: " " });
     let [showModal, setShowModal] = useState(false)
-    let handleChange = (e) => {
 
-        setNote({ ...note, [e.target.name]: e.target.value })
+    let [note, setNote] = useState({ title: "", description: "" });
+
+    let [addNote, setAddNote] = useState([])
+
+
+    let handleChange = (e) => {
+        const { name, value } = e.target;
+        setNote((prev) => ({ ...prev, [name]: value }));
     };
-    let key = 1;
+
     let handleSubmit = (e) => {
         e.preventDefault();
-        let key = ((prev) => prev.key++);
-        localStorage.setItem(key, JSON.stringify(note));
-        setNote({ title: "", description: "" });
+        setAddNote((prevNotes) => [
+            ...prevNotes,
+            {id:addNote.length+1 ,title: note.title, description: note.description }
+        ]);
+        setNote([]);
         setShowModal(false);
-    }
-    const deleteItem = (e) => {
-        console.log(e.target.id);
-    }
+    };
 
+    const deleteItem = (id) => {
+        setAddNote((prevNotes) =>
+            prevNotes.filter((note) => note.id !== id)
+        );
+    };
+    const editNote = (id) => {
+        const noteToEdit = addNote.find((note) => note.id === id);
+    
+        if (noteToEdit) {
+            setShowModal(true);
+            setNote({     
+                id:noteToEdit,
+                title: noteToEdit.title,
+                description: noteToEdit.description
+            });
+        }
+    }
+    
     return (
 
         <>
@@ -43,26 +65,25 @@ const StickyNotes = () => {
                     <Col md={3} onClick={() => setShowModal(!showModal)} className='mt-2'>
                         <div className="add-notes">
                             <div className="icon-bg">
-                                <i class="ri-add-line add-note-plus"></i>
+                                <i className="ri-add-line add-note-plus"></i>
                             </div>
                         </div>
                     </Col>
-                    {Object.keys(localStorage).map((item, key) => {
-                        const storedNote = localStorage.getItem(item);
-                        console.log(storedNote.title);
+                    {addNote.map((item, key) => {
+
                         return (<Col md={3} key={key} className='mt-2'>
                             <div className="view-notes">
                                 <div className="notes-description">
 
                                     <h4 className='text-primary notes-title'><b>{item.title}</b></h4>
                                     <p>{item.description}</p>
-                                    <div className="d-flex justify-content-between">
+                                    <div className="d-flex justify-content-between footer-section">
                                         <div className='date-section'>
 
-                                            <p>29 Feb,2023</p>
+                                            <p>{new Date().toLocaleDateString()}</p>
                                         </div>
                                         <div className="action">
-                                            <i class="ri-pencil-fill pointer"></i> <i class="ri-delete-bin-fill m-3 pointer"></i>
+                                            <i className="ri-pencil-fill pointer" onClick={()=>editNote(item.id)}></i> <i className="ri-delete-bin-fill m-3 pointer" onClick={() => deleteItem(item.id)}></i>
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +93,7 @@ const StickyNotes = () => {
                     })}
                 </Row>
             </Container>
-            {/* notepadmodal */}
+
 
 
 
