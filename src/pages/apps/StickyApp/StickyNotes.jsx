@@ -20,10 +20,15 @@ const StickyNotes = () => {
 
     let handleSubmit = (e) => {
         e.preventDefault();
-        setAddNote((prevNotes) => [
-            ...prevNotes,
-            {id:addNote.length+1 ,title: note.title, description: note.description }
-        ]);
+
+        if (note.id) {
+            setAddNote((prevNoteObject) => prevNoteObject.map((newArrofNotes) => newArrofNotes.id === note.id ? { ...note } : newArrofNotes))
+        } else {
+            setAddNote((prevNotes) => [
+                ...prevNotes,
+                { id: addNote.length + 1, title: note.title, description: note.description }
+            ]);
+        }
         setNote([]);
         setShowModal(false);
     };
@@ -35,21 +40,37 @@ const StickyNotes = () => {
     };
     const editNote = (id) => {
         const noteToEdit = addNote.find((note) => note.id === id);
-    
+
         if (noteToEdit) {
             setShowModal(true);
-            setNote({     
-                id:noteToEdit,
+
+            const updatedNotes = addNote.map((note) =>
+                note.id === id
+                    ? {
+                        ...note,
+                        title: noteToEdit.title,
+                        description: noteToEdit.description,
+                    }
+                    : note
+            );
+
+            setAddNote(updatedNotes);
+
+            setNote({
+                id: noteToEdit.id,
                 title: noteToEdit.title,
-                description: noteToEdit.description
+                description: noteToEdit.description,
             });
         }
-    }
-    
+    };
+
+
+
     return (
 
         <>
             <Container>
+                <p className="heading">Sticky Notes App</p>
                 <div className="row align-items-center justify-content-center notes-container mt-5" style={{ display: showModal ? "block" : "none" }}>
                     <div className="notepad-modal">
                         <form action="" onSubmit={handleSubmit}>
@@ -83,7 +104,7 @@ const StickyNotes = () => {
                                             <p>{new Date().toLocaleDateString()}</p>
                                         </div>
                                         <div className="action">
-                                            <i className="ri-pencil-fill pointer" onClick={()=>editNote(item.id)}></i> <i className="ri-delete-bin-fill m-3 pointer" onClick={() => deleteItem(item.id)}></i>
+                                            <i className="ri-pencil-fill pointer" onClick={() => editNote(item.id)}></i> <i className="ri-delete-bin-fill m-3 pointer" onClick={() => deleteItem(item.id)}></i>
                                         </div>
                                     </div>
                                 </div>
