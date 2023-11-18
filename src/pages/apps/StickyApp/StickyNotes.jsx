@@ -43,28 +43,15 @@ const StickyNotes = () => {
 
         if (noteToEdit) {
             setShowModal(true);
-
-            const updatedNotes = addNote.map((note) =>
-                note.id === id
-                    ? {
-                        ...note,
-                        title: noteToEdit.title,
-                        description: noteToEdit.description,
-                    }
-                    : note
-            );
-
-            setAddNote(updatedNotes);
-
+            setAddNote((prev) => prev.filter((id) => id !== noteToEdit.id))
             setNote({
                 id: noteToEdit.id,
                 title: noteToEdit.title,
-                description: noteToEdit.description,
+                description: noteToEdit.description
             });
         }
-    };
 
-
+    }
 
     return (
 
