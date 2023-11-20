@@ -7,7 +7,7 @@ import StickyNotes from './pages/apps/StickyApp/StickyNotes';
 import Footer from './components/footer/Footer'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Contact from './pages/contact/Contact'
-
+import AgeCal from './pages/apps/AgeCalculator/AgeCal'
 
 const App = () => {
   return (
@@ -21,6 +21,7 @@ const App = () => {
           <Route exact path='/app' element={<Apps />} />
           <Route exact path='/contact' element={<Contact />} />
           <Route exact path='/notes' element={<StickyNotes />} />
+          <Route exact path='/age-calculator' element={<AgeCal />} />
         </Routes>
         <Footer />
       </BrowserRouter>

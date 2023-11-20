@@ -13,6 +13,9 @@ const Apps = () => {
         <Col sm={12} md={4}>
         <Link to="/notes"><Cards cardText="Sticky Notes App" /></Link>
         </Col>
+        <Col sm={12} md={4}>
+        <Link to="/age-calculator"><Cards cardText="Age Calulator App" /></Link>
+        </Col>
         </Row>
       <TextEditor />
     </ContentWrapper>
