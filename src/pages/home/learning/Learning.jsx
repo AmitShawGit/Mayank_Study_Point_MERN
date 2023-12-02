@@ -19,21 +19,21 @@ const Learning = () => {
                     <Col md={6}>
                         <h2 className='heading'>Limitless learning more possibilities</h2>
                         <p className='description'>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            This website is all about learning through presentations with easy lectures, the basic aim of this website is to spread knowledge, on different topics, in an understandable language through PowerPoint presentations (PPTs) and on camera. As everything is going digital, so why not the way we study also become digital and easy, with the help of presentations one can learn/study more easily and quickly as compared to reading long paragraphs in different books. PPT makes the way of study very easy and effective. Subscribe and learn about different topics from your courses as well as the mind-blowing ideas of making college class presentations, office presentations, and a lot more. You will start learning even those topics which you never heard of, in a very easy and understandable language, Hindi.
                         </p>
                         <Row className='text-center'>
                             <Col md={4} className='text-orange'>
                                 <ScrollTrigger onEnter={() => setAnimate(true)} onExit={() => setAnimate(false)}>
-                                    {animate && <h3><CountUp start={0} end={1456} duration={8} style={{fontSize:"1.76rem"}}/>+</h3>}
+                                    {animate && <h3><CountUp start={0} end={1456} duration={8} style={{ fontSize: "1.76rem" }} />+</h3>}
                                 </ScrollTrigger>
                                 <p>Students</p>
                             </Col>
                             <Col md={4} className='text-pink'>
-                            {animate && <h3><CountUp start={0} end={260} duration={5} style={{fontSize:"1.76rem"}}/>+</h3>}
+                                {animate && <h3><CountUp start={0} end={260} duration={5} style={{ fontSize: "1.76rem" }} />+</h3>}
                                 <p>Courses</p>
                             </Col>
                             <Col md={4} className='text-blue'>
-                            {animate && <h3><CountUp start={0} end={576} duration={5} style={{fontSize:"1.76rem"}}/>+</h3>}
+                                {animate && <h3><CountUp start={0} end={576} duration={5} style={{ fontSize: "1.76rem" }} />+</h3>}
                                 <p>Watch Hours</p>
                             </Col>
 

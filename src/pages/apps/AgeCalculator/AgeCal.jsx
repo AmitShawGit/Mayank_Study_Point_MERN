@@ -35,7 +35,7 @@ const AgeCal = () => {
       <ContentWrapper >
         <Row>
           <Col className='offset-3' md={6}>
-            <div className="card">
+            <div className="card-calc card">
               <h2 className='heading'>Age Calculator</h2>
               <label htmlFor="date">Enter Your Date of Birth</label>
               <input type="date" id="date" className='form-control mt-2' value={dob} onChange={handleChange} />

@@ -34,6 +34,9 @@ $footer-text: #ddd;
 .text-primary {
    color: $primary !important;
 }
+a {
+   text-decoration: none !important;
+}
 @mixin xl{
    @media (max-width:1200px) {
       @content
