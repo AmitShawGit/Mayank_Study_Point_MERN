@@ -7,27 +7,29 @@ import ContentWrapper from '../../../components/wrapper/ContentWrapper';
 const AgeCal = () => {
   let [dob, setDob] = useState();
   let [age, setAge] = useState();
-  let [month,setMonth] = useState();
-  let [day,setDay]=useState();
+  let [month, setMonth] = useState();
+  let [day, setDay] = useState();
 
   let handleChange = (e) => {
-    let dobDate = new Date(e.target.value)
+    let userDob = e.target.value;
+    let dob = new Date(userDob);
+    let currentDate = new Date();
 
-    let month_diff = Date.now() - dobDate.getTime();
+    let userAge = currentDate.getFullYear() - dob.getFullYear();
+    let userMonth = currentDate.getMonth() - dob.getMonth();
+    let userDay = dob.getDate() - currentDate.getDate();
 
-    let age_dt = new Date(month_diff);
 
-    let year = age_dt.getUTCFullYear();
-    let mnth = age_dt.getUTCMonth();
-    let dy = age_dt.getUTCDay();
 
-    let age = Math.abs(year - 1970);
 
-    setAge(age);
-    setMonth(mnth + 1);
-
-    setDay(dy);
+    setAge(userAge)
+    setDay(userDay)
+    setMonth(userMonth)
   }
+
+
+
+
 
 
   return (
@@ -49,5 +51,6 @@ const AgeCal = () => {
     </div>
   )
 }
+
 
 export default AgeCal
