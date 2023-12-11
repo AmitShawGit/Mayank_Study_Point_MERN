@@ -1,8 +1,9 @@
-import React from 'react'
-import './footer.scss'
-import ContentWrapper from '../wrapper/ContentWrapper'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+import React from 'react';
+import './footer.scss';
+import ContentWrapper from '../wrapper/ContentWrapper';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import { Link } from 'react-router-dom';
 const footer = () => {
   return (
     <>
@@ -23,53 +24,43 @@ const footer = () => {
         <div className="footer pt-5">
           <ContentWrapper>
             <Row>
-              <Col md={3}>
+              <Col md={4}>
                 <ul className='footer-list'>
                   <li className='footer-head text-primary'>Quick Links</li>
-                  <li className='footer-item'>Home</li>
-                  <li className='footer-item'>Home</li>
-                  <li className='footer-item'>Home</li>
-                  <li className='footer-item'>Home</li>
-
+                  <li><Link to="/home" className='footer-item'>Home</Link></li>
+                  <li><Link to="/service" className='footer-item'>Service</Link></li>
+                  <li><Link to="/contact" className='footer-item'>Contact</Link></li>
+                  <li><Link to="/app" className='footer-item'>App</Link></li>
                 </ul>
               </Col>
-              <Col md={3}>
+              <Col md={4}>
                 <ul className='footer-list'>
                   <li className='footer-head text-primary'>Our Services</li>
-                  <li className='footer-item'>Home</li>
-                  <li className='footer-item'>Home</li>
-                  <li className='footer-item'>Home</li>
-                  <li className='footer-item'>Home</li>
+                  <li><Link to="/home" className='footer-item'>Web Design</Link></li>
+                  <li><Link to="/home" className='footer-item'>Web Development</Link></li>
+                  <li><Link to="/home" className='footer-item'>Graphic Design</Link></li>
+                  <li><Link to="/home" className='footer-item'>Assignment</Link></li>
 
                 </ul>
               </Col>
-              <Col md={3}>
-                <ul className='footer-list'>
-                  <li className='footer-head text-primary'>Our Services</li>
-                  <li className='footer-item'>Home</li>
-                  <li className='footer-item'>Home</li>
-                  <li className='footer-item'>Home</li>
-                  <li className='footer-item'>Home</li>
 
-                </ul>
-              </Col>
-              <Col md={3} className='text-center footer-logo'>
+              <Col md={4} className='text-center footer-logo'>
                 <h4>Mayank's Study Point</h4>
                 <p>Your Future is in your hand</p>
                 <ul className='footer-list'>
                   <li><i className="ri-mail-line"></i> mayank@gmail.com</li>
                   <div className="d-flex justify-content-around mt-3">
-                    <div><i className="ri-facebook-circle-fill footer-icon-fb footer-icon"></i></div>
-                    <div><i className="ri-youtube-fill footer-icon-yt footer-icon"></i></div>
-                    <div><i className="ri-instagram-fill footer-icon-insta footer-icon"></i></div>
+                    <div><Link to="#" target='_blank'><i className="ri-facebook-circle-fill footer-icon-fb footer-icon"></i></Link></div>
+                    <div><Link to="#" target='_blank'><i className="ri-youtube-fill footer-icon-yt footer-icon"></i></Link></div>
+                    <div><Link to="#" target='_blank'><i className="ri-instagram-fill footer-icon-insta footer-icon"></i></Link></div>
                   </div>
                 </ul>
               </Col>
             </Row>
-            <hr style={{color:"silver"}}/>
+            <hr style={{ color: "silver" }} />
             <div className="d-flex justify-content-between">
-<p>All right reserved by Mayank Study Point <i className="ri-copyright-line"></i> {new Date().getFullYear()}</p>
-<p>Designed & Developed by Amit Shaw</p>
+              <p className='footer-text'>All right reserved by <Link to="/home">Mayank Study Point</Link>  <i className="ri-copyright-line"></i> {new Date().getFullYear()}</p>
+              <p>Designed & Developed by Amit Shaw</p>
             </div>
           </ContentWrapper>
         </div>
@@ -78,4 +69,4 @@ const footer = () => {
   )
 }
 
-export default footer
+export default footer;
