@@ -3,10 +3,14 @@
 .border-primary {
     border: 1px solid $blue;
     box-shadow: 5px 6px 5px silver;
+    display: flex;
+    align-items: center;
     .feature {
         background-color: $blue !important;
         color: #fff !important;
         font-size: 20px;
+        text-align: center;
+        width: 100%;
     }
 
     .body-section {
@@ -16,11 +20,15 @@
     .price {
         color: $primary;
         font-size: 35px;
+        text-align: center;
     }
 
     .list-none {
-        list-style: none;
-        padding-left: 0;
+        list-style: inside;
+      
+      li{
+        margin-top: 0.5rem;
+      }
     }
 
     .links {

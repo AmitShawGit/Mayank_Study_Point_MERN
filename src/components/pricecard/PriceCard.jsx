@@ -6,7 +6,7 @@ const PriceCard = ({ head, price, features, path }) => {
   let feature = features
   return (
     <div>
-      <Card className="text-center border-primary">
+      <Card className="border-primary">
         <Card.Header className='feature'>{head}</Card.Header>
         <Card.Body className='body-section'>
           <Card.Title className='price'>{price}</Card.Title>
@@ -21,7 +21,7 @@ const PriceCard = ({ head, price, features, path }) => {
 
         </Card.Body>
         <Card.Footer className='feature'>
-          <Link to={path} variant="primary" className='links'>Go somewhere</Link>
+          <Link to={path} variant="primary" className='links'>More Info</Link>
         </Card.Footer>
       </Card>
     </div>

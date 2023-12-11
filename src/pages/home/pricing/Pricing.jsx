@@ -7,31 +7,40 @@ const Pricing = () => {
     const output = [
         {
             id: 1,
-            head: "Features",
-            price: "$10",
+            head: "Web Design Service",
+            price: "$100",
             features: [
-                { id: 1, name: 'Item 2' },
-                { id: 2, name: 'item2' }
+                { id: 1, name: 'Layout Design' },
+                { id: 2, name: 'HTML Development' },
+                { id: 3, name: 'SASS Based CSS Structure' },
+                { id: 4, name: 'Deployement' },
+                { id: 5, name: 'Services' },
             ],
             path: "/some-path",
         },
         {
             id: 2,
-            head: "Features",
-            price: "$10",
+            head: "Web Development Service",
+            price: "$200",
             features: [
-                { id: 1, name: 'Item 2' },
-                { id: 2, name: 'item2' }
+                { id: 1, name: 'Dynamic Website Development' },
+                { id: 2, name: 'Use of Latest Technology' },
+                { id: 3, name: 'Reusable Code' },
+                { id: 4, name: 'API Based Services' },
+                { id: 5, name: 'Services and Support' },
             ],
             path: "/some-path",
         },
         {
             id: 3,
-            head: "Features",
-            price: "$10",
+            head: "Graphic Design",
+            price: "$50",
             features: [
-                { id: 1, name: 'Item 2' },
-                { id: 2, name: 'item2' }
+                { id: 1, name: 'Photoshop Based Design' },
+                { id: 2, name: 'High Quality Images' },
+                { id: 3, name: 'Multiple Previews' },
+                { id: 4, name: 'Reusable Design' },
+                { id: 5, name: 'Support and Services' },
             ],
             path: "/some-path",
         },

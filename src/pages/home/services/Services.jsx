@@ -31,7 +31,7 @@ const Services = () => {
             text: "Asignment Video",
             img: assignment,
             icon: "ri-folder-video-line assign-video",
-            route: "/"
+            route: "https://youtube.com/playlist?list=PLgtmGiHE2Uyn0iGH2Ckk1p_k2Id6_tQ9d&si=451I0ZhrmINWqWxi"
         },
         {
             id: 4,
