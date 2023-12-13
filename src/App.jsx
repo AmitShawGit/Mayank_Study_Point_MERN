@@ -8,6 +8,8 @@ import Footer from './components/footer/Footer'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Contact from './pages/contact/Contact'
 import AgeCal from './pages/apps/AgeCalculator/AgeCal'
+import Freepdf from './pages/services/freepdf/Freepdf'
+import Assignment from './pages/services/assignment/Assignment'
 
 const App = () => {
   return (
@@ -22,6 +24,8 @@ const App = () => {
           <Route exact path='/contact' element={<Contact />} />
           <Route exact path='/notes' element={<StickyNotes />} />
           <Route exact path='/age-calculator' element={<AgeCal />} />
+          <Route exact path='/freepdf' element={<Freepdf />} />
+          <Route exact path='/assignment' element={<Assignment />} />
         </Routes>
         <Footer />
       </BrowserRouter>

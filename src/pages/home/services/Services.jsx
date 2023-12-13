@@ -38,14 +38,14 @@ const Services = () => {
             text: "Assignment",
             img: assVid,
             icon: "ri-file-list-2-line service-icon",
-            route: "/"
+            route: "/assignment"
         },
         {
             id: 5,
             text: "Free Pdf Notes",
             img: free,
             icon: "ri-file-pdf-2-line youtube-color",
-            route: "/"
+            route: "/freepdf"
         },
         {
             id: 6,
