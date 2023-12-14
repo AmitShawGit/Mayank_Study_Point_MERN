@@ -1,6 +1,7 @@
 import React from 'react'
 import Input from '../../components/formelement/Input'
 import { useFormik } from 'formik';
+import axios from 'axios';
 
 let initialValues = {
     name: "",
@@ -13,6 +14,22 @@ const Form = () => {
         initialValues: initialValues,
         onSubmit: (values, action) => {
             console.log(values);
+            try {
+                axios.post("http://localhost:4000/submit", values, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    withCredentials: true
+                })
+                    .then((res) => console.log(res.data))
+            }
+            catch (err) {
+                console.log(err.response.message);
+            }
+
+
+
+            console.log("data submitted");
             action.resetForm()
         }
     })
@@ -48,7 +65,7 @@ const Form = () => {
     ]
     return (
         <>
-            <form action='/formSubmit' onSubmit={handleSubmit}>
+            <form action='/submit' onSubmit={handleSubmit}>
                 {inputElement.map((item, index) => {
                     return <Input
                         key={index}
@@ -61,7 +78,7 @@ const Form = () => {
                         msg={errors[item.name]}
                         value={values[item.name]} />
                 })}
-                <button className='btn btn-primary' type="submit">Submit</button>
+                <input className='btn btn-primary' type="submit" value="Submit" />
             </form>
         </>
     )
