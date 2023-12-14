@@ -10,8 +10,8 @@ const footer = () => {
       <div className="sub-footer mt-5">
         <ContentWrapper>
           <Row>
-            <Col><h3>Subscribe to Our Newsletter</h3></Col>
-            <Col>
+            <Col sm={12} md={6}><h3>Subscribe to Our Newsletter</h3></Col>
+            <Col sm={12} md={6}>
               <div className="email-footer-form">
                 <input type="text" className='form-control ' />
                 <button type='button' className='btn btn-primary'>Send</button>

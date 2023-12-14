@@ -9,7 +9,8 @@ const PriceCard = ({ head, price, features, path }) => {
       <Card className="border-primary">
         <Card.Header className='feature'>{head}</Card.Header>
         <Card.Body className='body-section'>
-          <Card.Title className='price'>{price}</Card.Title>
+          <p>Starting from</p>
+          <Card.Title className='price'>Rs. {price}</Card.Title>
           <ul className='list-none'>
             {feature.map((item, index) => {
               return (
