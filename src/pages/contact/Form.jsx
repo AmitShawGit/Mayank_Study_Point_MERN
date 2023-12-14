@@ -15,24 +15,19 @@ const Form = () => {
         onSubmit: (values, action) => {
             console.log(values);
             try {
-                axios.post("http://localhost:4000/submit", values, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    withCredentials: true
-                })
+                axios.post("http://localhost:4000/submit", JSON.stringify(values),
+                )
                     .then((res) => console.log(res.data))
             }
             catch (err) {
-                console.log(err.response.message);
+                console.log(err);
             }
-
-
-
             console.log("data submitted");
             action.resetForm()
         }
     })
+
+
     const inputElement = [
         {
             id: 1,
