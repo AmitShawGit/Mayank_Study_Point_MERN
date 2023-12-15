@@ -24,17 +24,17 @@ const Learning = () => {
                         <Row className='text-center'>
                             <Col md={4} className='text-orange'>
                                 <ScrollTrigger onEnter={() => setAnimate(true)} onExit={() => setAnimate(false)}>
-                                    {animate && <h3><CountUp start={0} end={1456} duration={8} style={{ fontSize: "1.76rem" }} />+</h3>}
+                                    {animate && <h3><CountUp start={0} end={4123} duration={8} style={{ fontSize: "1.76rem" }} />+</h3>}
                                 </ScrollTrigger>
                                 <p>Students</p>
                             </Col>
                             <Col md={4} className='text-pink'>
-                                {animate && <h3><CountUp start={0} end={260} duration={5} style={{ fontSize: "1.76rem" }} />+</h3>}
-                                <p>Courses</p>
+                                {animate && <h3><CountUp start={0} end={3897} duration={5} style={{ fontSize: "1.76rem" }} />+</h3>}
+                                <p>Happy Customers</p>
                             </Col>
                             <Col md={4} className='text-blue'>
-                                {animate && <h3><CountUp start={0} end={576} duration={5} style={{ fontSize: "1.76rem" }} />+</h3>}
-                                <p>Watch Hours</p>
+                                {animate && <h3><CountUp start={0} end={7658} duration={5} style={{ fontSize: "1.76rem" }} />+</h3>}
+                                <p>Assignments and Projects</p>
                             </Col>
 
                         </Row>

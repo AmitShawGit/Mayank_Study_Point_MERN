@@ -48,7 +48,7 @@ const Pricing = () => {
     return (
         <div>
             <ContentWrapper>
-                <h2 className='heading'>Our Services</h2>
+                <h2 className='heading'>Other Services</h2>
                 <Row>
                 {output.map((item, index) => 
                  <Col md={4}  key={index} className='mb-4'>
