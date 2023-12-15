@@ -15,9 +15,13 @@ const Form = () => {
         onSubmit: (values, action) => {
             console.log(values);
             try {
-                axios.post("http://localhost:4000/submit", JSON.stringify(values),
+                axios.post("http://localhost:4000/submit", values, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }
                 )
-                    .then((res) => console.log(res.data))
+                    .then((res) => alert(res.data))
             }
             catch (err) {
                 console.log(err);
