@@ -1,8 +1,5 @@
 import React from "react";
 import ContentWrapper from "../../../components/wrapper/ContentWrapper";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from 'react-bootstrap/Card'
 import './style.scss'
 import { Link } from "react-router-dom";
 let Assignment = () => {

@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './footer.scss';
 import ContentWrapper from '../wrapper/ContentWrapper';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
-const footer = () => {
+import axios from 'axios';
+
+const Footer = () => {
+  let [userEmail, setUserEmail] = useState({ email: "" });
+
+
+  let handleformdata = (e) => {
+
+    setUserEmail((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+  let handleEmailSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:4000/email", userEmail, {
+        headers: {
+          'Content-Type': 'application/json',
+      }
+      })
+        .then((res) => { alert(res.data) })
+    }
+    catch (err) {
+      console.log(err.message);
+    }
+    console.log(userEmail);
+    setUserEmail("")
+  };
+
   return (
     <>
       <div className="sub-footer mt-5">
@@ -12,10 +38,10 @@ const footer = () => {
           <Row>
             <Col sm={12} md={6}><h3>Subscribe to Our Newsletter</h3></Col>
             <Col sm={12} md={6}>
-              <div className="email-footer-form">
-                <input type="text" className='form-control ' />
-                <button type='button' className='btn btn-primary'>Send</button>
-              </div>
+              <form className="email-footer-form" onSubmit={handleEmailSubmit}>
+                <input type="email" className='form-control ' name='email' placeholder='Type your email' value={userEmail.email || ""} onChange={handleformdata} required />
+                <input type='submit' className='btn btn-primary' value="Send" />
+              </form>
             </Col>
           </Row>
         </ContentWrapper>
@@ -69,4 +95,4 @@ const footer = () => {
   )
 }
 
-export default footer;
+export default Footer;
