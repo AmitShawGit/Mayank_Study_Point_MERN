@@ -1,7 +1,6 @@
 import React from 'react'
 import Cards from '../../../components/cards/Cards'
 import ContentWrapper from '../../../components/wrapper/ContentWrapper'
-import './style.scss';
 import { Col, Row } from 'react-bootstrap'
 import freePdf from '../../../assets/service1.png'
 import video from '../../../assets/service2.png';

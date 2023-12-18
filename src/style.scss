@@ -7,26 +7,27 @@
     text-align: center;
     color: $primary;
     padding: 5%;
- }
- 
- .btn-primary {
+}
+
+.btn-primary {
     background-color: $primary !important;
     border: $primary !important;
     box-shadow: $primary !important;
- }
- 
- .text-primary {
+}
+
+.text-primary {
     color: $primary !important;
- }
- 
- a {
+}
+
+a {
     text-decoration: none !important;
- }
+}
+
 /*Home Page*/
 
- /*hero section*/
- 
- .heroBg {
+/*hero section*/
+
+.heroBg {
     width: 100%;
     margin-top: -70px;
     background-repeat: no-repeat;
@@ -37,10 +38,10 @@
     background: rgb(240, 251, 255);
     background: linear-gradient(128deg, rgba(240, 251, 255, 1) 0%, rgba(213, 244, 255, 1) 100%);
 
-    @include lg {      
-            margin-top: 0;
-            height: 778px;
-            overflow: hidden;
+    @include lg {
+        margin-top: 0;
+        height: 778px;
+        overflow: hidden;
     }
 
     .hero {
@@ -67,10 +68,67 @@
             height: 100%;
             bottom: -252px;
         }
-        .men-img{
-            @include sm{
+
+        .men-img {
+            @include sm {
                 margin-left: -9%;
             }
         }
     }
+}
+
+/*learninsection*/
+
+.description {
+    line-height: 2.1;
+    text-align: left;
+
+    @include md {
+        padding-top: 0% !important;
+
+    }
+
+}
+
+.text-orange {
+    color: $primary;
+
+}
+
+.text-pink {
+    color: #ec1d3f
+}
+
+.text-blue {
+    color: #6913b9;
+}
+
+/*review  section*/
+.text-20 {
+    font-size: 20px;
+    line-height: 2;
+}
+
+.text-primary {
+    color: $primary !important;
+}
+
+.review {
+    @include md {
+        text-align: center;
+    }
+}
+
+/*servicesection*/
+.youtube-color{
+    color: #CD201F;
+}
+.projector{
+    color: $white;
+}
+.assign-video{
+    color: $pink;
+}
+.service-icon{
+    color: $blue;
 }

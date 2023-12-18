@@ -6,7 +6,7 @@ import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import './style.scss'
+
 const Learning = () => {
     let [animate, setAnimate] = useState(false)
     return (
