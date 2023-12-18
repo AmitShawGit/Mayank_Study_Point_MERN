@@ -1,5 +1,4 @@
 import React from 'react'
-import "./style.scss"
 import ContentWrapper from '../../../components/wrapper/ContentWrapper'
 import Img from '../../../components/lazyloading/LazyLoading'
 import menHero from '../../../assets/manhero1.png'

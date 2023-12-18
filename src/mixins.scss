@@ -16,44 +16,36 @@ $white: #fff;
 $blue-dark: #054d78;
 $footer-text: #ddd;
 
-.heading {
-   font-size: 30px;
-   font-weight: bold;
-   line-height: 0.84;
-   text-align: center;
-   color: $primary;
-   padding: 5%;
-}
 
-.btn-primary {
-   background-color: $primary !important;
-   border: $primary !important;
-   box-shadow: $primary !important;
-}
 
-.text-primary {
-   color: $primary !important;
-}
-a {
-   text-decoration: none !important;
-}
-@mixin xl{
+@mixin xl {
    @media (max-width:1200px) {
       @content
-   }};
+   }
+}
 
-@mixin lg{
-@media (max-width:768px) {
-   @content
-}};
+;
 
-@mixin md{
+@mixin lg {
+   @media (max-width:768px) {
+      @content
+   }
+}
+
+;
+
+@mixin md {
    @media (max-width:576px) {
       @content
    }
-};
-@mixin sm{
+}
+
+;
+
+@mixin sm {
    @media (max-width:414px) {
       @content
    }
-};
+}
+
+;

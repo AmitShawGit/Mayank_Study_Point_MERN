@@ -1,6 +1,32 @@
-@import '../../../mixins.scss';
+@import './mixins.scss';
 
-.heroBg {
+.heading {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 0.84;
+    text-align: center;
+    color: $primary;
+    padding: 5%;
+ }
+ 
+ .btn-primary {
+    background-color: $primary !important;
+    border: $primary !important;
+    box-shadow: $primary !important;
+ }
+ 
+ .text-primary {
+    color: $primary !important;
+ }
+ 
+ a {
+    text-decoration: none !important;
+ }
+/*Home Page*/
+
+ /*hero section*/
+ 
+ .heroBg {
     width: 100%;
     margin-top: -70px;
     background-repeat: no-repeat;
