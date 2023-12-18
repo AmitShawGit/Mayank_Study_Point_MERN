@@ -132,3 +132,17 @@ a {
 .service-icon{
     color: $blue;
 }
+
+
+
+/*Free Pdf*/
+.select-university{
+    margin-top: 3rem;
+    text-align: center;
+    @include md{
+        text-align: left;
+    }
+}
+.subject-card{
+    margin-top: 1rem;
+}

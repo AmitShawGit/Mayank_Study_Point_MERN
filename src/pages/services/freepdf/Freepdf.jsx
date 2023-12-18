@@ -3,29 +3,58 @@ import ContentWrapper from "../../../components/wrapper/ContentWrapper";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from 'react-bootstrap/Card'
+
 let Freepdf = () => {
+
+    let select = [
+        {
+            id: 1,
+            name: "NMIMS",
+        },
+        {
+            id: 2,
+            name: "Amity University",
+        },
+        {
+            id: 3,
+            name: "Burdwan University",
+        },
+    ]
     return (
         <>
 
             <ContentWrapper>
-                <Row>
-                    <Col md={3}>
-                        <input type="text" name="" id="" placeholder="search by name" className="form-control" />
-                    </Col>
-                </Row>
+                <div className="select-university">
+
+                    <Row>
+                        <Col md={3}>
+                            <label htmlFor="select">Select University</label>
+                        </Col>
+                        <Col md={8}>
+                            <select name="" id="select" className="form-control">
+                                {select.map((value,index) => {
+                                    return(
+                                        <option key={index} value={value.name}>{value.name}</option>
+                                    )
+                                })}
+
+                            </select>
+                        </Col>
+                    </Row>
+                </div>
 
                 <Row>
                     <Col>
-                        <Card style={{ width: '18rem' }}>
+                        <Card className="subject-card">
                             <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                                <Card.Title>Business Studies</Card.Title>
+                                <Card.Subtitle className="mb-2 text-muted">Semester 1</Card.Subtitle>
                                 <Card.Text>
                                     Some quick example text to build on the card title and make up the
                                     bulk of the card's content.
                                 </Card.Text>
-                                <Card.Link href="#">Card Link</Card.Link>
-                                <Card.Link href="#">Another Link</Card.Link>
+                                <Card.Link href="#">Add to Cart</Card.Link>
+                                <Card.Link href="#">Buy Now</Card.Link>
                             </Card.Body>
                         </Card>
                     </Col>
