@@ -144,8 +144,10 @@ a {
     }
 }
 .subject-card{
+    height: 300px;
     margin-top: 1rem;
-    p{
-        white-space: 0;
-    }
+   overflow: hidden;
+   -webkit-line-clamp: 4;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
 }
