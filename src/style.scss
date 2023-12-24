@@ -144,10 +144,13 @@ a {
     }
 }
 .subject-card{
-    height: 300px;
+
     margin-top: 1rem;
-   overflow: hidden;
-   -webkit-line-clamp: 4;
-   display: -webkit-box;
-   -webkit-box-orient: vertical;
+  .card-text{
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+  }
 }
