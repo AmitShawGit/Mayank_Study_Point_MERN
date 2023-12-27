@@ -114,6 +114,8 @@ a {
 }
 
 .review {
+    text-align: justify;
+    word-spacing: -1px;
     @include md {
         text-align: center;
     }
