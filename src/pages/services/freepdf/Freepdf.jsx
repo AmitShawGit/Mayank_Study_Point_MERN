@@ -4,9 +4,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from 'react-bootstrap/Card'
 import { Link } from "react-router-dom";
+import {useNavigate} from 'react-router-dom'
 
 let Freepdf = () => {
-let [subject,setSubject]=useState([])
+let [subject,setSubject]=useState([]);
+const navigate = useNavigate()
     let select = [
         {
             id: 1,
@@ -138,6 +140,9 @@ let [subject,setSubject]=useState([])
        let find = select.find((item)=>{return item.name===selected})
        setSubject(find ? find.subject : []);
     }
+    const goToViewProduct=()=>{
+navigate('/view')
+    }
 
     return (
         <>
@@ -165,7 +170,7 @@ let [subject,setSubject]=useState([])
                 <Row>
                     {    subject.map((subject) => (
                             <Col md={3} key={subject.id}>
-                                <Card className="subject-card">
+                                <Card className="subject-card" onClick={goToViewProduct}>
                                     <Card.Body>
                                         <Card.Title>{subject.subjectName}</Card.Title>
                                         <Card.Subtitle className="mb-2 text-muted">Semester {subject.semester}</Card.Subtitle>
