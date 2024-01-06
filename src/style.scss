@@ -116,43 +116,87 @@ a {
 .review {
     text-align: justify;
     word-spacing: -1px;
+
     @include md {
         text-align: center;
     }
 }
 
 /*servicesection*/
-.youtube-color{
+.youtube-color {
     color: #CD201F;
 }
-.projector{
+
+.projector {
     color: $white;
 }
-.assign-video{
+
+.assign-video {
     color: $pink;
 }
-.service-icon{
+
+.service-icon {
     color: $blue;
 }
 
 
 
 /*Free Pdf*/
-.select-university{
+.select-university {
     margin-top: 3rem;
     text-align: center;
-    @include md{
+
+    @include md {
         text-align: left;
     }
 }
-.subject-card{
+
+.subject-card {
 
     margin-top: 1rem;
-  .card-text{
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 4;
-    display: -webkit-box;
+
+    .card-text {
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 4;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+    }
+}
+
+/*Product View*/
+.product-view-page {
+    margin-top: 5%;
+}
+
+.product-description {
+    h2 {
+        font-size: 30px;
+    }
+
+    span {
+        color: rgb(127, 127, 127);
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+        color: $primary;
+        margin-bottom: 10px;
+        li {
+            display: inline-block;
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+    .btn-success{
+        margin-left: 10px;
+    }
+}
+
+.view-product-img {
+    max-width: 530px;
+    max-height: 600px;
     overflow: hidden;
-    -webkit-box-orient: vertical;
-  }
 }

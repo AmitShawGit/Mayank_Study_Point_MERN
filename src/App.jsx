@@ -11,6 +11,7 @@ import Contact from './pages/contact/Contact'
 import AgeCal from './pages/apps/AgeCalculator/AgeCal'
 import Freepdf from './pages/services/freepdf/Freepdf'
 import Assignment from './pages/services/assignment/Assignment'
+import ViewProd from './pages/services/freepdf/VIewProd';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route exact path='/age-calculator' element={<AgeCal />} />
           <Route exact path='/freepdf' element={<Freepdf />} />
           <Route exact path='/assignment' element={<Assignment />} />
+          <Route exact path='/view' element={<ViewProd />} />
         </Routes>
         <Footer />
       </BrowserRouter>
