@@ -24,8 +24,8 @@ let Assignment = () => {
     const navigate = useNavigate();
     const selectedRef = useRef();
 
-      //formik
-      const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+    //formik
+    const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: initialValues,
         onSubmit: (values, action) => {
             console.log(values);
@@ -173,7 +173,7 @@ let Assignment = () => {
 
     ]
 
-  
+//form elements
     const inputElement = [
         {
             id: 1,
@@ -196,13 +196,7 @@ let Assignment = () => {
             type: "number",
             name: "contact"
         },
-        {
-            id: 4,
-            label: "Your Queries",
-            placeholder: "Your Questions",
-            type: "text",
-            name: "query"
-        },
+
     ]
     //Select University
     const getSelectedVal = (event) => {
@@ -215,7 +209,7 @@ let Assignment = () => {
     }
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    
     useEffect(() => {
         selectedRef.current.focus();
         setShow(true)
@@ -226,11 +220,12 @@ let Assignment = () => {
             <ContentWrapper>
                 {/* Modal */}
                 <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <form action='/submit' onSubmit={handleSubmit}>
+                    <form action='/submit' onSubmit={handleSubmit}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Get Call Back</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+
                             {inputElement.map((item, index) => {
                                 return <Input
                                     key={index}
@@ -243,18 +238,20 @@ let Assignment = () => {
                                     msg={errors[item.name]}
                                     value={values[item.name]} />
                             })}
+
+
+
+
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Close
+                            </Button>
                             <input className='btn btn-primary' type="submit" value="Submit" />
-                        </form>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                            Save Changes
-                        </Button>
-                    </Modal.Footer>
+                        </Modal.Footer>
+                    </form>
                 </Modal>
+                {/* Select University */}
                 <div className="select-university">
 
                     <Row>
@@ -274,7 +271,7 @@ let Assignment = () => {
                         </Col>
                     </Row>
                 </div>
-
+{/* univeristy-content */}
                 <Row>
                     {subject.map((subject) => (
                         <Col md={3} key={subject.id}>
@@ -299,6 +296,9 @@ let Assignment = () => {
 
 
                 </Row>
+
+
+{/* why choose us */}
                 <div className="why-choose-us">
 
                     <h2 className="heading">Assignment</h2>
