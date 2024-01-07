@@ -7,7 +7,6 @@ import Review from './reviews/Review'
 import Input from '../../components/formelement/Input.jsx'
 
 
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 import { useFormik } from 'formik';
