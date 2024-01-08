@@ -1,7 +1,8 @@
 import React from 'react'
 import Input from '../../components/formelement/Input'
 import { useFormik } from 'formik';
-import axios from 'axios';
+
+import apiCall from '../../services/index.ts';
 
 let initialValues = {
     name: "",
@@ -15,7 +16,7 @@ const Form = () => {
         onSubmit: (values, action) => {
             console.log(values);
             try {
-                axios.post("http://localhost:4000/submit", values, {
+                apiCall.post("/submit", values, {
                     headers: {
                         'Content-Type': 'application/json',
                     }

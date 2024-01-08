@@ -10,7 +10,8 @@ import Input from '../../components/formelement/Input.jsx'
 import Modal from 'react-bootstrap/Modal';
 
 import { useFormik } from 'formik';
-import axios from 'axios';
+
+import apiCall from '../../services/index.ts'
 let initialValues = {
   name: "",
   email: "",
@@ -25,7 +26,7 @@ const Home = () => {
     onSubmit: (values, action) => {
       console.log(values);
       try {
-        axios.post("http://localhost:4000/send-info", values, {
+        apiCall.post("/send-info", values, {
           headers: {
             'Content-Type': 'application/json',
           }
