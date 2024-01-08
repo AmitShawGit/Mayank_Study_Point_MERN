@@ -16,7 +16,6 @@ let initialValues = {
     name: "",
     email: "",
     contact: "",
-    query: "",
 }
 let Assignment = () => {
     let [subject, setSubject] = useState([]);
@@ -30,7 +29,7 @@ let Assignment = () => {
         onSubmit: (values, action) => {
             console.log(values);
             try {
-                axios.post("http://localhost:4000/", values, {
+                axios.post("http://localhost:4000/send-info", values, {
                     headers: {
                         'Content-Type': 'application/json',
                     }
@@ -258,7 +257,7 @@ let Assignment = () => {
                         <Col md={3}>
                             <label htmlFor="select">Select University</label>
                         </Col>
-                        <Col md={8}>
+                        <Col md={5}>
                             <select id="select" className="form-control" onChange={getSelectedVal} ref={selectedRef}>
                                 <option value="select">Select University</option>
                                 {select.map((value, index) => {
@@ -269,18 +268,20 @@ let Assignment = () => {
 
                             </select>
                         </Col>
+                        <Col md={4}></Col>
                     </Row>
                 </div>
 {/* univeristy-content */}
                 <Row>
                     {subject.map((subject) => (
                         <Col md={3} key={subject.id}>
-                            <Card className="subject-card" onClick={goToViewProduct}>
-                                <Card.Body>
+                            <Card className="subject-card" >
+                                <Card.Body onClick={goToViewProduct}>
                                     <Card.Title>{subject.subjectName}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">Semester {subject.semester}</Card.Subtitle>
                                     <Card.Text>{subject.detail}</Card.Text>
-                                    <Row>
+                                    </Card.Body>
+                                    <Row className="text-center pb-3">
                                         <Col>
                                             <Link to={subject.cart}>Add to Cart</Link>
                                         </Col>
@@ -288,7 +289,7 @@ let Assignment = () => {
                                             <Link to={subject.path}>Buy Now</Link>
                                         </Col>
                                     </Row>
-                                </Card.Body>
+                               
                             </Card>
                         </Col>
                     ))

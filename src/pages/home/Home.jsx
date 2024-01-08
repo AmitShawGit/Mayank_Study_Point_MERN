@@ -15,7 +15,6 @@ let initialValues = {
   name: "",
   email: "",
   contact: "",
-  query: "",
 }
 const Home = () => {
   const [show, setShow] = useState(false);
@@ -26,7 +25,7 @@ const Home = () => {
     onSubmit: (values, action) => {
       console.log(values);
       try {
-        axios.post("http://localhost:4000/", values, {
+        axios.post("http://localhost:4000/send-info", values, {
           headers: {
             'Content-Type': 'application/json',
           }
