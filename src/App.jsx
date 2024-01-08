@@ -28,7 +28,7 @@ const App = () => {
           <Route exact path='/age-calculator' element={<AgeCal />} />
           <Route exact path='/freepdf' element={<Freepdf />} />
           <Route exact path='/assignment' element={<Assignment />} />
-          <Route exact path='/view' element={<ViewProd />} />
+          <Route exact path='/view/:id' element={<ViewProd />} />
         </Routes>
         <Footer />
       </BrowserRouter>

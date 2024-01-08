@@ -69,7 +69,7 @@ let Assignment = () => {
                     cart: "/cart"
                 },
                 {
-                    id: 2,
+                    id: 5,
                     subjectName: "Accountancy",
                     semester: "1",
                     detail: " Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content",
@@ -204,8 +204,9 @@ let Assignment = () => {
         let find = select.find((item) => { return item.name === selected })
         setSubject(find ? find.subject : []);
     }
-    const goToViewProduct = () => {
-        navigate('/view')
+    const goToViewProduct = (id) => {
+        console.log(id);
+        navigate(`/view/${id}`)
     }
 
     const handleClose = () => setShow(false);
@@ -258,7 +259,7 @@ let Assignment = () => {
                         <Col md={3}>
                             <label htmlFor="select">Select University</label>
                         </Col>
-                        <Col md={5}>
+                        <Col md={9}>
                             <select id="select" className="form-control" onChange={getSelectedVal} ref={selectedRef}>
                                 <option value="select">Select University</option>
                                 {select.map((value, index) => {
@@ -269,7 +270,7 @@ let Assignment = () => {
 
                             </select>
                         </Col>
-                        <Col md={4}></Col>
+                       
                     </Row>
                 </div>
 {/* univeristy-content */}
@@ -277,7 +278,7 @@ let Assignment = () => {
                     {subject.map((subject) => (
                         <Col md={3} key={subject.id}>
                             <Card className="subject-card" >
-                                <Card.Body onClick={goToViewProduct}>
+                                <Card.Body onClick={()=>goToViewProduct(subject.id)}>
                                     <Card.Title>{subject.subjectName}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">Semester {subject.semester}</Card.Subtitle>
                                     <Card.Text>{subject.detail}</Card.Text>
