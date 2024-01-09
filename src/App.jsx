@@ -12,6 +12,7 @@ import AgeCal from './pages/apps/AgeCalculator/AgeCal'
 import Freepdf from './pages/services/freepdf/Freepdf'
 import Assignment from './pages/services/assignment/Assignment'
 import ViewProd from './pages/services/freepdf/VIewProd';
+import Phonepay from './payment/Phonepay';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route exact path='/freepdf' element={<Freepdf />} />
           <Route exact path='/assignment' element={<Assignment />} />
           <Route exact path='/view/:id' element={<ViewProd />} />
+          <Route exact path='/Phonepay/1' element={<Phonepay />} />
         </Routes>
         <Footer />
       </BrowserRouter>
