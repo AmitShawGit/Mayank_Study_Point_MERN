@@ -14,7 +14,11 @@
     border: $primary !important;
     box-shadow: $primary !important;
 }
-
+.list-none{
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
 .text-primary {
     color: $primary !important;
 }
