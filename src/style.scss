@@ -14,7 +14,11 @@
     border: $primary !important;
     box-shadow: $primary !important;
 }
-
+.list-none{
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
 .text-primary {
     color: $primary !important;
 }
@@ -152,7 +156,7 @@ a {
 }
 
 .subject-card {
-cursor: pointer;
+    cursor: pointer;
     margin-top: 1rem;
 
     .card-text {
@@ -183,14 +187,17 @@ cursor: pointer;
         padding-left: 0;
         color: $primary;
         margin-bottom: 10px;
+
         li {
             display: inline-block;
+
             i {
                 font-size: 20px;
             }
         }
     }
-    .btn-success{
+
+    .btn-success {
         margin-left: 10px;
     }
 }
@@ -199,4 +206,19 @@ cursor: pointer;
     max-width: 530px;
     max-height: 600px;
     overflow: hidden;
+}
+
+//payment-page
+.payment-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #87ceeb36;
+    padding: 12px 5%;
+    margin-top: 3rem;
+    
+        h3{
+            text-align: center;
+        }
+    
 }

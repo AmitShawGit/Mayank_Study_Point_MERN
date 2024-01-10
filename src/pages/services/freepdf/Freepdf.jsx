@@ -140,8 +140,8 @@ const navigate = useNavigate()
        let find = select.find((item)=>{return item.name===selected})
        setSubject(find ? find.subject : []);
     }
-    const goToViewProduct=()=>{
-navigate('/view')
+    const goToViewProduct=(id)=>{
+navigate(`/view/${id}`)
     }
 
     return (
@@ -170,7 +170,7 @@ navigate('/view')
                 <Row>
                     {    subject.map((subject) => (
                             <Col md={3} key={subject.id}>
-                                <Card className="subject-card" onClick={goToViewProduct}>
+                                <Card className="subject-card" onClick={()=>goToViewProduct(subject.id)}>
                                     <Card.Body>
                                         <Card.Title>{subject.subjectName}</Card.Title>
                                         <Card.Subtitle className="mb-2 text-muted">Semester {subject.semester}</Card.Subtitle>
