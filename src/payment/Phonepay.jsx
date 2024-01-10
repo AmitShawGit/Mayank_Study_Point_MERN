@@ -90,7 +90,7 @@ const checked = createRef();
                                     <li>(d) Once you verified you will get the futher proceses</li>
                                     <li><input type="checkbox" ref={checked} onClick={checkBox}/>I accept the following terms and conditions</li>
                                 </ul>
-                                <button className='btn btn-success mb-2' ref={paybtn}>Ready to Pay</button>
+                                <button className='btn btn-success mb-2' >Ready to Pay</button>
                             </div>
                             <img src={Barcode} alt="" className='img-fluid' />
                         </Col>
