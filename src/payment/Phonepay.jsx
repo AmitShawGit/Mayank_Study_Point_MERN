@@ -3,14 +3,14 @@ import Input from '../components/formelement/Input.jsx'
 import { useFormik } from 'formik';
 import apiCall from '../services/index.ts';
 import ContentWrapper from '../components/wrapper/ContentWrapper.jsx';
-
+import  Row  from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col'
+import Barcode from '../assets/barcode.jpg'
 let initialValues = {
-    name: "amitshaw",
-    email: "amitshaw20@gmail.com",
-    contact: "1234567890",
-    amount: "1",
-    MUID: "MUID" + Date.now(),
-    transactionId: "TI" + Date.now(),
+    name: "",
+    email: "",
+    contact: "",
+    amount: "",
 }
 const Phonepay = () => {
  
@@ -61,15 +61,30 @@ const Phonepay = () => {
         {
             id: 4,
             label: "Amount",
-            placeholder: "Your Questions",
+            placeholder: "Amount you paid",
             type: "number",
             name: "amount"
         },
     ]
     return (
         <>
-        <ContentWrapper>
-            <form action='/submit' onSubmit={handleSubmit}>
+        <ContentWrapper >
+        <div className="payment-form">
+            <Row>
+                <Col sm={6}>
+                   
+                    <h3>Payment Terms</h3>
+                    <ul>
+                        <li>Payment form must be filled first to get the barcode</li>
+                        <li>After Payment one need to take the screenshot of paid amount and share the screen shot on mail</li>
+                        <li>The verification of payment takes time upto two days</li>
+                        <li>Once you verified you will get the futher proceses</li>
+                    </ul>
+                    <img src={Barcode} alt="" />
+                </Col>
+                <Col sm={6}>
+                <form action='/submit' onSubmit={handleSubmit}>
+                <h3>Payment Form</h3>
                 {inputElement.map((item, index) => {
                     return <Input
                         key={index}
@@ -84,6 +99,12 @@ const Phonepay = () => {
                 })}
                 <input className='btn btn-primary' type="submit" value="Submit" />
             </form>
+                </Col>
+            </Row>
+            
+
+            </div>
+            
             </ContentWrapper>
         </>
     )

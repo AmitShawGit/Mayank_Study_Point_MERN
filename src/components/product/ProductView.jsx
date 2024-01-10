@@ -24,7 +24,7 @@ const ProductView = (props) => {
                     <p>{props.description}</p>
                <div>
                 <button className='btn btn-warning'>Add to cart</button>
-                <button className='btn btn-success'>Buy Now</button>
+                <button className='btn btn-success' onClick={props.buyNow}>Buy Now</button>
                </div>
                 </div>
             </div>

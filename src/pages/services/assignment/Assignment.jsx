@@ -205,7 +205,6 @@ let Assignment = () => {
         setSubject(find ? find.subject : []);
     }
     const goToViewProduct = (id) => {
-        console.log(id);
         navigate(`/view/${id}`)
     }
 

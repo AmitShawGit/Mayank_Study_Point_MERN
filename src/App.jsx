@@ -30,7 +30,7 @@ const App = () => {
           <Route exact path='/freepdf' element={<Freepdf />} />
           <Route exact path='/assignment' element={<Assignment />} />
           <Route exact path='/view/:id' element={<ViewProd />} />
-          <Route exact path='/Phonepay/1' element={<Phonepay />} />
+          <Route exact path='/Phonepay/:id' element={<Phonepay />} />
         </Routes>
         <Footer />
       </BrowserRouter>
