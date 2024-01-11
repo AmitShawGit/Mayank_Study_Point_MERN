@@ -37,6 +37,11 @@
     &:hover .title{
         display: block;
     }
+    @include lg{
+        .title{
+            display: block;
+        }
+    }
     .pink-overlay {
         content: "";
         width: 200px;
