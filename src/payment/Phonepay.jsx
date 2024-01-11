@@ -96,7 +96,12 @@ const Phonepay = () => {
                     <Row>
                         <Col sm={6}>
                             <div className="payment-terms">
-                                <h3>Payment Terms</h3>
+                                <h5>Product Summary</h5>
+                                <ul className="list-none">
+                                    <li><b>Bussiness Studies, Semester 1</b></li>
+                                    <li>Rs :2000 only</li>
+                                </ul>
+                                <h5 style={{ display: showBarcode ? "none" : "block" }}>Payment Terms</h5>
                                 <ul className='list-none p-2' style={{ display: showBarcode ? "none" : "block" }}>
                                     <li>(a) Payment form must be filled first to get the payment confirmation mail</li>
                                     <li>(b) After Payment one need to take the screenshot of paid amount and share the screen shot on mail as well as attach with form</li>
@@ -110,7 +115,7 @@ const Phonepay = () => {
                         </Col>
                         <Col sm={6}>
                             <form action='/submit' onSubmit={handleSubmit}>
-                                <h3>Payment Form</h3>
+                                <h5>Payment Form</h5>
                                 {inputElement.map((item, index) => {
                                     return <Input
                                         key={index}
