@@ -24,16 +24,14 @@ const Home = () => {
   const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialValues,
     onSubmit: (values, action) => {
-      console.log(values);
       try {
-        apiCall.post("/send-info", values)
-          .then((res) => alert(res.data))
-          .catch((error)=>{console.log(error);})
+        apiCall.post("/send-info", values
+        )
+          .then((res) => alert(res.data.response))
       }
       catch (err) {
         console.log(err);
       }
-      console.log("data submitted");
       action.resetForm()
     }
   })
