@@ -19,161 +19,33 @@ let initialValues = {
     contact: "",
 }
 let Assignment = () => {
-    let [subject, setSubject] = useState([]);
+    let [subject, setSubject] = useState([])
     const [show, setShow] = useState(false);
     const navigate = useNavigate();
     const selectedRef = useRef();
-
+    let [select, setSelect] = useState([])
     //formik
     const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: initialValues,
         onSubmit: (values, action) => {
-            console.log(values);
+
             try {
-                apiCall.post("/send-info", values, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                }
+                apiCall.post("/send-info", values
                 )
-                    .then((res) => alert(res.data))
+                    .then((res) => alert(res.data.response))
             }
             catch (err) {
                 console.log(err);
             }
-            console.log("data submitted");
-            action.resetForm()
+            action.resetForm();
+            setShow(false)
         }
     })
 
 
-    let select = [
-        {
-            id: 1,
-            name: "NMIMS",
-            subject: [
-                {
-                    id: 1,
-                    subjectName: "NMIMS Studies",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.",
-                    path: "/home",
-                    cart: "/cart"
-                },
-                {
-                    id: 2,
-                    subjectName: "Accountancy",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content",
-                    path: "/home",
-                    cart: "/cart"
-                },
-                {
-                    id: 5,
-                    subjectName: "Accountancy",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content",
-                    path: "/home",
-                    cart: "/cart"
-                },
-                {
-                    id: 2,
-                    subjectName: "Accountancy",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content",
-                    path: "/home",
-                    cart: "/cart"
-                },
-                {
-                    id: 2,
-                    subjectName: "Accountancy",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content",
-                    path: "/home",
-                    cart: "/cart"
-                },
-                {
-                    id: 2,
-                    subjectName: "Accountancy",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content",
-                    path: "/home",
-                    cart: "/cart"
-                },
-                {
-                    id: 2,
-                    subjectName: "Accountancy",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content",
-                    path: "/home",
-                    cart: "/cart"
-                },
-                {
-                    id: 2,
-                    subjectName: "Accountancy",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content",
-                    path: "/home",
-                    cart: "/cart"
-                },
-                {
-                    id: 2,
-                    subjectName: "Accountancy",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content",
-                    path: "/home",
-                    cart: "/cart"
-                },
-            ]
-        },
-        {
-            id: 2,
-            name: "Amity University",
-            subject: [
-                {
-                    id: 1,
-                    subjectName: "Amity Studies",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.",
-                    path: "/home",
-                    cart: "/cart"
-                },
-                {
-                    id: 2,
-                    subjectName: "Accountancy",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content",
-                    path: "/home",
-                    cart: "/cart"
-                },
-            ]
-        },
-        {
-            id: 3,
-            name: "Burdwan University",
-            subject: [
-                {
-                    id: 1,
-                    subjectName: "Bussiness Studies",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.",
-                    path: "/home",
-                    cart: "/cart"
-                },
-                {
-                    id: 2,
-                    subjectName: "Accountancy",
-                    semester: "1",
-                    detail: " Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content",
-                    path: "/home",
-                    cart: "/cart"
-                },
-            ]
-        },
 
-    ]
 
-//form elements
+    //form elements
     const inputElement = [
         {
             id: 1,
@@ -199,20 +71,41 @@ let Assignment = () => {
 
     ]
     //Select University
-    const getSelectedVal = (event) => {
+    const getSelectedVal = async (event) => {
         let selected = event.target.value;
-        let find = select.find((item) => { return item.name === selected })
-        setSubject(find ? find.subject : []);
+        let find = select.find((item) => item.name === selected);
+        console.log(find);
+        if (find) {
+            setSubject(find);
+        } else {
+            setSubject([]);
+        }
+
+        setShow(true);
     }
     const goToViewProduct = (id) => {
         navigate(`/view/${id}`)
     }
+    const goToPayment = (id) => {
+        navigate(`/Phonepay/${id}`)
+    }
 
     const handleClose = () => setShow(false);
-    
+
     useEffect(() => {
         selectedRef.current.focus();
         setShow(true)
+        try {
+            apiCall.get("/view-assignment")
+                .then((res) => {
+                    setSelect(res.data)
+                })
+                .catch((err) => err)
+        }
+        catch (err) {
+            console.log(err);
+        }
+
     }, [])
     return (
         <>
@@ -269,28 +162,28 @@ let Assignment = () => {
 
                             </select>
                         </Col>
-                       
+
                     </Row>
                 </div>
-{/* univeristy-content */}
+                {/* univeristy-content */}
                 <Row>
                     {subject.map((subject) => (
                         <Col md={3} key={subject.id}>
                             <Card className="subject-card" >
-                                <Card.Body onClick={()=>goToViewProduct(subject.id)}>
-                                    <Card.Title>{subject.subjectName}</Card.Title>
+                                <Card.Body onClick={() => goToViewProduct(subject.id)}>
+                                    <Card.Title>{subject.subject_name}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">Semester {subject.semester}</Card.Subtitle>
-                                    <Card.Text>{subject.detail}</Card.Text>
-                                    </Card.Body>
-                                    <Row className="text-center pb-3">
-                                        <Col>
-                                            <Link to={subject.cart}>Add to Cart</Link>
-                                        </Col>
-                                        <Col>
-                                            <Link to={subject.path}>Buy Now</Link>
-                                        </Col>
-                                    </Row>
-                               
+                                    <Card.Text>{subject.short_description}</Card.Text>
+                                </Card.Body>
+                                <Row className="text-center pb-3">
+                                    <Col>
+                                        <Link onClick={() => goToViewProduct(subject.id)} >Add to Cart</Link>
+                                    </Col>
+                                    <Col>
+                                        <Link onClick={() => goToPayment(subject.id)}>Buy Now</Link>
+                                    </Col>
+                                </Row>
+
                             </Card>
                         </Col>
                     ))
@@ -300,7 +193,7 @@ let Assignment = () => {
                 </Row>
 
 
-{/* why choose us */}
+                {/* why choose us */}
                 <div className="why-choose-us">
 
                     <h2 className="heading">Assignment</h2>
