@@ -26,13 +26,9 @@ const Home = () => {
     onSubmit: (values, action) => {
       console.log(values);
       try {
-        apiCall.post("/send-info", values, {
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        }
-        )
+        apiCall.post("/send-info", values)
           .then((res) => alert(res.data))
+          .catch((error)=>{console.log(error);})
       }
       catch (err) {
         console.log(err);
