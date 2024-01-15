@@ -23,7 +23,7 @@ let Assignment = () => {
     const [show, setShow] = useState(false);
     const navigate = useNavigate();
     const selectedRef = useRef();
-    let [select, setSelect] = useState([])
+    let [university, setUniversity] = useState([])
     //formik
     const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: initialValues,
@@ -41,10 +41,6 @@ let Assignment = () => {
             setShow(false)
         }
     })
-
-
-
-
     //form elements
     const inputElement = [
         {
@@ -73,40 +69,45 @@ let Assignment = () => {
     //Select University
     const getSelectedVal = async (event) => {
         let selected = event.target.value;
-        let find = select.find((item) => item.name === selected);
-        console.log(find);
+        console.log(selected);
+        let find = university.find((item) =>{ return item.name === selected});
         if (find) {
-            setSubject(find);
+            setSubject(find.subjects);
         } else {
             setSubject([]);
         }
-
-        setShow(true);
     }
+    //go to view course
     const goToViewProduct = (id) => {
         navigate(`/view/${id}`)
     }
+
+    //go direct to  payment page
     const goToPayment = (id) => {
         navigate(`/Phonepay/${id}`)
     }
 
-    const handleClose = () => setShow(false);
-
-    useEffect(() => {
-        selectedRef.current.focus();
-        setShow(true)
+    //get university list
+    const getUniversityList = async () => {
         try {
-            apiCall.get("/view-assignment")
+            await apiCall.get("/view-assignment")
                 .then((res) => {
-                    setSelect(res.data)
+                    setUniversity(res.data)
                 })
                 .catch((err) => err)
         }
         catch (err) {
             console.log(err);
         }
+    }
 
+    const handleClose = () => setShow(false);
+    useEffect(() => {
+        selectedRef.current.focus();
+        setShow(true)
+        getUniversityList()
     }, [])
+
     return (
         <>
 
@@ -154,9 +155,9 @@ let Assignment = () => {
                         <Col md={9}>
                             <select id="select" className="form-control" onChange={getSelectedVal} ref={selectedRef}>
                                 <option value="select">Select University</option>
-                                {select.map((value, index) => {
+                                {university.map((value) => {
                                     return (
-                                        <option key={index} value={value.name} >{value.name}</option>
+                                        <option key={value?.id} value={value?.name} >{value?.name}</option>
                                     )
                                 })}
 
@@ -168,12 +169,12 @@ let Assignment = () => {
                 {/* univeristy-content */}
                 <Row>
                     {subject.map((subject) => (
-                        <Col md={3} key={subject.id}>
+                        <Col md={3} key={subject?.id}>
                             <Card className="subject-card" >
                                 <Card.Body onClick={() => goToViewProduct(subject.id)}>
-                                    <Card.Title>{subject.subject_name}</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">Semester {subject.semester}</Card.Subtitle>
-                                    <Card.Text>{subject.short_description}</Card.Text>
+                                    <Card.Title>{subject?.subject_name}</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">Semester {subject?.semester}</Card.Subtitle>
+                                    <Card.Text>{subject?.short_description}</Card.Text>
                                 </Card.Body>
                                 <Row className="text-center pb-3">
                                     <Col>
