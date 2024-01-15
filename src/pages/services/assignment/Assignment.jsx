@@ -69,7 +69,6 @@ let Assignment = () => {
     //Select University
     const getSelectedVal = async (event) => {
         let selected = event.target.value;
-        console.log(selected);
         let find = university.find((item) =>{ return item.name === selected});
         if (find) {
             setSubject(find.subjects);
@@ -84,6 +83,7 @@ let Assignment = () => {
 
     //go direct to  payment page
     const goToPayment = (id) => {
+        console.log(id);
         navigate(`/Phonepay/${id}`)
     }
 
@@ -102,6 +102,7 @@ let Assignment = () => {
     }
 
     const handleClose = () => setShow(false);
+
     useEffect(() => {
         selectedRef.current.focus();
         setShow(true)
@@ -145,9 +146,9 @@ let Assignment = () => {
                         </Modal.Footer>
                     </form>
                 </Modal>
+
                 {/* Select University */}
                 <div className="select-university">
-
                     <Row>
                         <Col md={3}>
                             <label htmlFor="select">Select University</label>
@@ -166,22 +167,23 @@ let Assignment = () => {
 
                     </Row>
                 </div>
-                {/* univeristy-content */}
+
+                {/* university-content */}
                 <Row>
                     {subject.map((subject) => (
                         <Col md={3} key={subject?.id}>
                             <Card className="subject-card" >
-                                <Card.Body onClick={() => goToViewProduct(subject.id)}>
+                                <Card.Body onClick={() => goToViewProduct(subject?.id)}>
                                     <Card.Title>{subject?.subject_name}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">Semester {subject?.semester}</Card.Subtitle>
                                     <Card.Text>{subject?.short_description}</Card.Text>
                                 </Card.Body>
-                                <Row className="text-center pb-3">
+                                <Row className="text-center">
                                     <Col>
-                                        <Link onClick={() => goToViewProduct(subject.id)} >Add to Cart</Link>
+                                        <p onClick={() => goToPayment(subject?.id)} >Add to Cart</p>
                                     </Col>
                                     <Col>
-                                        <Link onClick={() => goToPayment(subject.id)}>Buy Now</Link>
+                                        <p onClick={() => goToPayment(subject?.id)}>Buy Now</p>
                                     </Col>
                                 </Row>
 
