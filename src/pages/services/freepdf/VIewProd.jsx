@@ -1,11 +1,12 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import ProductView from '../../../components/product/ProductView';
 import ContentWrapper from '../../../components/wrapper/ContentWrapper';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import apiCall from '../../../services/index.ts';
 const VIewProd = () => {
     let navigate = useNavigate()
-
+    let id =useParams()
+let [product , setProduct] = useState({id:""})
     //go direct to  payment page
     const goToPayment = (id) => {
         console.log(id);
@@ -14,10 +15,13 @@ const VIewProd = () => {
 
     //get university list
     const getUniversityList = async () => {
+        let intId = parseInt(id.id);
         try {
-            await apiCall.get("/view-assignment")
+            await apiCall.get(`/view-specific-assignment/${intId}`)
                 .then((res) => {
-                    setUniversity(res.data)
+                    let dataReturned = res.data
+                    console.log(dataReturned[0].id);
+                    setProduct({id:dataReturned[0].id})
                 })
                 .catch((err) => err)
         }
@@ -28,6 +32,7 @@ const VIewProd = () => {
     //api call
     useEffect(() => {
         getUniversityList()
+        console.log(product);
     }, [])
     return (
         <ContentWrapper >
