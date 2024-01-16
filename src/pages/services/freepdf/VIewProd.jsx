@@ -10,8 +10,8 @@ const VIewProd = () => {
     let imageURL = process.env.REACT_APP_BASE_URL
     //go direct to  payment page
     const goToPayment = (id) => {
-        console.log(id);
-        navigate(`/Phonepay/${id}`)
+        let intId = parseInt(id.id);
+        navigate(`/Phonepay/${intId}`)
     }
 
     //get university list
@@ -37,7 +37,7 @@ const VIewProd = () => {
         <ContentWrapper >
             <div className="product-view-page">
 
-                <ProductView img={imageURL + product.image} title={product.subject_name} short_description={product.short_description} description={product.description} buyNow={() => goToPayment(id)} />
+                <ProductView img={imageURL + product.image} actualPrice={product.sell_price} price={product.price} title={product.subject_name} short_description={product.short_description} description={product.description} buyNow={() => goToPayment(id)} />
             </div>
         </ContentWrapper>
     )
