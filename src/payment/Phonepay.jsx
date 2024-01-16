@@ -13,19 +13,25 @@ let initialValues = {
     email: "",
     contact: "",
     amount: "",
-    screenshot: ""
+    screenshot: null
 }
 const Phonepay = () => {
     const checked = createRef();
     let [disable, setDisable] = useState(true)
     let [showBarcode, setShowBarcode] = useState(false)
     let [product, setProduct] = useState({})
-    const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+    const { values, errors, handleBlur, handleChange, handleSubmit,setFieldValue } = useFormik({
         initialValues: initialValues,
         onSubmit: (values, action) => {
             console.log(values);
             try {
-                apiCall.post("/api/payment", values)
+                const formData = new FormData();
+                for (const key in values) {
+                    formData.append(key, values[key]);
+                }
+                formData.append('payment-screenshot', values['payment-screenshot']);
+    
+                apiCall.post("/api/payment", formData)
                     .then((res) => alert(res.data))
             }
             catch (err) {
@@ -35,7 +41,9 @@ const Phonepay = () => {
             action.resetForm()
         }
     })
-
+    const handleFileChange = (e) => {
+        setFieldValue('payment-screenshot', e.currentTarget.files[0]);
+    };
     // Form Elements
     const inputElement = [
         {
@@ -65,12 +73,6 @@ const Phonepay = () => {
             placeholder: "Amount you paid",
             type: "number",
             name: "amount"
-        },
-        {
-            id: 5,
-            label: "Paymant Screenshot",
-            type: "file",
-            name: "paymant-screnshot"
         },
     ]
     const checkBox = () => {
@@ -126,6 +128,7 @@ const Phonepay = () => {
                                         msg={errors[item.name]}
                                         value={values[item.name]} />
                                 })}
+                                <input type="file" name="payment-screenshot" onChange={handleFileChange} className='form-control'/>
                                 <input className='btn btn-primary' type="submit" value="Submit" />
                             </form>
                         </Col>
