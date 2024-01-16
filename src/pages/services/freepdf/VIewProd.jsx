@@ -22,6 +22,12 @@ const VIewProd = () => {
                 .then((res) => {
                     let dataReturned = res.data
                     setProduct(dataReturned)
+                    let productInfo = {
+                        subject_name : dataReturned.subject_name,
+                        sell_price: dataReturned.sell_price,
+                        semester: dataReturned.semester
+                    }
+                    sessionStorage.setItem("productInfo",JSON.stringify(productInfo))
                 })
                 .catch((err) => err)
         }

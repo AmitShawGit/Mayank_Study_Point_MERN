@@ -1,4 +1,4 @@
-import React, { createRef, useState } from 'react'
+import React, { createRef, useEffect, useState } from 'react'
 import Input from '../components/formelement/Input.jsx'
 import { useFormik } from 'formik';
 import apiCall from '../services/index.ts';
@@ -19,18 +19,13 @@ const Phonepay = () => {
     const checked = createRef();
     let [disable, setDisable] = useState(true)
     let [showBarcode, setShowBarcode] = useState(false)
-   
+    let [product, setProduct] = useState({})
     const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: initialValues,
         onSubmit: (values, action) => {
             console.log(values);
             try {
-                apiCall.post("/api/payment", values, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                }
-                )
+                apiCall.post("/api/payment", values)
                     .then((res) => alert(res.data))
             }
             catch (err) {
@@ -41,7 +36,7 @@ const Phonepay = () => {
         }
     })
 
-
+    // Form Elements
     const inputElement = [
         {
             id: 1,
@@ -87,8 +82,11 @@ const Phonepay = () => {
     }
     let payBtnClicked = () => {
         setShowBarcode(!showBarcode)
-       
     }
+    let subjects = JSON.parse(sessionStorage.getItem("productInfo"))
+    useEffect(() => {
+        setProduct(subjects)
+    }, [])
     return (
         <>
             <ContentWrapper >
@@ -98,8 +96,8 @@ const Phonepay = () => {
                             <div className="payment-terms">
                                 <h5>Product Summary</h5>
                                 <ul className="list-none">
-                                    <li><b>Bussiness Studies, Semester 1</b></li>
-                                    <li>Rs :2000 only</li>
+                                    <li><b>{product.subject_name}, Semester {product.semester}</b></li>
+                                    <li>Rs. {product.sell_price} only</li>
                                 </ul>
                                 <h5 style={{ display: showBarcode ? "none" : "block" }}>Payment Terms</h5>
                                 <ul className='list-none p-2' style={{ display: showBarcode ? "none" : "block" }}>
