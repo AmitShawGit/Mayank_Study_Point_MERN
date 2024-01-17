@@ -13,25 +13,29 @@ let initialValues = {
     email: "",
     contact: "",
     amount: "",
-    screenshot: null
+    image:""
 }
 const Phonepay = () => {
     const checked = createRef();
     let [disable, setDisable] = useState(true)
     let [showBarcode, setShowBarcode] = useState(false)
     let [product, setProduct] = useState({})
-    const { values, errors, handleBlur, handleChange, handleSubmit,setFieldValue } = useFormik({
+    const { values, errors, handleBlur, handleChange, handleSubmit, setFieldValue } = useFormik({
         initialValues: initialValues,
         onSubmit: (values, action) => {
-            console.log(values);
+            // console.log(values);
             try {
                 const formData = new FormData();
                 for (const key in values) {
                     formData.append(key, values[key]);
                 }
-                formData.append('payment-screenshot', values['payment-screenshot']);
-    
-                apiCall.post("/api/payment", formData)
+                formData.append('paymentScreenshot', values['paymentScreenshot'])
+
+                apiCall.post("/api/payment", formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    }
+                })
                     .then((res) => alert(res.data))
             }
             catch (err) {
@@ -42,7 +46,7 @@ const Phonepay = () => {
         }
     })
     const handleFileChange = (e) => {
-        setFieldValue('payment-screenshot', e.currentTarget.files[0]);
+        setFieldValue('paymentScreenshot', e.currentTarget.files[0]);
     };
     // Form Elements
     const inputElement = [
@@ -114,7 +118,7 @@ const Phonepay = () => {
                             <img src={Barcode} alt="" className='img-fluid barcode-img' style={{ display: showBarcode ? "block" : "none" }} />
                         </Col>
                         <Col sm={6}>
-                            <form action='/submit' onSubmit={handleSubmit}>
+                            <form onSubmit={handleSubmit} encType="multipart/form-data" method="post">
                                 <h5>Payment Form</h5>
                                 {inputElement.map((item, index) => {
                                     return <Input
@@ -128,7 +132,7 @@ const Phonepay = () => {
                                         msg={errors[item.name]}
                                         value={values[item.name]} />
                                 })}
-                                <input type="file" name="payment-screenshot" onChange={handleFileChange} className='form-control'/>
+                                <input type="file" name="paymentScreenshot" onChange={handleFileChange} className='form-control' />
                                 <input className='btn btn-primary' type="submit" value="Submit" />
                             </form>
                         </Col>
