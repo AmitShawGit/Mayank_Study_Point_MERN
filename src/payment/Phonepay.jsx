@@ -1,6 +1,5 @@
 import React, { createRef, useEffect, useState } from 'react'
 import Input from '../components/formelement/Input.jsx'
-import { useFormik } from 'formik';
 import apiCall from '../services/index.ts';
 import ContentWrapper from '../components/wrapper/ContentWrapper.jsx';
 import Row from 'react-bootstrap/Row';
@@ -8,46 +7,18 @@ import Col from 'react-bootstrap/Col'
 import Barcode from '../assets/barcode.jpg'
 
 
-let initialValues = {
-    name: "",
-    email: "",
-    contact: "",
-    amount: "",
-    image:""
-}
 const Phonepay = () => {
     const checked = createRef();
     let [disable, setDisable] = useState(true)
     let [showBarcode, setShowBarcode] = useState(false)
-    let [product, setProduct] = useState({})
-    const { values, errors, handleBlur, handleChange, handleSubmit, setFieldValue } = useFormik({
-        initialValues: initialValues,
-        onSubmit: (values, action) => {
-            // console.log(values);
-            try {
-                const formData = new FormData();
-                for (const key in values) {
-                    formData.append(key, values[key]);
-                }
-                formData.append('paymentScreenshot', values['paymentScreenshot'])
-
-                apiCall.post("/api/payment", formData, {
-                    headers: {
-                        'Content-Type': 'multipart/form-data',
-                    }
-                })
-                    .then((res) => alert(res.data))
-            }
-            catch (err) {
-                console.log(err);
-            }
-            console.log("data submitted");
-            action.resetForm()
-        }
+    let [product, setProduct] = useState({
+      
     })
-    const handleFileChange = (e) => {
-        setFieldValue('paymentScreenshot', e.currentTarget.files[0]);
-    };
+let [input,setInput]=useState({  name: "",
+email: "",
+contact: "",
+amount: "",
+paymentScreenshot: null})
     // Form Elements
     const inputElement = [
         {
@@ -79,6 +50,42 @@ const Phonepay = () => {
             name: "amount"
         },
     ]
+    const handleChange = (e) => {
+        const { name, value, files } = e.target;
+        console.log(files);
+        setInput((prevData) => ({
+            ...prevData,
+            [name]: files ? files[0] : value
+        }));
+    };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log("Assignment Object:", input);
+        const formData = new FormData();
+        for (const key in input) {
+            formData.append(key, input[key]);
+        }
+        try {
+            await apiCall.post("/api/payment", formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                }
+            })
+                .then((res) =>{ alert(res.data.response); setInput({name: "",
+                email: "",
+                contact: "",
+                amount: "",
+                paymentScreenshot: null})})
+                .catch(err => alert(err.data.response));
+
+        }
+
+        catch (err) {
+            alert(err)
+        }
+
+    }
+
     const checkBox = () => {
         if (checked.current.checked) {
             setDisable(false)
@@ -128,11 +135,10 @@ const Phonepay = () => {
                                         name={item.name}
                                         type={item.type}
                                         change={handleChange}
-                                        blur={handleBlur}
-                                        msg={errors[item.name]}
-                                        value={values[item.name]} />
+                                        value={product[item.name]} />
                                 })}
-                                <input type="file" name="paymentScreenshot" onChange={handleFileChange} className='form-control' />
+                                <input type="file" id="image" label="Image" name="paymentScreenshot" onChange={handleChange} className='form-control' />
+
                                 <input className='btn btn-primary' type="submit" value="Submit" />
                             </form>
                         </Col>
