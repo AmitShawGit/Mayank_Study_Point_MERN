@@ -50,6 +50,7 @@ paymentScreenshot: null})
             name: "amount"
         },
     ]
+    //Form HandleChange
     const handleChange = (e) => {
         const { name, value, files } = e.target;
         console.log(files);
@@ -58,9 +59,10 @@ paymentScreenshot: null})
             [name]: files ? files[0] : value
         }));
     };
+    //Form Submitted
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Assignment Object:", input);
+        // console.log("Assignment Object:", input);
         const formData = new FormData();
         for (const key in input) {
             formData.append(key, input[key]);
@@ -77,15 +79,12 @@ paymentScreenshot: null})
                 amount: "",
                 paymentScreenshot: null})})
                 .catch(err => alert(err.data.response));
-
         }
-
         catch (err) {
             alert(err)
         }
-
     }
-
+//Checkbox to view barcode
     const checkBox = () => {
         if (checked.current.checked) {
             setDisable(false)
@@ -93,10 +92,13 @@ paymentScreenshot: null})
             setDisable(true)
         }
     }
+    //Show Barcode show hide
     let payBtnClicked = () => {
         setShowBarcode(!showBarcode)
     }
+
     let subjects = JSON.parse(sessionStorage.getItem("productInfo"))
+
     useEffect(() => {
         setProduct(subjects)
     }, [])
@@ -139,7 +141,7 @@ paymentScreenshot: null})
                                 })}
                                 <input type="file" id="image" label="Image" name="paymentScreenshot" onChange={handleChange} className='form-control' />
 
-                                <input className='btn btn-primary' type="submit" value="Submit" />
+                                <input className='btn btn-primary mt-2' type="submit" value="Submit" />
                             </form>
                         </Col>
                     </Row>
