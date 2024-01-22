@@ -11,14 +11,14 @@ const Phonepay = () => {
     const checked = createRef();
     let [disable, setDisable] = useState(true)
     let [showBarcode, setShowBarcode] = useState(false)
-    let [product, setProduct] = useState({
-      
+    let [product, setProduct] = useState({})
+    let [input, setInput] = useState({
+        name: "",
+        email: "",
+        contact: "",
+        amount: "",
+        paymentScreenshot: null
     })
-let [input,setInput]=useState({  name: "",
-email: "",
-contact: "",
-amount: "",
-paymentScreenshot: null})
     // Form Elements
     const inputElement = [
         {
@@ -65,26 +65,36 @@ paymentScreenshot: null})
         // console.log("Assignment Object:", input);
         const formData = new FormData();
         for (const key in input) {
-            formData.append(key, input[key]);
+            formData.append(key, input[key],);
         }
+        formData.append('subject', product.subject_name);
+        formData.append('price', product.sell_price);
+
         try {
             await apiCall.post("/api/payment", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }
             })
-                .then((res) =>{ alert(res.data.response); setInput({name: "",
-                email: "",
-                contact: "",
-                amount: "",
-                paymentScreenshot: null})})
+                .then((res) => {
+                    alert(res.data.response); setInput({
+                        name: "",
+                        email: "",
+                        contact: "",
+                        amount: "",
+                        paymentScreenshot: null,
+                        subject: product.subject_name,
+                        price: product.sell_price
+
+                    })
+                })
                 .catch(err => alert(err.data.response));
         }
         catch (err) {
             alert(err)
         }
     }
-//Checkbox to view barcode
+    //Checkbox to view barcode
     const checkBox = () => {
         if (checked.current.checked) {
             setDisable(false)
