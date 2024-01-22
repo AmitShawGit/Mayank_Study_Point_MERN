@@ -9,7 +9,7 @@ import Footer from './components/footer/Footer'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Contact from './pages/contact/Contact'
 import AgeCal from './pages/apps/AgeCalculator/AgeCal'
-import Freepdf from './pages/services/freepdf/Freepdf'
+import Study from './pages/services/studymat/Study';
 import Assignment from './pages/services/assignment/Assignment'
 import ViewProd from './pages/services/freepdf/VIewProd';
 import Phonepay from './payment/Phonepay';
@@ -26,8 +26,8 @@ const App = () => {
           <Route exact path='/app' element={<Apps />} />
           <Route exact path='/contact' element={<Contact />} />
           <Route exact path='/notes' element={<StickyNotes />} />
+          <Route exact path='/freepdf' element={<Study />} />
           <Route exact path='/age-calculator' element={<AgeCal />} />
-          <Route exact path='/freepdf' element={<Freepdf />} />
           <Route exact path='/assignment' element={<Assignment />} />
           <Route exact path='/view/:id' element={<ViewProd />} />
           <Route exact path='/Phonepay/:id' element={<Phonepay />} />
