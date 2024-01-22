@@ -10,6 +10,7 @@ import Barcode from '../assets/barcode.jpg'
 const Phonepay = () => {
     const checked = createRef();
     let [disable, setDisable] = useState(true)
+    let [submitBtn,setSubmitBtn] = useState(true)
     let [showBarcode, setShowBarcode] = useState(false)
     let [product, setProduct] = useState({})
     let [input, setInput] = useState({
@@ -105,6 +106,7 @@ const Phonepay = () => {
     //Show Barcode show hide
     let payBtnClicked = () => {
         setShowBarcode(!showBarcode)
+        setSubmitBtn(!submitBtn)
     }
 
     let subjects = JSON.parse(sessionStorage.getItem("productInfo"))
@@ -121,8 +123,8 @@ const Phonepay = () => {
                             <div className="payment-terms">
                                 <h5>Product Summary</h5>
                                 <ul className="list-none">
-                                    <li><b>{product.subject_name}, Semester {product.semester}</b></li>
-                                    <li>Rs. {product.sell_price} only</li>
+                                    <li><b>{product?.subject_name}, Semester {product?.semester}</b></li>
+                                    <li>Rs. {product?.sell_price} only</li>
                                 </ul>
                                 <h5 style={{ display: showBarcode ? "none" : "block" }}>Payment Terms</h5>
                                 <ul className='list-none p-2' style={{ display: showBarcode ? "none" : "block" }}>
@@ -151,7 +153,7 @@ const Phonepay = () => {
                                 })}
                                 <input type="file" id="image" label="Image" name="paymentScreenshot" onChange={handleChange} className='form-control' />
 
-                                <input className='btn btn-primary mt-2' type="submit" value="Submit" />
+                                <input className='btn btn-primary mt-2' type="submit" value="Submit" disabled={submitBtn} />
                             </form>
                         </Col>
                     </Row>

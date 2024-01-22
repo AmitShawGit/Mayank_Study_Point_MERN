@@ -4,11 +4,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from 'react-bootstrap/Card'
 import { Link } from "react-router-dom";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 let Freepdf = () => {
-let [subject,setSubject]=useState([]);
-const navigate = useNavigate()
+    let [subject, setSubject] = useState([]);
+    const navigate = useNavigate()
     let select = [
         {
             id: 1,
@@ -137,11 +137,11 @@ const navigate = useNavigate()
     //Select University
     const getSelectedVal = (event) => {
         let selected = event.target.value;
-       let find = select.find((item)=>{return item.name===selected})
-       setSubject(find ? find.subject : []);
+        let find = select.find((item) => { return item.name === selected })
+        setSubject(find ? find.subject : []);
     }
-    const goToViewProduct=(id)=>{
-navigate(`/view/${id}`)
+    const goToViewProduct = (id) => {
+        navigate(`/view/${id}`)
     }
 
     return (
@@ -168,26 +168,26 @@ navigate(`/view/${id}`)
                 </div>
 
                 <Row>
-                    {    subject.map((subject) => (
-                            <Col md={3} key={subject.id}>
-                                <Card className="subject-card" onClick={()=>goToViewProduct(subject.id)}>
-                                    <Card.Body>
-                                        <Card.Title>{subject.subjectName}</Card.Title>
-                                        <Card.Subtitle className="mb-2 text-muted">Semester {subject.semester}</Card.Subtitle>
-                                        <Card.Text>{subject.detail}</Card.Text>
-                                        <Row>
-                                            <Col>
-                                                <Link to={subject.cart}>Add to Cart</Link>
-                                            </Col>
-                                            <Col>
-                                                <Link to={subject.path}>Buy Now</Link>
-                                            </Col>
-                                        </Row>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        ))
-}
+                    {subject.map((subject) => (
+                        <Col md={3} key={subject.id}>
+                            <Card className="subject-card" onClick={() => goToViewProduct(subject.id)}>
+                                <Card.Body>
+                                    <Card.Title>{subject.subjectName}</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">Semester {subject.semester}</Card.Subtitle>
+                                    <Card.Text>{subject.detail}</Card.Text>
+                                    <Row>
+                                        <Col>
+                                            <Link to={subject.cart}>Add to Cart</Link>
+                                        </Col>
+                                        <Col>
+                                            <Link to={subject.path}>Buy Now</Link>
+                                        </Col>
+                                    </Row>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))
+                    }
 
 
                 </Row>
