@@ -89,7 +89,7 @@ let Assignment = () => {
     //get university list
     const getUniversityList = async () => {
         try {
-            await apiCall.get("/view-assignment")
+            await apiCall.get("/view-free-pdf")
                 .then((res) => {
                     setUniversity(res.data)
                 })
