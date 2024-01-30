@@ -77,7 +77,7 @@ let Assignment = () => {
     }
     //go to view course
     const goToViewProduct = (id) => {
-        navigate(`/view/${id}`)
+        navigate(`/view-pdf/${id}`)
     }
 
     //go direct to  payment page
