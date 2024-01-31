@@ -5,22 +5,25 @@ import Col from 'react-bootstrap/Col'
 import janta from '../../../assets/janta.png'
 import Img from '../../../components/lazyloading/LazyLoading';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
 
 const Review = () => {
     return (
         <>
-
-
-
             <ContentWrapper>
                 <h2 className='heading'>Student's Review</h2>
                 <Swiper
-                    autoplay={true}
-                    slidesPerView={'auto'}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    modules={Autoplay}
+                    slidesPerView={'2'}
                     spaceBetween={30}
                     className="mySwiper"
+
                 >
                     <SwiperSlide>
                         <Row className='d-flex align-items-center'>
@@ -28,7 +31,7 @@ const Review = () => {
                                 <Img src={janta} className="img-fluid" />
                             </Col>
                             <Col md={8} className='review'>
-                                <p className='text-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cum aut, perferendis illum odio fugit sint sequi facere repellendus quos.</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cum aut, perferendis illum odio fugit sint sequi facere repellendus quos.</p>
                                 <p className='text-primary text-20'>- Amit Shaw</p>
                             </Col>
                         </Row>
@@ -39,7 +42,7 @@ const Review = () => {
                                 <Img src={janta} className="img-fluid" />
                             </Col>
                             <Col md={8} className='review'>
-                                <p className='text-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cum aut, perferendis illum odio fugit sint sequi facere repellendus quos.</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cum aut, perferendis illum odio fugit sint sequi facere repellendus quos.</p>
                                 <p className='text-primary text-20'>- Amit Shaw</p>
                             </Col>
                         </Row>
@@ -50,7 +53,7 @@ const Review = () => {
                                 <Img src={janta} className="img-fluid" />
                             </Col>
                             <Col md={8} className='review'>
-                                <p className='text-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cum aut, perferendis illum odio fugit sint sequi facere repellendus quos.</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cum aut, perferendis illum odio fugit sint sequi facere repellendus quos.</p>
                                 <p className='text-primary text-20'>- Amit Shaw</p>
                             </Col>
                         </Row>
