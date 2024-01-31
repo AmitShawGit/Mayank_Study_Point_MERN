@@ -16,6 +16,7 @@ const Review = () => {
         try {
             await apiCall.get('/view-review')
                 .then((response) => setReviews(response.data))
+                .catch((err) => err)
         } catch (err) {
         }
 
@@ -31,7 +32,7 @@ const Review = () => {
                         disableOnInteraction: false,
                     }}
                     modules={Autoplay}
-                    slidesPerView={'2'}
+                    slidesPerView={"auto"}
                     spaceBetween={30}
                     className="mySwiper"
 

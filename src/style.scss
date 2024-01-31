@@ -224,3 +224,18 @@ a {
     list-style: numeric;
     padding-left: 1.4%;
 }
+
+//404Page
+.error-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    h3{
+        font-size: 120px;
+    }
+    p{
+        font-size: 60px;
+    }
+}
