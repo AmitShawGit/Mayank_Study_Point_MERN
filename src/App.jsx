@@ -14,14 +14,14 @@ import Assignment from './pages/services/assignment/Assignment'
 import ViewProd from './pages/services/freepdf/VIewProd';
 import Phonepay from './payment/Phonepay';
 import ViewPdf from './pages/services/freepdf/ViewPdf';
-import ErrorPage from './pages/error/ErrorPage';
+
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route exact path='*' element={<ErrorPage />} />
+          
           <Route exact path='/' element={<Home />} />
           <Route exact path='/home' element={<Home />} />
           <Route exact path='/service' element={<Services />} />
@@ -34,6 +34,7 @@ const App = () => {
           <Route exact path='/view/:id' element={<ViewProd />} />
           <Route exact path='/view-pdf/:id' element={<ViewPdf />} />
           <Route exact path='/Phonepay/:id' element={<Phonepay />} />
+   
         </Routes>
         <Footer />
       </BrowserRouter>
