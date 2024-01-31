@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ContentWrapper from '../../../components/wrapper/ContentWrapper';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import janta from '../../../assets/janta.png'
 import Img from '../../../components/lazyloading/LazyLoading';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-
+import apiCall from '../../../services/index.ts'
 
 const Review = () => {
+    let imgURL = process.env.REACT_APP_BASE_URL + "upload/"
+    let [reviews, setReviews] = useState([]);
+    //fetch reviews
+    let fetchServices = async () => {
+        try {
+            await apiCall.get('/view-review')
+                .then((response) => setReviews(response.data))
+        } catch (err) {
+        }
+
+    }
+    useEffect(() => { fetchServices() }, [])
     return (
         <>
             <ContentWrapper>
@@ -25,39 +36,23 @@ const Review = () => {
                     className="mySwiper"
 
                 >
-                    <SwiperSlide>
-                        <Row className='d-flex align-items-center'>
-                            <Col md={4}>
-                                <Img src={janta} className="img-fluid" />
-                            </Col>
-                            <Col md={8} className='review'>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cum aut, perferendis illum odio fugit sint sequi facere repellendus quos.</p>
-                                <p className='text-primary text-20'>- Amit Shaw</p>
-                            </Col>
-                        </Row>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Row className='d-flex align-items-center'>
-                            <Col md={4}>
-                                <Img src={janta} className="img-fluid" />
-                            </Col>
-                            <Col md={8} className='review'>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cum aut, perferendis illum odio fugit sint sequi facere repellendus quos.</p>
-                                <p className='text-primary text-20'>- Amit Shaw</p>
-                            </Col>
-                        </Row>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Row className='d-flex align-items-center'>
-                            <Col md={4}>
-                                <Img src={janta} className="img-fluid" />
-                            </Col>
-                            <Col md={8} className='review'>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cum aut, perferendis illum odio fugit sint sequi facere repellendus quos.</p>
-                                <p className='text-primary text-20'>- Amit Shaw</p>
-                            </Col>
-                        </Row>
-                    </SwiperSlide>
+                    {reviews.map((item) => {
+                        return (
+                            <SwiperSlide key={item.id}>
+                                <Row className='d-flex align-items-center'>
+                                    <Col md={4}>
+                                        <Img src={imgURL + item.image} className="img-fluid" />
+                                    </Col>
+                                    <Col md={8} className='review'>
+                                        <p>{item.user_comment}</p>
+                                        <p className='text-primary text-20'>- {item.user_name}</p>
+                                    </Col>
+                                </Row>
+                            </SwiperSlide>
+                        )
+                    })}
+
+
                 </Swiper>
             </ContentWrapper>
         </>
