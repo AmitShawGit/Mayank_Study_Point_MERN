@@ -6,7 +6,7 @@ import Services from './pages/services/Services'
 import Apps from './pages/apps/Apps'
 import StickyNotes from './pages/apps/StickyApp/StickyNotes';
 import Footer from './components/footer/Footer'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Contact from './pages/contact/Contact'
 import AgeCal from './pages/apps/AgeCalculator/AgeCal'
 import Study from './pages/services/studymat/Study';
@@ -14,11 +14,12 @@ import Assignment from './pages/services/assignment/Assignment'
 import ViewProd from './pages/services/freepdf/VIewProd';
 import Phonepay from './payment/Phonepay';
 import ViewPdf from './pages/services/freepdf/ViewPdf';
+import ErrorPage from './pages/error/ErrorPage'
 
 const App = () => {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Header />
         <Routes>
           
@@ -34,10 +35,10 @@ const App = () => {
           <Route exact path='/view/:id' element={<ViewProd />} />
           <Route exact path='/view-pdf/:id' element={<ViewPdf />} />
           <Route exact path='/Phonepay/:id' element={<Phonepay />} />
-   
+          <Route exact path='*' element={<ErrorPage />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
