@@ -179,10 +179,10 @@ let Assignment = () => {
                                 </Card.Body>
                                 <Row className="text-center">
                                     <Col>
-                                        <p onClick={() => goToPayment(subject?.id)} >Add to Cart</p>
+                                        <p onClick={() => goToViewProduct(subject?.id)} >Add to Cart</p>
                                     </Col>
                                     <Col>
-                                        <p onClick={() => goToPayment(subject?.id)}>Buy Now</p>
+                                        <p onClick={() => goToViewProduct(subject?.id)}>Buy Now</p>
                                     </Col>
                                 </Row>
 

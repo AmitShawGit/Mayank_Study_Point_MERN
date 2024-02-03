@@ -13,7 +13,7 @@ const ProductView = (props) => {
                 <div className="col-md-6">
                     <div className="product-description">
                         <h2>{props.title}</h2>
-                        <span>{props.short_description.slice(0,100)}...</span>
+                        <span>{props.short_description?.slice(0,100)}...</span>
                         <ul>
                             <li><i class="ri-star-s-fill"></i></li>
                             <li><i class="ri-star-s-fill"></i></li>
