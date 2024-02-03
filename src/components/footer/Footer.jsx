@@ -4,7 +4,7 @@ import ContentWrapper from '../wrapper/ContentWrapper';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import apiCall from '../../services/index.ts'
 
 const Footer = () => {
   let [userEmail, setUserEmail] = useState({ email: "" });
@@ -17,11 +17,7 @@ const Footer = () => {
   let handleEmailSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:4000/email", userEmail, {
-        headers: {
-          'Content-Type': 'application/json',
-      }
-      })
+      await apiCall.post("/email", userEmail)
         .then((res) => { alert(res.data) })
     }
     catch (err) {
@@ -75,7 +71,7 @@ const Footer = () => {
                 <h4>Mayank's Study Point</h4>
                 <p>Your Future is in your hand</p>
                 <ul className='footer-list'>
-                  <li><i className="ri-mail-line"></i> mayank@gmail.com</li>
+                  <li ><Link to="mailto:mayankshaw8928@gmail.com" className='footer-item'><i className="ri-mail-line"></i> mayankshaw8928@gmail.com</Link></li>
                   <div className="d-flex justify-content-around mt-3">
                     <div><Link to="https://www.facebook.com/mayankstudypoint" target='_blank'><i className="ri-facebook-circle-fill footer-icon-fb footer-icon"></i></Link></div>
                     <div><Link to="https://www.youtube.com/@MayanksStudyPoint" target='_blank'><i className="ri-youtube-fill footer-icon-yt footer-icon"></i></Link></div>
@@ -89,7 +85,7 @@ const Footer = () => {
             <hr style={{ color: "silver" }} />
             <div className="d-flex justify-content-between">
               <p className='footer-text'>All right reserved by <Link to="/home">Mayank Study Point</Link>  <i className="ri-copyright-line"></i> {new Date().getFullYear()}</p>
-              <p>Designed & Developed by <Link to="mailto:amitshaw1422@gmail.com"> Amit Shaw</Link> </p>
+              <p>Designed & Developed by <Link to="https://www.linkedin.com/in/amitshaw20/" target='_blank'> Amit Shaw</Link> </p>
             </div>
           </ContentWrapper>
         </div>

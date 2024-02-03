@@ -4,13 +4,13 @@ import apiCall from '../services/index.ts';
 import ContentWrapper from '../components/wrapper/ContentWrapper.jsx';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
-import Barcode from '../assets/barcode.jpg'
+import Barcode from '../assets/barcode.jpeg'
 
 
 const Phonepay = () => {
     const checked = createRef();
     let [disable, setDisable] = useState(true)
-    let [submitBtn,setSubmitBtn] = useState(true)
+    let [submitBtn, setSubmitBtn] = useState(true)
     let [showBarcode, setShowBarcode] = useState(false)
     let [product, setProduct] = useState({})
     let [input, setInput] = useState({
@@ -131,12 +131,14 @@ const Phonepay = () => {
                                     <li>(a) Payment form must be filled first to get the payment confirmation mail</li>
                                     <li>(b) After Payment one need to take the screenshot of paid amount and share the screen shot on mail as well as attach with form</li>
                                     <li>(c) The verification of payment takes time upto two days</li>
-                                    <li>(d) Once you verified you will get the futher proceses</li>
+                                    <li>(d) Once you verified you will get the further processes</li>
                                     <li><input type="checkbox" ref={checked} onClick={checkBox} id="checkbox" /> &nbsp;<label htmlFor="checkbox"> I accept the following terms and conditions</label></li>
                                 </ul>
                                 <button className='btn btn-success mb-2' disabled={disable} onClick={payBtnClicked} style={{ display: showBarcode ? "none" : "block" }} >Show Barcode</button>
                             </div>
                             <img src={Barcode} alt="" className='img-fluid barcode-img' style={{ display: showBarcode ? "block" : "none" }} />
+                            <marquee direction="rtl" className="text-danger">
+                                Please ensure to upload the payment screenshot as your payment will not be accepted without it, even if the money has been deducted from your account.</marquee>
                         </Col>
                         <Col sm={6}>
                             <form onSubmit={handleSubmit} encType="multipart/form-data" method="post">
@@ -151,7 +153,8 @@ const Phonepay = () => {
                                         change={handleChange}
                                         value={product[item.name]} />
                                 })}
-                                <input type="file" id="image" label="Image" name="paymentScreenshot" onChange={handleChange} className='form-control' />
+                                <label htmlFor="">Upload Payment Screenshot <span className='text-danger'>*</span></label>
+                                <input type="file" id="image" label="Image" name="paymentScreenshot" onChange={handleChange} className='form-control' required />
 
                                 <input className='btn btn-primary mt-2' type="submit" value="Submit" disabled={submitBtn} />
                             </form>

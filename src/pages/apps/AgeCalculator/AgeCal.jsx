@@ -18,10 +18,6 @@ const AgeCal = () => {
     let userAge = currentDate.getFullYear() - dob.getFullYear();
     let userMonth = currentDate.getMonth() - dob.getMonth();
     let userDay = dob.getDate() - currentDate.getDate();
-
-
-
-
     setAge(userAge)
     setDay(userDay)
     setMonth(userMonth)
