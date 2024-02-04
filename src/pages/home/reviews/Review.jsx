@@ -32,7 +32,7 @@ const Review = () => {
                         disableOnInteraction: false,
                     }}
                     modules={Autoplay}
-                    slidesPerView={"auto"}
+                    slidesPerView={"2"}
                     spaceBetween={30}
                     className="mySwiper"
 
