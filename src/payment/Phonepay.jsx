@@ -128,11 +128,11 @@ const Phonepay = () => {
                                 </ul>
                                 <h5 style={{ display: showBarcode ? "none" : "block" }}>Payment Terms</h5>
                                 <ul className='list-none p-2' style={{ display: showBarcode ? "none" : "block" }}>
-                                    <li>(a) Payment form must be filled first to get the payment confirmation mail</li>
-                                    <li>(b) After Payment one need to take the screenshot of paid amount and share the screen shot on mail as well as attach with form</li>
-                                    <li>(c) The verification of payment takes time upto two days</li>
-                                    <li>(d) Once you verified you will get the further processes</li>
-                                    <li><input type="checkbox" ref={checked} onClick={checkBox} id="checkbox" /> &nbsp;<label htmlFor="checkbox"> I accept the following terms and conditions</label></li>
+                                    <li>(a) Fill out the payment form to receive confirmation via email</li>
+                                    <li>(b) Take a screenshot of the paid amount and email it along with the form</li>
+                                    <li>(c) Payment verification may take up to two days</li>
+                                    <li>(d) Upon verification, further processes will be provided</li>
+                                    <li><input type="checkbox" ref={checked} onClick={checkBox} id="checkbox" style={{cursor:"pointer"}}/> &nbsp;<label htmlFor="checkbox"> I accept the following terms and conditions</label></li>
                                 </ul>
                                 <button className='btn btn-success mb-2' disabled={disable} onClick={payBtnClicked} style={{ display: showBarcode ? "none" : "block" }} >Show Barcode</button>
                             </div>
