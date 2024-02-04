@@ -63,7 +63,6 @@ const Phonepay = () => {
     //Form Submitted
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log("Assignment Object:", input);
         const formData = new FormData();
         for (const key in input) {
             formData.append(key, input[key],);
