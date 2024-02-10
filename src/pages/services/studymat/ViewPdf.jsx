@@ -21,6 +21,7 @@ const ViewPdf = () => {
             await apiCall.get(`/view-specific-assignment/${intId}`)
                 .then((res) => {
                     let dataReturned = res.data
+                    
                     setProduct(dataReturned)
                     let productInfo = {
                         subject_name : dataReturned.subject_name,
