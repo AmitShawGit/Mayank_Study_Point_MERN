@@ -20,15 +20,15 @@ const ViewPdf = () => {
         try {
             await apiCall.get(`/view-specific-assignment/${intId}`)
                 .then((res) => {
-                    let dataReturned = res.data
-                    
+                    let dataReturned = res
+                    console.log("i  m", dataReturned);
                     setProduct(dataReturned)
                     let productInfo = {
-                        subject_name : dataReturned.subject_name,
+                        subject_name: dataReturned.subject_name,
                         sell_price: dataReturned.sell_price,
                         semester: dataReturned.semester
                     }
-                    sessionStorage.setItem("productInfo",JSON.stringify(productInfo))
+                    sessionStorage.setItem("productInfo", JSON.stringify(productInfo))
                 })
                 .catch((err) => err)
         }
