@@ -6,11 +6,11 @@ import apiCall from '../../../services/index.ts';
 const ViewPdf = () => {
     let id = useParams()
     let [product, setProduct] = useState([])
-    let imageURL = process.env.REACT_APP_BASE_URL
+    let imageURL = process.env.REACT_APP_BASE_URL + 'upload/'
 
     //go direct to  payment page
     const goToPayment = (id) => {
-        const url = `${product.pdf}`;
+        const url = `${product[0]?.pdf}`;
         window.open(url, "_blank"); 
 }
 
@@ -23,9 +23,9 @@ const ViewPdf = () => {
                     let dataReturned = res.data
                     setProduct(dataReturned)
                     let productInfo = {
-                        subject_name : dataReturned.subject_name,
-                        sell_price: dataReturned.sell_price,
-                        semester: dataReturned.semester
+                        subject_name : dataReturned[0]?.subject_name,
+                        sell_price: dataReturned[0]?.sell_price,
+                        semester: dataReturned[0]?.semester
                     }
                     sessionStorage.setItem("productInfo",JSON.stringify(productInfo))
                 })
@@ -43,7 +43,7 @@ const ViewPdf = () => {
         <ContentWrapper >
             <div className="product-view-page">
 
-                <ProductView img={imageURL + product.image} actualPrice="0000.00" price="5000.00" title={product.subject_name} short_description={product.short_description} description={product.description} buyNow={() => goToPayment(id)} />
+                <ProductView img={imageURL + product[0]?.image} actualPrice="0000.00" price="5000.00" title={product[0]?.subject_name} short_description={product[0]?.short_description} description={product[0]?.description} buyNow={() => goToPayment(id)} />
             </div>
         </ContentWrapper>
     )
