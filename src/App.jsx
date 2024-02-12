@@ -13,7 +13,8 @@ import Study from './pages/services/studymat/Study';
 import Assignment from './pages/services/assignment/Assignment'
 import ViewProd from './pages/services/freepdf/VIewProd';
 import Phonepay from './payment/Phonepay';
-import ViewPdf from './pages/services/freepdf/ViewPdf';
+import ViewPdfs from './pages/services/freepdf/ViewPdfs';
+import ViewPdf from './pages/services/studymat/ViewPdf'
 import ErrorPage from './pages/error/ErrorPage'
 
 const App = () => {
@@ -32,7 +33,7 @@ const App = () => {
           <Route exact path='/freepdf' element={<Study />} />
           <Route exact path='/age-calculator' element={<AgeCal />} />
           <Route exact path='/assignment' element={<Assignment />} />
-          <Route exact path='/view/:id' element={<ViewProd />} />
+          {/* <Route exact path='/view/:id' element={<ViewProd />} /> */}
           <Route exact path='/view-pdf/:id' element={<ViewPdf />} />
           <Route exact path='/Phonepay/:id' element={<Phonepay />} />
           <Route exact path='*' element={<ErrorPage />} />
