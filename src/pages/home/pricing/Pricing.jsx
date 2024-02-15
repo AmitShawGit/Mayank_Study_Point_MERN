@@ -7,8 +7,8 @@ const Pricing = () => {
     const output = [
         {
             id: 1,
-            head: "Web Design Service",
-            price: "10,000",
+            head: "Basic Service",
+            price: "3,000",
             features: [
                 { id: 1, name: 'Layout Design' },
                 { id: 2, name: 'HTML Development' },
@@ -20,8 +20,8 @@ const Pricing = () => {
         },
         {
             id: 2,
-            head: "Web Development Service",
-            price: "25,000",
+            head: "Average Service",
+            price: "5,000",
             features: [
                 { id: 1, name: 'Dynamic Website Development' },
                 { id: 2, name: 'Use of Latest Technology' },
@@ -33,8 +33,8 @@ const Pricing = () => {
         },
         {
             id: 3,
-            head: "Graphic Design",
-            price: "100",
+            head: "Premium",
+            price: "10,000",
             features: [
                 { id: 1, name: 'Photoshop Based Design' },
                 { id: 2, name: 'High Quality Images' },
@@ -48,7 +48,7 @@ const Pricing = () => {
     return (
         <div>
             <ContentWrapper>
-                <h2 className='heading'>Other Services</h2>
+                <h2 className='heading'>Project Services</h2>
                 <Row>
                 {output.map((item, index) => 
                  <Col md={4}  key={index} className='mb-4'>
