@@ -7,40 +7,34 @@ const Pricing = () => {
     const output = [
         {
             id: 1,
-            head: "Basic Service",
-            price: "3,000",
+            head: "Projects",
+            price: "2,000",
             features: [
-                { id: 1, name: 'Layout Design' },
-                { id: 2, name: 'HTML Development' },
-                { id: 3, name: 'SASS Based CSS Structure' },
-                { id: 4, name: 'Deployement' },
-                { id: 5, name: 'Services and Support' },
+                { id: 1, name: 'Average', price:"3,000",desc:"Limited time offer 85% off" },
+                { id: 2, name: 'Premium',price:"5,000" ,desc:"Limited time offer 85% off"},
+               
             ],
             path: "/contact",
         },
         {
             id: 2,
-            head: "Average Service",
-            price: "5,000",
+            head: "Projects",
+            price: "2,000",
             features: [
-                { id: 1, name: 'Dynamic Website Development' },
-                { id: 2, name: 'Use of Latest Technology' },
-                { id: 3, name: 'Reusable Code' },
-                { id: 4, name: 'API Based Services' },
-                { id: 5, name: 'Services and Support' },
+                { id: 1, name: 'Average', price:"3,000",desc:"Limited time offer 85% off" },
+                { id: 2, name: 'Premium',price:"5,000" ,desc:"Limited time offer 85% off"},
+               
             ],
             path: "/contact",
         },
         {
             id: 3,
-            head: "Premium",
-            price: "10,000",
+            head: "Projects",
+            price: "2,000",
             features: [
-                { id: 1, name: 'Photoshop Based Design' },
-                { id: 2, name: 'High Quality Images' },
-                { id: 3, name: 'Multiple Previews' },
-                { id: 4, name: 'Reusable Design' },
-                { id: 5, name: 'Support and Services' },
+                { id: 1, name: 'Average', price:"3,000",desc:"Limited time offer 85% off" },
+                { id: 2, name: 'Premium',price:"5,000" ,desc:"Limited time offer 85% off"},
+               
             ],
             path: "/contact",
         },
@@ -48,7 +42,7 @@ const Pricing = () => {
     return (
         <div>
             <ContentWrapper>
-                <h2 className='heading'>Project Services</h2>
+                <h2 className='heading'>Our Services</h2>
                 <Row>
                 {output.map((item, index) => 
                  <Col md={4}  key={index} className='mb-4'>

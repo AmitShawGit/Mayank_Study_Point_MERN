@@ -9,17 +9,25 @@ const PriceCard = ({ head, price, features, path }) => {
       <Card className="border-primary">
         <Card.Header className='feature'>{head}</Card.Header>
         <Card.Body className='body-section'>
-          <p>Starting from</p>
-          <Card.Title className='price'>Rs. {price}</Card.Title>
-          <ul className='list-none'>
-            {feature.map((item, index) => {
-              return (
-                <li key={index}>{item.name}</li>
-              )
-            })
-            }
-          </ul>
-
+         <ul className='list-none'>
+         {feature.map((item)=>{
+          return(
+            <>
+            <li key={item.id}>
+            <div className="d-flex align-items-center justify-content-between w-100">
+              <div>
+                <p>{item.name}</p>
+                <span>{item.desc} <del>{item.price}</del></span>
+              </div>
+              <div className='price'>
+                Rs. 4200
+              </div>
+            </div>
+          </li>
+            </>
+          )
+         })} 
+         </ul>
         </Card.Body>
         <Card.Footer className='feature'>
           <Link to={path} variant="primary" className='links'>More Info</Link>

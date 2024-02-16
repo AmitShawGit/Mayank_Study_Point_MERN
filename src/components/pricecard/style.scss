@@ -9,7 +9,6 @@
         background-color: $blue !important;
         color: #fff !important;
         font-size: 20px;
-        text-align: center;
         width: 100%;
     }
 
@@ -17,22 +16,23 @@
         background-color: #eafdff6b;
         p{
             margin: 0;
-            margin-left: 4.5rem;
+        }
+        span{
+            font-size: 12px;
         }
     }
 
     .price {
         color: $primary;
         font-size: 35px;
-        text-align: center;
     }
 
     .list-none {
         list-style: none;
-        margin-left: 2rem;
       
       li{
         margin-top: 0.5rem;
+        border-bottom: 2px solid silver;
       }
     }
 
