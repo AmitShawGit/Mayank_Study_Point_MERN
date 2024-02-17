@@ -7,12 +7,24 @@ const Pricing = () => {
     const output = [
         {
             id: 1,
-            head: "Assignment",
+            head: "Assignment (UG)",
             features: [
                 { id: 1, name: 'Single', price:"1,900",desc:"Only limited time offer 5% off", del:"2,000" },      
-                { id: 1, name: 'All Six', price:"1,500",desc:"Only limited time offer 25% off", del:"2,000" },      
-                { id: 1, name: 'Annual(12)', price:"1,300",desc:"Only limited time offer 35% off", del:"2,000" },      
-                { id: 1, name: 'Full Package(23)', price:"1,000",desc:"Only limited time offer 50% off", del:"2,000" },      
+                { id: 1, name: 'Each Semester', price:"9,000",desc:"Only limited time offer 25% off", del:"12,000" },      
+                { id: 1, name: 'Annual', price:"15,600",desc:"Only limited time offer 35% off", del:"24,000" },      
+                { id: 1, name: 'Full Package', price:"23,000",desc:"Only limited time offer 50% off", del:"46,000" },      
+               
+            ],
+            path: "/contact",
+        },
+        {
+            id: 2,
+            head: "Assignment (Master's / MBA)",
+            features: [
+                { id: 1, name: 'Single', price:"1,900",desc:"Only limited time offer 5% off", del:"2,000" },      
+                { id: 1, name: 'Each Semester', price:"9,000",desc:"Only limited time offer 25% off", del:"12,000" },      
+                { id: 1, name: 'Annual', price:"15,600",desc:"Only limited time offer 35% off", del:"24,000" },      
+                { id: 1, name: 'Full Package', price:"23,000",desc:"Only limited time offer 50% off", del:"46,000" },      
                
             ],
             path: "/contact",
