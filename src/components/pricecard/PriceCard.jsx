@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import './style.scss'
-const PriceCard = ({ head, price, features, path }) => {
+const PriceCard = ({ head, features, path }) => {
   let feature = features
   return (
     <div>
@@ -17,10 +17,10 @@ const PriceCard = ({ head, price, features, path }) => {
             <div className="d-flex align-items-center justify-content-between w-100">
               <div>
                 <p>{item.name}</p>
-                <span>{item.desc} <del>{item.price}</del></span>
+                <span>{item.desc} <del>{item.del} </del>&nbsp;</span>
               </div>
               <div className='price'>
-                Rs. 4200
+                Rs. {item.price}
               </div>
             </div>
           </li>

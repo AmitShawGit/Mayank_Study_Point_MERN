@@ -7,22 +7,12 @@ const Pricing = () => {
     const output = [
         {
             id: 1,
-            head: "Projects",
-            price: "2,000",
+            head: "Assignment",
             features: [
-                { id: 1, name: 'Average', price:"3,000",desc:"Limited time offer 85% off" },
-                { id: 2, name: 'Premium',price:"5,000" ,desc:"Limited time offer 85% off"},
-               
-            ],
-            path: "/contact",
-        },
-        {
-            id: 2,
-            head: "Projects",
-            price: "2,000",
-            features: [
-                { id: 1, name: 'Average', price:"3,000",desc:"Limited time offer 85% off" },
-                { id: 2, name: 'Premium',price:"5,000" ,desc:"Limited time offer 85% off"},
+                { id: 1, name: 'Single', price:"1,900",desc:"Only limited time offer 5% off", del:"2,000" },      
+                { id: 1, name: 'All Six', price:"1,500",desc:"Only limited time offer 25% off", del:"2,000" },      
+                { id: 1, name: 'Annual(12)', price:"1,300",desc:"Only limited time offer 35% off", del:"2,000" },      
+                { id: 1, name: 'Full Package(23)', price:"1,000",desc:"Only limited time offer 50% off", del:"2,000" },      
                
             ],
             path: "/contact",
@@ -30,10 +20,10 @@ const Pricing = () => {
         {
             id: 3,
             head: "Projects",
-            price: "2,000",
             features: [
-                { id: 1, name: 'Average', price:"3,000",desc:"Limited time offer 85% off" },
-                { id: 2, name: 'Premium',price:"5,000" ,desc:"Limited time offer 85% off"},
+                { id: 1, name: 'Basic', price:"2,000",desc:"Only limited time offer 33% off", del:"3,000" },
+                { id: 2, name: 'Average',price:"3,000" ,desc:"Limited time offer 40% off",del:"5,000"},
+                { id: 2, name: 'Premium',price:"5,000" ,desc:"Limited time offer 50% off",del:"10,000"},
                
             ],
             path: "/contact",

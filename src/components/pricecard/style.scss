@@ -10,29 +10,37 @@
         color: #fff !important;
         font-size: 20px;
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .body-section {
         background-color: #eafdff6b;
         p{
             margin: 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
         }
-        span{
+        span , del{
             font-size: 12px;
+            
         }
     }
 
     .price {
         color: $primary;
-        font-size: 35px;
+        font-size: 25px;
+        font-weight: 800;
     }
 
     .list-none {
         list-style: none;
       
       li{
-        margin-top: 0.5rem;
-        border-bottom: 2px solid silver;
+        margin: 1rem 0;
+        border-bottom: 1px solid #666464;
+        cursor: pointer;
       }
     }
 
@@ -40,5 +48,7 @@
         text-decoration: none;
         color: $white;
         font-size: 20px;
+        display: flex;
+        justify-content: center;
     }
 }
