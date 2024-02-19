@@ -109,6 +109,7 @@ const Phonepay = () => {
     }
 
     let subjects = JSON.parse(sessionStorage.getItem("productInfo"))
+   
 
     useEffect(() => {
         setProduct(subjects)
@@ -122,8 +123,8 @@ const Phonepay = () => {
                             <div className="payment-terms">
                                 <h5>Product Summary</h5>
                                 <ul className="list-none">
-                                    <li><b>{product?.subject_name}, Semester {product?.semester}</b></li>
-                                    <li>Rs. {product?.sell_price} only</li>
+                                    <li><b>{product?.subject_name || product?.name}, {product?.subject_name? "Semester":product?.head} {product?.semester}</b></li>
+                                    <li>Rs. {product?.sell_price || product?.price} only</li>
                                 </ul>
                                 <h5 style={{ display: showBarcode ? "none" : "block" }}>Payment Terms</h5>
                                 <ul className='list-none p-2' style={{ display: showBarcode ? "none" : "block" }}>

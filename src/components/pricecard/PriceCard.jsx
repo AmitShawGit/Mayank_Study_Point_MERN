@@ -7,10 +7,15 @@ const PriceCard = ({ head, features, path, goToPay }) => {
   let feature = features
   let navigate = useNavigate()
 
-  let goToPayment = (val, id) => {
+  let goToPayment = (val, id, head) => {
     let specificItem = val.find((item) => item.id === id)
-    sessionStorage.setItem("package", JSON.stringify(specificItem));
-    // navigate(`/Phonepay/${id}`)
+    let additionalData = {
+      head: head
+    }
+    specificItem = { ...specificItem, ...additionalData }
+    sessionStorage.setItem("productInfo", JSON.stringify(specificItem));
+
+    navigate(`/Phonepay/${id}`)
   }
   return (
     <div>
@@ -21,7 +26,7 @@ const PriceCard = ({ head, features, path, goToPay }) => {
             {feature.map((item) => {
               return (
                 <>
-                  <li key={item.id} onClick={() => goToPayment(goToPay, item.id)}>
+                  <li key={item.id} onClick={() => goToPayment(goToPay, item.id, head)}>
                     <div className="d-flex align-items-center justify-content-between w-100">
                       <div>
                         <p>{item.name}</p>
