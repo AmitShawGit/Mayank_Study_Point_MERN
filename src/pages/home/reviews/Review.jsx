@@ -11,6 +11,7 @@ import apiCall from '../../../services/index.ts'
 const Review = () => {
     let imgURL = process.env.REACT_APP_BASE_URL + "upload/"
     let [reviews, setReviews] = useState([]);
+    
     //fetch reviews
     let fetchServices = async () => {
         try {
@@ -27,11 +28,12 @@ const Review = () => {
             <ContentWrapper>
                 <h2 className='heading'>Student's Review</h2>
                 <Swiper
+              modules={[Autoplay]}
                     autoplay={{
-                        delay: 2500,
+                        delay: 1000,
                         disableOnInteraction: false,
                     }}
-                    modules={Autoplay}
+                    
                     slidesPerView={"2"}
                     spaceBetween={30}
                     className="mySwiper"
