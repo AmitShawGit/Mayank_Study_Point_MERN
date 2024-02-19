@@ -10,9 +10,9 @@ const Pricing = () => {
             head: "Assignment (UG)",
             features: [
                 { id: 1, name: 'Single', price:"1,900",desc:"Only limited time offer 5% off", del:"2,000" },      
-                { id: 1, name: 'Each Semester', price:"9,000",desc:"Only limited time offer 25% off", del:"12,000" },      
-                { id: 1, name: 'Annual', price:"15,600",desc:"Only limited time offer 35% off", del:"24,000" },      
-                { id: 1, name: 'Full Package', price:"23,000",desc:"Only limited time offer 50% off", del:"46,000" },      
+                { id: 2, name: 'Each Semester', price:"9,000",desc:"Only limited time offer 25% off", del:"12,000" },      
+                { id: 3, name: 'Annual', price:"15,600",desc:"Only limited time offer 35% off", del:"24,000" },      
+                { id: 4, name: 'Full Package', price:"23,000",desc:"Only limited time offer 50% off", del:"46,000" },      
                
             ],
             path: "/contact",
@@ -22,9 +22,9 @@ const Pricing = () => {
             head: "Assignment (Master's / MBA)",
             features: [
                 { id: 1, name: 'Single', price:"1,900",desc:"Only limited time offer 5% off", del:"2,000" },      
-                { id: 1, name: 'Each Semester', price:"9,000",desc:"Only limited time offer 25% off", del:"12,000" },      
-                { id: 1, name: 'Annual', price:"15,600",desc:"Only limited time offer 35% off", del:"24,000" },      
-                { id: 1, name: 'Full Package', price:"23,000",desc:"Only limited time offer 50% off", del:"46,000" },      
+                { id: 2, name: 'Each Semester', price:"9,000",desc:"Only limited time offer 25% off", del:"12,000" },      
+                { id: 3, name: 'Annual', price:"15,600",desc:"Only limited time offer 35% off", del:"24,000" },      
+                { id: 4, name: 'Full Package', price:"23,000",desc:"Only limited time offer 50% off", del:"46,000" },      
                
             ],
             path: "/contact",
@@ -35,7 +35,7 @@ const Pricing = () => {
             features: [
                 { id: 1, name: 'Basic', price:"2,000",desc:"Only limited time offer 33% off", del:"3,000" },
                 { id: 2, name: 'Average',price:"3,000" ,desc:"Limited time offer 40% off",del:"5,000"},
-                { id: 2, name: 'Premium',price:"5,000" ,desc:"Limited time offer 50% off",del:"10,000"},
+                { id: 3, name: 'Premium',price:"5,000" ,desc:"Limited time offer 50% off",del:"10,000"},
                
             ],
             path: "/contact",
@@ -53,6 +53,7 @@ const Pricing = () => {
                             price={item.price}
                             features={item.features}
                             path={item.path}
+                            goToPay={item.features}
                         />
                      
                     </Col>   )}
