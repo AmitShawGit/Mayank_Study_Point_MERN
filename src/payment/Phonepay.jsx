@@ -67,8 +67,8 @@ const Phonepay = () => {
         for (const key in input) {
             formData.append(key, input[key],);
         }
-        formData.append('subject', product.subject_name);
-        formData.append('price', product.sell_price);
+        formData.append('subject', product.subject_name ? product.subject_name : product.Packagename + " " + product.head,);
+        formData.append('price', product.sell_price ? product.sell_price : product.price);
 
         try {
             await apiCall.post("/api/payment", formData, {
@@ -83,8 +83,8 @@ const Phonepay = () => {
                         contact: "",
                         amount: "",
                         paymentScreenshot: null,
-                        subject: product.subject_name,
-                        price: product.sell_price
+                        subject: product.subject_name ? product.subject_name : product.Packagename + product.head,
+                        price: product.sell_price ? product.sell_price : product.price
 
                     })
                 })
@@ -109,7 +109,7 @@ const Phonepay = () => {
     }
 
     let subjects = JSON.parse(sessionStorage.getItem("productInfo"))
-   
+
 
     useEffect(() => {
         setProduct(subjects)
@@ -123,7 +123,7 @@ const Phonepay = () => {
                             <div className="payment-terms">
                                 <h5>Product Summary</h5>
                                 <ul className="list-none">
-                                    <li><b>{product?.subject_name || product?.name}, {product?.subject_name? "Semester":product?.head} {product?.semester}</b></li>
+                                    <li><b>{product?.subject_name || product?.Packagename}, {product?.subject_name ? "Semester" : product?.head} {product?.semester}</b></li>
                                     <li>Rs. {product?.sell_price || product?.price} only</li>
                                 </ul>
                                 <h5 style={{ display: showBarcode ? "none" : "block" }}>Payment Terms</h5>
@@ -132,7 +132,7 @@ const Phonepay = () => {
                                     <li>(b) Take a screenshot of the paid amount and email it along with the form</li>
                                     <li>(c) Payment verification may take up to two days</li>
                                     <li>(d) Upon verification, further processes will be provided</li>
-                                    <li><input type="checkbox" ref={checked} onClick={checkBox} id="checkbox" style={{cursor:"pointer"}}/> &nbsp;<label htmlFor="checkbox"> I accept the following terms and conditions</label></li>
+                                    <li><input type="checkbox" ref={checked} onClick={checkBox} id="checkbox" style={{ cursor: "pointer" }} /> &nbsp;<label htmlFor="checkbox"> I accept the following terms and conditions</label></li>
                                 </ul>
                                 <button className='btn btn-success mb-2' disabled={disable} onClick={payBtnClicked} style={{ display: showBarcode ? "none" : "block" }} >Show Barcode</button>
                             </div>

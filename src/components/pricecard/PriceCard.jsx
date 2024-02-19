@@ -29,7 +29,7 @@ const PriceCard = ({ head, features, path, goToPay }) => {
                   <li key={item.id} onClick={() => goToPayment(goToPay, item.id, head)}>
                     <div className="d-flex align-items-center justify-content-between w-100">
                       <div>
-                        <p>{item.name}</p>
+                        <p>{item.Packagename}</p>
                         <span>{item.desc} <del>{item.del} </del>&nbsp;</span>
                       </div>
                       <div className='price'>
