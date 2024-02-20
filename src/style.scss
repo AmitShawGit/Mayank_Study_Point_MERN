@@ -116,7 +116,21 @@ a {
 .text-primary {
     color: $primary !important;
 }
+//review
+.review-container{
+    position: relative;
 
+    .add-review {
+        position: absolute;
+        right: -4%;
+        background: blue;
+        border-radius: 50%;
+        padding: 10px;
+        bottom: 0;
+        color: #fff;
+        cursor: pointer;
+    }
+}
 .review {
     text-align: justify;
     word-spacing: -1px;
@@ -242,3 +256,4 @@ a {
         font-size: 60px;
     }
 }
+
