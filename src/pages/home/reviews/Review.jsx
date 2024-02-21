@@ -9,6 +9,7 @@ import 'swiper/css';
 import apiCall from '../../../services/index.ts'
 import Modal from 'react-bootstrap/Modal';
 import Input from '../../../components/formelement/Input.jsx'
+import dummyuser from '../../../assets/dummyuser.png'
 const Review = () => {
     let imgURL = process.env.REACT_APP_BASE_URL + "upload/"
     let [reviews, setReviews] = useState([]);
@@ -77,6 +78,7 @@ const Review = () => {
         catch (err) {
             alert(err)
         }
+        setShow(false)
     }
 
     const handleClose = () => setShow(false);
@@ -154,7 +156,7 @@ const Review = () => {
                                 <SwiperSlide key={item.id}>
                                     <Row className='d-flex align-items-center'>
                                         <Col md={4}>
-                                            <Img src={imgURL + item.image} className="img-fluid" />
+                                            <Img src={item.image ? imgURL + item?.image : dummyuser} className="img-fluid" />
                                         </Col>
                                         <Col md={8} className='review'>
                                             <p>{item.user_comment}</p>
