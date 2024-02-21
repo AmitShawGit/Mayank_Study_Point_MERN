@@ -138,7 +138,7 @@ const Review = () => {
 
 
                 <div className="review-container">
-                    <h2 className='heading'>Student's Review</h2>
+                    <h2 className='heading'>Review</h2>
                     <Swiper
                         modules={[Autoplay]}
                         autoplay={{

@@ -32,7 +32,7 @@ const Footer = () => {
       <div className="sub-footer mt-5">
         <ContentWrapper>
           <Row>
-            <Col sm={12} md={6}><h3>Subscribe to Our Newsletter</h3></Col>
+            <Col sm={12} md={6}><h3>Subscribe for Newsletter</h3></Col>
             <Col sm={12} md={6}>
               <form className="email-footer-form" onSubmit={handleEmailSubmit}>
                 <input type="email" className='form-control ' name='email' placeholder='Type your email' value={userEmail.email || ""} onChange={handleformdata} required />
@@ -61,7 +61,7 @@ const Footer = () => {
                   <li><Link to="/contact" className='footer-item'>Web Design</Link></li>
                   <li><Link to="/contact" className='footer-item'>Web Development</Link></li>
                   <li><Link to="/contact" className='footer-item'>Graphic Design</Link></li>
-                  <li><Link to="/contact" className='footer-item'>Assignments</Link></li>
+                  <li><Link to="/assignment" className='footer-item'>Assignments</Link></li>
                   <li><Link to="/contact" className='footer-item'>Projects</Link></li>
 
                 </ul>
@@ -69,7 +69,7 @@ const Footer = () => {
 
               <Col md={4} className='text-center footer-logo'>
                 <h4>Mayank's Study Point</h4>
-                <p>Your Future is in your hand</p>
+                <q> Your Future is in Your Hand</q>
                 <ul className='footer-list'>
                   <li ><Link to="mailto:mayankshaw8928@gmail.com" className='footer-item'><i className="ri-mail-line"></i> mayankshaw8928@gmail.com</Link></li>
                   <div className="d-flex justify-content-around mt-3">

@@ -25,13 +25,13 @@ const Services = () => {
             icon: "ri-projector-2-line projector",
             route: "https://drive.google.com/drive/folders/1n7sIddEM6A2u2UcVfU_GlE1UEm9unrQx"
         },
-        {
-            id: 3,
-            text: "Asignment Video",
-            img: assignment,
-            icon: "ri-folder-video-line assign-video",
-            route: "https://www.youtube.com/@MayanksStudyPoint/playlists"
-        },
+        // {
+        //     id: 3,
+        //     text: "Asignment Video",
+        //     img: assignment,
+        //     icon: "ri-folder-video-line assign-video",
+        //     route: "https://www.youtube.com/@MayanksStudyPoint/playlists"
+        // },
         {
             id: 4,
             text: "Assignment",
