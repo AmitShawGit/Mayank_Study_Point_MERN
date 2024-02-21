@@ -31,7 +31,7 @@ const Review = () => {
     let assignmentForm = [
         {
             key: 1,
-            label: "User Name",
+            label: "Your Name",
             id: "user_name",
             type: "text",
             placeholder: "Enter User Name",
@@ -39,7 +39,7 @@ const Review = () => {
         },
         {
             key: 2,
-            label: "User Comment",
+            label: "Your Review",
             id: "user_comment",
             type: "text",
             placeholder: "Enter User Comment",
@@ -97,15 +97,16 @@ const Review = () => {
 
                  
                             <Row>
-                                <Col md={6}>
+                                <Col md={12}>
                                     <label>Upload Image</label>
-                                    <input type="file" id="image" name="image" onChange={handleChange} className='form-control mt-1' />
+                                    <input type="file" id="image" name="image" onChange={handleChange} className='form-control mt-1 mb-3' />
 
                                 </Col>
+                            
                                 {
                                     assignmentForm.map((item) => {
                                         return (
-                                            <Col md={6} key={item.key}>
+                                            <Col md={12} key={item.key}>
                                                 <Input
                                                     name={item.name}
                                                     type={item.type}
@@ -138,7 +139,6 @@ const Review = () => {
 
                 <div className="review-container">
                     <h2 className='heading'>Student's Review</h2>
-                    <i class="ri-add-line add-review" onClick={() => setShow(!show)}></i>
                     <Swiper
                         modules={[Autoplay]}
                         autoplay={{
@@ -169,6 +169,7 @@ const Review = () => {
 
 
                     </Swiper>
+                    <button className='btn btn-primary add-review' onClick={() => setShow(!show)}>Share Your Experience</button>
                 </div>
             </ContentWrapper>
         </>

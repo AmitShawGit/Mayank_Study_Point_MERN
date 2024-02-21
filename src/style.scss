@@ -53,7 +53,9 @@ a {
         align-items: center;
         justify-content: center;
         height: 600px;
-
+h1{
+    font-size: 25px;
+}
     }
 
     .right-section {
@@ -121,14 +123,10 @@ a {
     position: relative;
 
     .add-review {
-        position: absolute;
-        right: -4%;
-        background: blue;
-        border-radius: 50%;
-        padding: 10px;
-        bottom: 0;
-        color: #fff;
-        cursor: pointer;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 0 auto;
     }
 }
 .review {
