@@ -32,7 +32,7 @@ const Footer = () => {
       <div className="sub-footer mt-5">
         <ContentWrapper>
           <Row>
-            <Col sm={12} md={6}><h3>Subscribe for Newsletter</h3></Col>
+            <Col sm={12} md={6}><h3>Subscribe for newsletter</h3></Col>
             <Col sm={12} md={6}>
               <form className="email-footer-form" onSubmit={handleEmailSubmit}>
                 <input type="email" className='form-control ' name='email' placeholder='Type your email' value={userEmail.email || ""} onChange={handleformdata} required />
@@ -46,30 +46,34 @@ const Footer = () => {
         <div className="footer pt-5">
           <ContentWrapper>
             <Row>
+            
+              <Col md={4}>
+                <ul className='footer-list'>
+                  <li className='footer-head text-primary'>Our Services</li>
+                  <li><Link to="/assignment" className='footer-item'>Assignments</Link></li>
+                  <li><Link to="/contact" className='footer-item'>Projects</Link></li>
+                  <li><Link to="/contact" className='footer-item'>Web Design</Link></li>
+                  <li><Link to="/contact" className='footer-item'>Web Development</Link></li>
+                  <li><Link to="/contact" className='footer-item'>Graphic Design</Link></li>
+                  
+
+                </ul>
+              </Col>
               <Col md={4}>
                 <ul className='footer-list'>
                   <li className='footer-head text-primary'>Quick Links</li>
                   <li><Link to="/home" className='footer-item'>Home</Link></li>
                   <li><Link to="/service" className='footer-item'>Service</Link></li>
                   <li><Link to="/contact" className='footer-item'>Contact</Link></li>
-                  <li><Link to="/app" className='footer-item'>App</Link></li>
+                  <li><Link to="/" className='footer-item'>Feedback</Link></li>
+                  <li><Link to="/" className='footer-item'>Mission</Link></li>
+                  <li><Link to="/" className='footer-item'>Vision</Link></li>
+                  <li><Link to="/" className='footer-item'>About us</Link></li>
                 </ul>
               </Col>
-              <Col md={4}>
-                <ul className='footer-list'>
-                  <li className='footer-head text-primary'>Our Services</li>
-                  <li><Link to="/contact" className='footer-item'>Web Design</Link></li>
-                  <li><Link to="/contact" className='footer-item'>Web Development</Link></li>
-                  <li><Link to="/contact" className='footer-item'>Graphic Design</Link></li>
-                  <li><Link to="/assignment" className='footer-item'>Assignments</Link></li>
-                  <li><Link to="/contact" className='footer-item'>Projects</Link></li>
-
-                </ul>
-              </Col>
-
               <Col md={4} className='text-center footer-logo'>
                 <h4>Mayank's Study Point</h4>
-                <q> Your Future is in Your Hand</q>
+                <q> Your future is in your hand </q>
                 <ul className='footer-list'>
                   <li ><Link to="mailto:mayankshaw8928@gmail.com" className='footer-item'><i className="ri-mail-line"></i> mayankshaw8928@gmail.com</Link></li>
                   <div className="d-flex justify-content-around mt-3">
@@ -83,7 +87,7 @@ const Footer = () => {
               </Col>
             </Row>
             <hr style={{ color: "silver" }} />
-            <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between flex-sm-row flex-column">
               <p className='footer-text'>All right reserved by <Link to="/home">Mayank's Study Point</Link>  <i className="ri-copyright-line"></i> {new Date().getFullYear()}</p>
               <p>Designed & Developed by <Link to="https://www.linkedin.com/in/amitshaw20/" target='_blank'> Amit Shaw</Link> </p>
             </div>
