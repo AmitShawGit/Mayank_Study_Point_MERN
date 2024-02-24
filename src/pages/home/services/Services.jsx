@@ -3,11 +3,10 @@ import Cards from '../../../components/cards/Cards'
 import ContentWrapper from '../../../components/wrapper/ContentWrapper'
 import { Col, Row } from 'react-bootstrap'
 import freePdf from '../../../assets/service1.jpg'
-import video from '../../../assets/service2.png';
-import assVid from '../../../assets/service3.png'
-import assignment from '../../../assets/service4.png'
-import winner from '../../../assets/service5.png'
-import free from '../../../assets/service6.png';
+import video from '../../../assets/service2.jpg';
+import assVid from '../../../assets/service3.jpg'
+import winner from '../../../assets/service5.png';
+import free from '../../../assets/service4.jpg'
 import { Link } from 'react-router-dom';
 const Services = () => {
     let CardDetails = [
@@ -25,29 +24,22 @@ const Services = () => {
             icon: "ri-projector-2-line projector",
             route: "https://drive.google.com/drive/folders/1n7sIddEM6A2u2UcVfU_GlE1UEm9unrQx"
         },
-        // {
-        //     id: 3,
-        //     text: "Asignment Video",
-        //     img: assignment,
-        //     icon: "ri-folder-video-line assign-video",
-        //     route: "https://www.youtube.com/@MayanksStudyPoint/playlists"
-        // },
         {
-            id: 4,
+            id: 3,
             text: "Assignment",
             img: assVid,
             icon: "ri-file-list-2-line service-icon",
             route: "/assignment"
         },
         {
-            id: 5,
+            id: 4,
             text: "Free Pdf Notes",
             img: free,
             icon: "ri-file-pdf-2-line youtube-color",
             route: "/freepdf"
         },
         {
-            id: 6,
+            id: 5,
             text: "Other Services",
             icon: "ri-medal-line projector",
             img: winner,
