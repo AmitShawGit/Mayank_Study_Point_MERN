@@ -12,7 +12,7 @@ const Learning = () => {
     return (
         <>
             <ContentWrapper>
-                <Row className='py-5'>
+                <Row className='py-5 align-items-center'>
                     <Col md={6}>
                         <Img src={sectionImg} className="img-fluid" />
                     </Col>

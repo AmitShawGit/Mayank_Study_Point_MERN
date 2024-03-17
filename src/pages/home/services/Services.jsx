@@ -5,7 +5,7 @@ import { Col, Row } from 'react-bootstrap'
 import freePdf from '../../../assets/service1.jpg'
 import video from '../../../assets/service2.jpg';
 import assVid from '../../../assets/service3.jpg'
-import winner from '../../../assets/service5.png';
+import winner from '../../../assets/web.jpg';
 import free from '../../../assets/service4.jpg'
 import { Link } from 'react-router-dom';
 const Services = () => {
@@ -40,7 +40,7 @@ const Services = () => {
         },
         {
             id: 5,
-            text: "Other Services",
+            text: "Web Development",
             icon: "ri-medal-line projector",
             img: winner,
             route: "/"

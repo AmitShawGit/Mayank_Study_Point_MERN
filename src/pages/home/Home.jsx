@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Hero from './hero/Hero'
 import Learning from './learning/Learning'
 import Services from './services/Services'
@@ -20,10 +20,13 @@ let initialValues = {
 const Home = () => {
   const [show, setShow] = useState(false);
 
+  const [eye, setEye] = useState(false)
+
   //formik
   const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialValues,
     onSubmit: (values, action) => {
+      console.log("myval", values);
       try {
         apiCall.post("/send-info", values
         )
@@ -57,10 +60,27 @@ const Home = () => {
       placeholder: "Your Contact Number",
       type: "number",
       name: "contact"
-    },
+    }
+
 
   ]
   const handleClose = () => setShow(false);
+
+  const passwordType = useRef();
+  const eyeIcon = useRef();
+  const showPassword = () => {
+    if (eye) {
+      setEye(false)
+      passwordType.current.type = "text"
+      eyeIcon.current.className = "ri-eye-off-line"
+    } else {
+      passwordType.current.type = "password"
+      eyeIcon.current.className = "ri-eye-line"
+      setEye(true)
+    }
+
+  }
+
   useEffect(() => {
 
     setShow(true)
@@ -71,7 +91,7 @@ const Home = () => {
       <Modal show={show} onHide={handleClose}>
         <form action='/submit' onSubmit={handleSubmit}>
           <Modal.Header closeButton>
-            <Modal.Title>Get Call Back</Modal.Title>
+            <Modal.Title>Sign Up</Modal.Title>
           </Modal.Header>
           <Modal.Body>
 
@@ -87,7 +107,15 @@ const Home = () => {
                 msg={errors[item.name]}
                 value={values[item.name]} />
             })}
+            <div className="password-input">
+              <label htmlFor="password">Password</label>
+              <input type='password' className='form-control' placeholder='Enter your password' onChange={handleChange}
+                onBlur={handleBlur} name='password' id='password' ref={passwordType} />
+              <i className="ri-eye-line" ref={eyeIcon} onClick={showPassword}></i>
+            </div>
           </Modal.Body>
+
+
           <Modal.Footer>
 
             <input className='btn btn-success' type="submit" value="Submit" />
