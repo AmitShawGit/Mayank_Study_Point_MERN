@@ -12,15 +12,20 @@ import Modal from 'react-bootstrap/Modal';
 import { useFormik } from 'formik';
 
 import apiCall from '../../services/index.ts'
+
 let initialValues = {
   name: "",
   email: "",
   contact: "",
+  password: ""
 }
 const Home = () => {
   const [show, setShow] = useState(false);
-
+  const [showLogin, setShowLogin] = useState(false);
+  const [logInCred, setLogInCred] = useState({ email: "", password: "" })
   const [eye, setEye] = useState(false)
+  const passwordType = useRef();
+  const eyeIcon = useRef();
 
   //formik
   const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
@@ -65,9 +70,15 @@ const Home = () => {
 
   ]
   const handleClose = () => setShow(false);
+  const handleCloseLogin = () => setShowLogin(false);
 
-  const passwordType = useRef();
-  const eyeIcon = useRef();
+  const handleLoginChange = (e) => {
+    setLogInCred((credentials) => ({ ...credentials, [e.target.name]: e.target.value }))
+  }
+  const logIn = (e) => {
+    e.preventDefault()
+    console.log(logInCred);
+  }
   const showPassword = () => {
     if (eye) {
       setEye(false)
@@ -83,7 +94,7 @@ const Home = () => {
 
   useEffect(() => {
 
-    setShow(true)
+    setShowLogin(true)
   }, [])
   return (
     <>
@@ -113,15 +124,43 @@ const Home = () => {
                 onBlur={handleBlur} name='password' id='password' ref={passwordType} />
               <i className="ri-eye-line" ref={eyeIcon} onClick={showPassword}></i>
             </div>
+            <p className='goToLogIn'>Already have account <span onClick={() => (setShowLogin(true), setShow(false))}>click here</span>  to login</p>
+          </Modal.Body>
+
+
+          <Modal.Footer>
+            <input className='btn btn-success' type="submit" value="Sign up" />
+          </Modal.Footer>
+        </form>
+      </Modal>
+
+      <Modal show={showLogin} onHide={handleCloseLogin}>
+        <form action="" onSubmit={logIn}>
+          <Modal.Header closeButton>
+            <Modal.Title>Log in</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+
+            <label htmlFor="email">Username (email)</label>
+            <input type="email" name="email" id="email" className='form-control' value={logInCred.email} onChange={handleLoginChange}
+            />
+            <div className="password-input">
+              <label htmlFor="password">Password</label>
+              <input type='password' className='form-control' placeholder='Enter your password' onChange={handleLoginChange}
+                name='password' id='password' ref={passwordType} value={logInCred.password} />
+              <i className="ri-eye-line" ref={eyeIcon} onClick={showPassword}></i>
+            </div>
+            <p className='goToLogIn'>Don't have account <span  onClick={() => (setShow(true), setShowLogin(false))}>click here</span>  to Signup</p>
           </Modal.Body>
 
 
           <Modal.Footer>
 
-            <input className='btn btn-success' type="submit" value="Submit" />
+            <input className='btn btn-success' type="submit" value="Login" />
           </Modal.Footer>
         </form>
       </Modal>
+
       <Hero />
       <Services />
       <Learning />
