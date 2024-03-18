@@ -77,7 +77,22 @@ const Home = () => {
   }
   const logIn = (e) => {
     e.preventDefault()
-    console.log(logInCred);
+    try {
+
+      apiCall.post("/login", logInCred)
+        .then((res) => {
+          alert(res.data);
+
+          setLogInCred({ email: "", password: "" })
+          setShowLogin(false)
+        })
+        .catch((error) => {
+          alert(error)
+          setLogInCred({ email: "", password: "" })
+        setShowLogin(false)})
+    } catch (err) {
+      console.log(err);
+    }
   }
   const showPassword = () => {
     if (eye) {
@@ -150,7 +165,7 @@ const Home = () => {
                 name='password' id='password' ref={passwordType} value={logInCred.password} />
               <i className="ri-eye-line" ref={eyeIcon} onClick={showPassword}></i>
             </div>
-            <p className='goToLogIn'>Don't have account <span  onClick={() => (setShow(true), setShowLogin(false))}>click here</span>  to Signup</p>
+            <p className='goToLogIn'>Don't have account <span onClick={() => (setShow(true), setShowLogin(false))}>click here</span>  to Signup</p>
           </Modal.Body>
 
 
