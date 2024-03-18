@@ -157,7 +157,7 @@ const Home = () => {
           <Modal.Body>
 
             <label htmlFor="email">Username (email)</label>
-            <input type="email" name="email" id="email" className='form-control' value={logInCred.email} onChange={handleLoginChange}
+            <input type="email" placeholder='Enter your username' name="email" id="email" className='form-control' value={logInCred.email} onChange={handleLoginChange}
             />
             <div className="password-input">
               <label htmlFor="password">Password</label>
