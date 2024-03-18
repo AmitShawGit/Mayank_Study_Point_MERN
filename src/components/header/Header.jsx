@@ -28,7 +28,7 @@ const Header = () => {
                   <Link to="/contact">Contact</Link>
                 </li>
                 <li className='nav-items' onClick={()=>{setMenu(prev => !prev)}}>
-                  <Link to="/app">Login</Link>
+                  <Link to="/">My Profile</Link>
                 </li>
               </ul>
               <i

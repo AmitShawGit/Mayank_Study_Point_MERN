@@ -14,7 +14,7 @@ import { useFormik } from 'formik';
 import apiCall from '../../services/index.ts'
 
 let initialValues = {
-  name: "",
+  uname: "",
   email: "",
   contact: "",
   password: ""
@@ -33,9 +33,9 @@ const Home = () => {
     onSubmit: (values, action) => {
       console.log("myval", values);
       try {
-        apiCall.post("/send-info", values
+        apiCall.post("/sign-up", values
         )
-          .then((res) => alert(res.data.response))
+          .then((res) => alert(res.data))
       }
       catch (err) {
         console.log(err);
@@ -50,7 +50,7 @@ const Home = () => {
       label: "Name",
       placeholder: "Your Name",
       type: "text",
-      name: "name",
+      name: "uname",
     },
     {
       id: 2,
