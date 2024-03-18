@@ -23,15 +23,22 @@ const Home = () => {
   const [show, setShow] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [logInCred, setLogInCred] = useState({ email: "", password: "" })
-  const [eye, setEye] = useState(false)
-  const passwordType = useRef();
-  const eyeIcon = useRef();
+
+  const passwordType = useRef(null);
+  const eyeIcon = useRef(null);
+
+  const passwordTypeSign = useRef(null);
+  const eyeIconSign = useRef(null);
+
+  const [eye, setEye] = useState(true)
+
+  const [eyes, setEyes] = useState(true)
 
   //formik
   const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialValues,
     onSubmit: (values, action) => {
-      console.log("myval", values);
+
       try {
         apiCall.post("/sign-up", values
         )
@@ -89,27 +96,42 @@ const Home = () => {
         .catch((error) => {
           alert(error)
           setLogInCred({ email: "", password: "" })
-        setShowLogin(false)})
+          setShowLogin(false)
+        })
     } catch (err) {
       console.log(err);
     }
   }
   const showPassword = () => {
-    if (eye) {
-      setEye(false)
-      passwordType.current.type = "text"
-      eyeIcon.current.className = "ri-eye-off-line"
-    } else {
-      passwordType.current.type = "password"
-      eyeIcon.current.className = "ri-eye-line"
-      setEye(true)
+    if (passwordType?.current) {
+      if (eye) {
+        passwordType.current.type = "text";
+        eyeIcon.current.className = "ri-eye-off-line";
+      } else {
+        passwordType.current.type = "password";
+        eyeIcon.current.className = "ri-eye-line";
+      }
+      setEye(prevEye => !prevEye);
     }
+  }
 
+  const showPasswordSign = () => {
+    if (passwordTypeSign?.current) {
+      if (eyes) {
+        passwordTypeSign.current.type = "text";
+        eyeIconSign.current.className = "ri-eye-off-line";
+      } else {
+        passwordTypeSign.current.type = "password";
+        eyeIconSign.current.className = "ri-eye-line";
+      }
+      setEyes(prevEye => !prevEye);
+    }
   }
 
   useEffect(() => {
 
     setShowLogin(true)
+    setShow(false)
   }, [])
   return (
     <>
@@ -136,8 +158,8 @@ const Home = () => {
             <div className="password-input">
               <label htmlFor="password">Password</label>
               <input type='password' className='form-control' placeholder='Enter your password' onChange={handleChange}
-                onBlur={handleBlur} name='password' id='password' ref={passwordType} />
-              <i className="ri-eye-line" ref={eyeIcon} onClick={showPassword}></i>
+                onBlur={handleBlur} name='password' id='password' ref={passwordTypeSign} />
+              <i className="ri-eye-line" ref={eyeIconSign} onClick={showPasswordSign}></i>
             </div>
             <p className='goToLogIn'>Already have account <span onClick={() => (setShowLogin(true), setShow(false))}>click here</span>  to login</p>
           </Modal.Body>
@@ -149,7 +171,7 @@ const Home = () => {
         </form>
       </Modal>
 
-      <Modal show={showLogin} onHide={handleCloseLogin}>
+      <Modal show={showLogin} onHide={handleCloseLogin} size='sm'>
         <form action="" onSubmit={logIn}>
           <Modal.Header closeButton>
             <Modal.Title>Log in</Modal.Title>
@@ -165,7 +187,7 @@ const Home = () => {
                 name='password' id='password' ref={passwordType} value={logInCred.password} />
               <i className="ri-eye-line" ref={eyeIcon} onClick={showPassword}></i>
             </div>
-            <p className='goToLogIn'>Don't have account <span onClick={() => (setShow(true), setShowLogin(false))}>click here</span>  to Signup</p>
+            <p className='goToSignUp'>Don't have account <span onClick={() => (setShow(true), setShowLogin(false))}>click here</span>  to Signup</p>
           </Modal.Body>
 
 
