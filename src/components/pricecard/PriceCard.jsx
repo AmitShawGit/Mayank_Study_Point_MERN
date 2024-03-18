@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import './style.scss';
-import { Navigate } from 'react-router-dom';
+
 const PriceCard = ({ head, features, path, goToPay }) => {
   let feature = features
   let navigate = useNavigate()
