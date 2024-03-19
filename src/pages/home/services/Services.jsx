@@ -26,7 +26,7 @@ const Services = () => {
         },
         {
             id: 3,
-            text: "Assignment",
+            text: "Order Assignment / Projects",
             img: assVid,
             icon: "ri-file-list-2-line service-icon",
             route: "/assignment"

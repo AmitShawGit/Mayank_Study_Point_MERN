@@ -3,7 +3,7 @@ import './style.scss'
 import Header from './components/header/Header'
 import Home from './pages/home/Home'
 import Services from './pages/services/Services'
-import Apps from './pages/apps/Apps'
+import Profile from './pages/myprofile/MyProfile'
 import StickyNotes from './pages/apps/StickyApp/StickyNotes';
 import Footer from './components/footer/Footer'
 import { HashRouter, Route, Routes } from 'react-router-dom'
@@ -27,7 +27,7 @@ const App = () => {
           <Route exact path='/' element={<Home />} />
           <Route exact path='/home' element={<Home />} />
           <Route exact path='/service' element={<Services />} />
-          <Route exact path='/app' element={<Apps />} />
+          <Route exact path='/profile' element={<Profile />} />
           <Route exact path='/contact' element={<Contact />} />
           <Route exact path='/notes' element={<StickyNotes />} />
           <Route exact path='/freepdf' element={<Study />} />
