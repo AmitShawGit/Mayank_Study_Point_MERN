@@ -4,7 +4,7 @@ import apiCall from '../services/index.ts';
 import ContentWrapper from '../components/wrapper/ContentWrapper.jsx';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
-import Barcode from '../assets/barcode.jpeg'
+import Barcode from '../assets/barcode2.png'
 
 
 const Phonepay = () => {
