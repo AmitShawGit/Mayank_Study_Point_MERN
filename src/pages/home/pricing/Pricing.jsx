@@ -9,10 +9,10 @@ const Pricing = () => {
             id: 1,
             head: "Assignment (UG)",
             features: [
-                { id: 1, Packagename: 'Single', price:"1,900",desc:"Only limited time offer 5% off", del:"2,000" },      
-                { id: 2, Packagename: 'Each Semester', price:"9,000",desc:"Only limited time offer 25% off", del:"12,000" },      
-                { id: 3, Packagename: 'Annual', price:"15,600",desc:"Only limited time offer 35% off", del:"24,000" },      
-                { id: 4, Packagename: 'Full Package', price:"23,000",desc:"Only limited time offer 50% off", del:"46,000" },      
+                { id: 1, Packagename: 'Single', price:"800",desc:"Only limited time offer 20% off", del:"1,000" },      
+                { id: 2, Packagename: 'Each Semester', price:"4,500",desc:"Only limited time offer 25% off", del:"6,000" },      
+                { id: 3, Packagename: 'Annual', price:"8,400",desc:"Only limited time offer 30% off", del:"12,000" },      
+                { id: 4, Packagename: 'Full Package', price:"21,600",desc:"Only limited time offer 40% off", del:"36,000" },      
                
             ],
             path: "/contact",
@@ -21,10 +21,9 @@ const Pricing = () => {
             id: 2,
             head: "Assignment (Master's / MBA)",
             features: [
-                { id: 1, Packagename: 'Single', price:"1,900",desc:"Only limited time offer 5% off", del:"2,000" },      
-                { id: 2, Packagename: 'Each Semester', price:"9,000",desc:"Only limited time offer 25% off", del:"12,000" },      
-                { id: 3, Packagename: 'Annual', price:"15,600",desc:"Only limited time offer 35% off", del:"24,000" },      
-                { id: 4, Packagename: 'Full Package', price:"23,000",desc:"Only limited time offer 50% off", del:"46,000" },      
+                { id: 1, Packagename: 'Single', price:"1,500",desc:"Only limited time offer 25% off", del:"2,000" },      
+                { id: 2, Packagename: 'Each Semester', price:"8,400",desc:"Only limited time offer 30% off", del:"12,000" },      
+                { id: 3, Packagename: 'Full Package', price:"27,600",desc:"Only limited time offer 40% off", del:"46,000" },      
                
             ],
             path: "/contact",
