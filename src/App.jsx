@@ -16,7 +16,7 @@ import Phonepay from './payment/Phonepay';
 import ViewPdfs from './pages/services/freepdf/ViewPdfs';
 import ViewPdf from './pages/services/studymat/ViewPdf'
 import ErrorPage from './pages/error/ErrorPage'
-
+import SampleWorks from './pages/home/services/SampleWorks';
 const App = () => {
   return (
     <>
@@ -36,6 +36,7 @@ const App = () => {
           <Route exact path='/view-free-pdf/:id' element={<ViewPdfs />} />
           <Route exact path='/view-pdf/:id' element={<ViewPdf />} />
           <Route exact path='/Phonepay/:id' element={<Phonepay />} />
+          <Route exact path='/SampleWorks' element={<SampleWorks />} />
           <Route exact path='*' element={<ErrorPage />} />
         </Routes>
         <Footer />

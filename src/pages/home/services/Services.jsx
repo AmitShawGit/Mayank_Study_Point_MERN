@@ -22,7 +22,7 @@ const Services = () => {
             text: "Sample Assignment / Projects",
             img: video,
             icon: "ri-projector-2-line projector",
-            route: "https://drive.google.com/drive/folders/1n7sIddEM6A2u2UcVfU_GlE1UEm9unrQx"
+            route: "/SampleWorks"
         },
         {
             id: 3,
