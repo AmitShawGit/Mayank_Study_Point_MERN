@@ -17,6 +17,7 @@ import ViewPdfs from './pages/services/freepdf/ViewPdfs';
 import ViewPdf from './pages/services/studymat/ViewPdf'
 import ErrorPage from './pages/error/ErrorPage'
 import SampleWorks from './pages/home/services/SampleWorks';
+import OnDevelopment from './pages/OnDevelopment';
 const App = () => {
   return (
     <>
@@ -27,7 +28,7 @@ const App = () => {
           <Route exact path='/' element={<Home />} />
           <Route exact path='/home' element={<Home />} />
           <Route exact path='/service' element={<Services />} />
-          <Route exact path='/profile' element={<Profile />} />
+          <Route exact path='/profile' element={<OnDevelopment />} />
           <Route exact path='/contact' element={<Contact />} />
           <Route exact path='/notes' element={<StickyNotes />} />
           <Route exact path='/freepdf' element={<Study />} />

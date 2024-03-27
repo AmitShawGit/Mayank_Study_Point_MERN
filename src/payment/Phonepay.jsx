@@ -77,16 +77,17 @@ const Phonepay = () => {
                 }
             })
                 .then((res) => {
-                    alert(res.data.response); setInput({
+                     setInput({
                         name: "",
                         email: "",
                         contact: "",
                         amount: "",
                         paymentScreenshot: null,
+                        
                         subject: product.subject_name ? product.subject_name : product.Packagename + product.head,
                         price: product.sell_price ? product.sell_price : product.price
-
                     })
+                    alert(res.data.response);
                 })
                 .catch(err => alert(err.data.response));
         }
