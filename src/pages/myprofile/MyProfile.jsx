@@ -1,4 +1,4 @@
-import React ,{ useState }   from 'react'
+import React, { useState } from 'react'
 import ContentWrapper from '../../components/wrapper/ContentWrapper'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -9,14 +9,14 @@ const MyProfile = () => {
 
 
     let goToOrders = (text) => {
-    
+        setHeadingText(text)
     }
     let goToCart = (text) => {
-      
+        setHeadingText(text)
     }
     let goToPaymentHistory = (text) => {
-        alert("Iam clicked")
-        
+        setHeadingText(text)
+
     }
     let goToHome = () => {
 
@@ -36,9 +36,9 @@ const MyProfile = () => {
                             </ul>
                             <div className="menu">
                                 <ul className="list-none">
-                                    <li onClick={goToOrders("My Orders")}><i class="ri-archive-fill menuIcon"></i> My Orders</li>
-                                    <li onClick={goToCart("My Cart")}><i class="ri-shopping-cart-2-fill menuIcon"></i> My Cart</li>
-                                    <li onClick={goToPaymentHistory("Payment History")}><i class="ri-refund-2-line menuIcon"></i> Payment History</li>
+                                    <li onClick={() => { goToOrders("My Orders") }}><i class="ri-archive-fill menuIcon"></i> My Orders</li>
+                                    <li onClick={() => { goToCart("My Cart") }}><i class="ri-shopping-cart-2-fill menuIcon"></i> My Cart</li>
+                                    <li onClick={() => { goToPaymentHistory("Payment History") }}><i class="ri-refund-2-line menuIcon"></i> Payment History</li>
                                     <li onClick={goToHome}><i class="ri-shut-down-line menuIcon"></i> Log out</li>
                                 </ul>
                             </div>
@@ -46,6 +46,7 @@ const MyProfile = () => {
                     </Col>
                     <Col sm={12} md={9}>
                         <div className="tableSide">
+                            
                             <h5>{headingText}</h5>
                             <Table striped bordered hover>
                                 <thead>
@@ -76,6 +77,8 @@ const MyProfile = () => {
                                     </tr>
                                 </tbody>
                             </Table>
+
+                            <h2>You have no order history yet</h2>
                         </div>
                     </Col>
 
