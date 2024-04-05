@@ -65,7 +65,7 @@ const Phonepay = () => {
         e.preventDefault();
         const formData = new FormData();
         for (const key in input) {
-            formData.append(key, input[key],);
+            formData.append(key, input[key]);
         }
         formData.append('subject', product.subject_name ? product.subject_name : product.Packagename + " " + product.head,);
         formData.append('price', product.sell_price ? product.sell_price : product.price);
