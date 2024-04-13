@@ -23,7 +23,9 @@ const Pricing = () => {
             features: [
                 { id: 1, Packagename: 'Single', price:"1,500",desc:"Only limited time offer 25% off", del:"2,000" },      
                 { id: 2, Packagename: 'Each Semester', price:"8,400",desc:"Only limited time offer 30% off", del:"12,000" },      
-                { id: 3, Packagename: 'Full Package', price:"27,600",desc:"Only limited time offer 40% off", del:"46,000" },      
+                { id: 3, Packagename: 'Annual', price:"15,600",desc:"Only limited time offer 35% off", del:"24,000" },      
+
+                { id: 4, Packagename: 'Full Package', price:"27,600",desc:"Only limited time offer 40% off", del:"46,000" },      
                
             ],
             path: "/contact",

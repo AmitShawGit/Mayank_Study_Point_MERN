@@ -198,25 +198,18 @@ let Assignment = () => {
                 {/* why choose us */}
                 <div className="why-choose-us">
 
-                    <h2 className="heading">Assignment</h2>
-                    <h4 className="text-primary">Unlock Your Academic Success with Our Expert Assignment Services!</h4>
-                    <p>Struggling to meet tight deadlines or looking to elevate your academic performance? Look no further! Our assignment creation service is your gateway to stress-free, top-notch assignments that stand out. We understand the demands of student life, and our team of seasoned professionals is here to lend you a helping hand</p>
-                    <h5 className="text-primary">Why Choose Us?</h5>
-                    <p>With a commitment to excellence, we pride ourselves on delivering authentic, plagiarism-free content tailored to your unique requirements. Our team consists of subject matter experts dedicated to ensuring your success. Every assignment is a product of thorough research, meticulous writing, and a guarantee of on-time delivery. </p>
-                    <h5 className="text-primary">Our Genuine Promise</h5>
-                    <p>Transparency, authenticity, and academic integrity are the cornerstones of our service. We prioritize your academic goals and strictly adhere to ethical standards. When you choose us, you're not just getting an assignment; you're investing in a partnership that prioritizes your success. </p>
-                    <h5 className="text-primary">How It Works ?</h5>
-                    <ul className="works-list">
-                        <li><b>Submit Your Requirements:</b> Share your assignment details and specifications. </li>
-                        <li><b>Get Matched with an Expert:</b>  Our team assigns a qualified expert to your task. </li>
-                        <li><b>Quality Assurance:</b> Your assignment undergoes a stringent quality check. </li>
-                        <li><b>On-Time Delivery:</b> Receive your completed assignment well before your deadline.
-                        </li>
-                    </ul>
+                    <h2 className="heading">Free Access to E-Book PDFs and Notes</h2>
+                    <p>We would like to clarify that all Ebook PDFs and notes provided on our website are available for free download or viewing. We believe in making educational resources accessible to all learners, regardless of financial constraints. <br />
 
-                    <p>Empower your academic journey with our genuine commitment to excellence. Let's turn your assignments into opportunities for success.</p>
+You are welcome to download or view these materials at your convenience, without any cost or obligation. Our aim is to support your learning journey and provide valuable resources to aid in your academic endeavors. <br />
 
-                    <p>Ready to experience the difference? Contact us today and witness the transformation in your academic endeavors!</p>
+Please feel free to explore and utilize the Ebook PDFs and notes to enhance your studies and broaden your knowledge base. <br />
+
+If you have any questions or encounter any issues while accessing the materials,please don't hesitate to contact us. Your feedback is always appreciated as we strive to improve our services and offerings. <br />
+
+Thank you for choosing us as your educational partner. Happy learning!</p>
+
+
                     <Link to='/contact' className="btn btn-primary">Contact Us</Link>
 
                 </div>
