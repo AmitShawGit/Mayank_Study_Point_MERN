@@ -68,7 +68,7 @@ let Assignment = () => {
     //Select University
     const getSelectedVal = async (event) => {
         let selected = event.target.value;
-        let find = university.find((item) =>{ return item.name === selected});
+        let find = university.find((item) => { return item.name === selected });
         if (find) {
             setSubject(find.subjects);
         } else {
@@ -201,13 +201,13 @@ let Assignment = () => {
                     <h2 className="heading">Free Access to E-Book PDFs and Notes</h2>
                     <p>We would like to clarify that all Ebook PDFs and notes provided on our website are available for free download or viewing. We believe in making educational resources accessible to all learners, regardless of financial constraints. <br />
 
-You are welcome to download or view these materials at your convenience, without any cost or obligation. Our aim is to support your learning journey and provide valuable resources to aid in your academic endeavors. <br />
+                        You are welcome to download or view these materials at your convenience, without any cost or obligation. Our aim is to support your learning journey and provide valuable resources to aid in your academic endeavors. <br />
 
-Please feel free to explore and utilize the Ebook PDFs and notes to enhance your studies and broaden your knowledge base. <br />
+                        Please feel free to explore and utilize the Ebook PDFs and notes to enhance your studies and broaden your knowledge base. <br />
 
-If you have any questions or encounter any issues while accessing the materials,please don't hesitate to contact us. Your feedback is always appreciated as we strive to improve our services and offerings. <br />
+                        If you have any questions or encounter any issues while accessing the materials,please don't hesitate to contact us. Your feedback is always appreciated as we strive to improve our services and offerings. <br />
 
-Thank you for choosing us as your educational partner. Happy learning!</p>
+                        Thank you for choosing us as your educational partner. Happy learning!</p>
 
 
                     <Link to='/contact' className="btn btn-primary">Contact Us</Link>
