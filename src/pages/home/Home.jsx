@@ -5,7 +5,7 @@ import Services from './services/Services'
 import Pricing from './pricing/Pricing'
 import Review from './reviews/Review'
 import Input from '../../components/formelement/Input.jsx'
-
+import Sliders from './hero/Slider.jsx'
 
 import Modal from 'react-bootstrap/Modal';
 
@@ -197,6 +197,8 @@ const Home = () => {
           </Modal.Footer>
         </form>
       </Modal>
+
+{/* <Sliders /> */}
 
       <Hero />
       <Services />
