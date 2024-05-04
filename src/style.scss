@@ -1,5 +1,9 @@
 @import './mixins.scss';
 
+.container-fluid{
+max-width: 1200px;
+}
+
 .heading {
     font-size: 30px;
     font-weight: bold;

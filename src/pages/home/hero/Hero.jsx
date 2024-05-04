@@ -1,7 +1,7 @@
 import React from 'react'
 import ContentWrapper from '../../../components/wrapper/ContentWrapper'
 import Img from '../../../components/lazyloading/LazyLoading'
-import menHero from '../../../assets/manhero1.png'
+import menHero from '../../../assets/hero2.png'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
@@ -23,11 +23,12 @@ const Hero = () => {
 
   return (
     <>
-      <div className="heroBg">
-        <ContentWrapper>
+    
+        <div className='container-fluid'>
+          <div className="hero-Bg">
           <Slider {...settings}>
-            <div>
-              <div className="heroBg">
+            {/* <div>
+             
                 <Row className='hero'>
                   <Col md={6}>
                     <h1>"We are with students from starting to end."</h1>
@@ -43,15 +44,18 @@ const Hero = () => {
 
                   </Col>
                 </Row>
-              </div>
+              </div> */}
+           
+            <div>
+              <img src={menHero} alt="hero-img" className='img-fluid' />
             </div>
             <div>
-              <img src={poster} alt="" className='img-fluid' />
+              <img src={poster} alt="hero-img" className='img-fluid' />
             </div>
          
            
           </Slider>
-
+          </div>
           {/* old hero  */}
           {/* <Row className='hero'>
             <Col md={6}>
@@ -68,8 +72,8 @@ const Hero = () => {
 
             </Col>
           </Row> */}
-        </ContentWrapper>
-      </div>
+        </div>
+     
     </>
   )
 }
