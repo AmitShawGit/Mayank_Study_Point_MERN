@@ -198,9 +198,9 @@ const Home = () => {
         </form>
       </Modal>
 
-{/* <Sliders /> */}
+<Sliders />
 
-      <Hero />
+      {/* <Hero /> */}
       <Services />
       <Learning />
       <Pricing />

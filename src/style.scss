@@ -36,6 +36,9 @@ a {
 /*Home Page*/
 
 /*hero section*/
+.slick-slider.slick-initialized{
+    overflow: hidden;
+}
 
 .heroBg {
     width: 100%;
