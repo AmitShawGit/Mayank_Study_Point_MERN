@@ -8,10 +8,8 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <>
-
       <div className='heroBg'>
         <div className="container">
-          {/* old hero  */}
           <Row className='hero'>
             <Col md={6}>
               <h1>"We are with students from starting to end."</h1>
@@ -24,7 +22,6 @@ const Hero = () => {
               <div className="men-img">
                 <Img src={menHero} />
               </div>
-
             </Col>
           </Row>
         </div>
