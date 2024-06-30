@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-// import Hero from './hero/Hero'
+import Hero from './hero/Hero'
 import Learning from './learning/Learning'
 import Services from './services/Services'
 import Pricing from './pricing/Pricing'
