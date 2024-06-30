@@ -1,16 +1,16 @@
 import React from 'react'
 
 import Slider from "react-slick";
-import ContentWrapper from '../../../components/wrapper/ContentWrapper';
+// import ContentWrapper from '../../../components/wrapper/ContentWrapper';
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Img from '../../../components/lazyloading/LazyLoading'
+// import Img from '../../../components/lazyloading/LazyLoading'
 import menHero from '../../../assets/manhero1.png'
 import poster from '../../../assets/poster1.png'
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { Link } from 'react-router-dom';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import { Link } from 'react-router-dom';
 const Sliders = () => {
 
     var settings = {

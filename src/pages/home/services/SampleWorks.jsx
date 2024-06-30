@@ -1,9 +1,8 @@
 import React from 'react'
 import ContentWrapper from '../../../components/wrapper/ContentWrapper';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const SampleWorks = () => {
-    const navigate = useNavigate()
     let goToProject = () => {
 
         window.open("https://drive.google.com/drive/folders/1-AWTlTznchIVFG3m8uITsj6pDo1zS8dI")
