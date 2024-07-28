@@ -1,7 +1,7 @@
 @import './mixins.scss';
 
-.container-fluid{
-max-width: 1200px;
+.container-fluid {
+    max-width: 1200px;
 }
 
 .heading {
@@ -36,7 +36,7 @@ a {
 /*Home Page*/
 
 /*hero section*/
-.slick-slider.slick-initialized{
+.slick-slider.slick-initialized {
     overflow: hidden;
 }
 
@@ -50,6 +50,9 @@ a {
     justify-content: center;
     background: rgb(240, 251, 255);
     background: linear-gradient(128deg, rgba(240, 251, 255, 1) 0%, rgba(213, 244, 255, 1) 100%);
+
+    max-height: 600px;
+    overflow: hidden;
 
     @include lg {
         margin-top: 0;
@@ -338,4 +341,3 @@ a {
         margin-top: 10%;
     }
 }
-
