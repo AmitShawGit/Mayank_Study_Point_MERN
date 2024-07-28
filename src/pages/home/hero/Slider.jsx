@@ -1,15 +1,13 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import apiCall from '../../../services/index.ts';
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import menHero from '../../../assets/manhero1.png'
-import poster from '../../../assets/poster1.png'
 
 const Sliders = () => {
-
+  let imgURL = process.env.REACT_APP_BASE_URL + "uploadSlider/"
   var settings = {
     dots: true,
     infinite: true,
@@ -17,17 +15,24 @@ const Sliders = () => {
     slidesToShow: 1,
     slidesToScroll: 1
   };
-  let sliderImages = [
-    { img: `${menHero}`, alt: "Hero-Img" },
-    { img: `${poster}`, alt: "Hero-Img" }
-  ]
+  let [sliderImage, setSliderImage] = useState([]);
+
+  let getImages = () => {
+    apiCall.get("/view-slider")
+      .then((res) => { setSliderImage(res.data) })
+      .catch((error) => { console.log(err.message); })
+  }
+
+  useEffect(() => {
+    getImages()
+  }, [])
   return (
     <>
       <div className="hero-Bg">
         <Slider {...settings}>
-          {sliderImages.map((img, index) => (
+          {sliderImage.map((img, index) => (
             <div key={index}>
-              <img src={img.img} alt={img.alt} className='img-fluid' />
+              <img src={img.sliderImage ? imgURL + img.sliderImage : ""} alt={img.alt} className='img-fluid' />
             </div>
           ))}
         </Slider>
