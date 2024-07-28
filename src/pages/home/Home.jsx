@@ -34,6 +34,8 @@ const Home = () => {
 
   const [eyes, setEyes] = useState(true)
 
+  const [slider, setSlider] = useState(true)
+
   //formik
   const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialValues,
@@ -127,6 +129,7 @@ const Home = () => {
       setEyes(prevEye => !prevEye);
     }
   }
+  const showSlider = () => { }
 
   useEffect(() => {
 
@@ -198,9 +201,9 @@ const Home = () => {
         </form>
       </Modal>
 
-<Sliders />
 
-      {/* <Hero /> */}
+
+      {slider ? <Sliders /> : <Hero />}
       <Services />
       <Learning />
       <Pricing />
