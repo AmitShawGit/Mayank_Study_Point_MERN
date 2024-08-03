@@ -25,7 +25,7 @@ const Sliders = () => {
   let getImages = () => {
     apiCall.get("/view-slider")
       .then((res) => { setSliderImage(res.data) })
-      .catch((error) => { console.log(err.message); })
+      .catch((error) => { console.log(error.message); })
   }
 
   useEffect(() => {
