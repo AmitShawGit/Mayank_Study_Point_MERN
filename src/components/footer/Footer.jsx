@@ -79,9 +79,9 @@ const Footer = () => {
                   <div className="d-flex justify-content-around mt-3">
                     <div><Link to="https://www.facebook.com/mayankstudypoint" target='_blank'><i className="ri-facebook-circle-fill footer-icon-fb footer-icon"></i></Link></div>
                     <div><Link to="https://www.youtube.com/@MayanksStudyPoint" target='_blank'><i className="ri-youtube-fill footer-icon-yt footer-icon"></i></Link></div>
-                    <div><Link to="https://www.linkedin.com/in/mayankshaw" target='_blank'><i class="ri-linkedin-box-fill footer-icon-fb footer-icon"></i></Link></div>
+                    <div><Link to="https://www.linkedin.com/in/mayankshaw" target='_blank'><i className="ri-linkedin-box-fill footer-icon-fb footer-icon"></i></Link></div>
                     <div><Link to="https://www.instagram.com/mayankstudypoint" target='_blank'><i className="ri-instagram-fill footer-icon-insta footer-icon"></i></Link></div>
-                    <div><Link to="https://twitter.com/i/flow/login?redirect_after_login=%2FMayankshaw99" target='_blank'><i class="ri-twitter-fill footer-icon-twitter footer-icon"></i></Link></div>
+                    <div><Link to="https://twitter.com/i/flow/login?redirect_after_login=%2FMayankshaw99" target='_blank'><i className="ri-twitter-fill footer-icon-twitter footer-icon"></i></Link></div>
                   </div>
                 </ul>
               </Col>

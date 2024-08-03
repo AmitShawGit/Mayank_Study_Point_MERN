@@ -19,11 +19,11 @@ const PriceCard = ({ head, features, path, goToPay }) => {
   }
   return (
     <div>
-      <Card className="border-primary">
+      <Card className="border-primary" >
         <Card.Header className='feature'>{head}</Card.Header>
-        <Card.Body className='body-section' >
+        <Card.Body className='body-section'>
           <ul className='list-none'>
-            {feature.map((item) => {
+            {feature.map((item,index) => {
               return (
                 <>
                   <li key={item.id} onClick={() => goToPayment(goToPay, item.id, head)}>
