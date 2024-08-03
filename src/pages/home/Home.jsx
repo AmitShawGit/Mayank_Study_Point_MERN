@@ -34,7 +34,7 @@ const Home = () => {
 
   const [eyes, setEyes] = useState(true)
 
-  const [slider, setSlider] = useState(true)
+  const [slider, setSlider] = useState(false)
 
   //formik
   const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
@@ -116,7 +116,6 @@ const Home = () => {
       setEye(prevEye => !prevEye);
     }
   }
-
   const showPasswordSign = () => {
     if (passwordTypeSign?.current) {
       if (eyes) {
@@ -129,13 +128,21 @@ const Home = () => {
       setEyes(prevEye => !prevEye);
     }
   }
-  const showSlider = () => { }
+  const showSlider = () => {
+    apiCall.get("/showSlider")
+
+      .then((res) => {
+        setSlider(res.data[0].visibility === 0 ? false : true)
+      })
+      .catch((err) => { console.log(err); })
+  }
 
   useEffect(() => {
-
+    showSlider()
     setShowLogin(true)
     setShow(false)
   }, [])
+  
   return (
     <>
       {/* Modal */}
