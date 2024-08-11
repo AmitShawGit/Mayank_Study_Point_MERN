@@ -80,11 +80,11 @@ let Assignment = () => {
         navigate(`/view-free-pdf/${id}`)
     }
 
-    //go direct to  payment page
-    const goToPayment = (id) => {
-        console.log(id);
-        navigate(`/Phonepay/${id}`)
-    }
+    // //go direct to  payment page
+    // const goToPayment = (id) => {
+    //     console.log(id);
+    //     navigate(`/Phonepay/${id}`)
+    // }
 
     //get university list
     const getUniversityList = async () => {
