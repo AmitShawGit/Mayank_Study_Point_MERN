@@ -3,7 +3,7 @@ import './style.scss'
 import Header from './components/header/Header'
 import Home from './pages/home/Home'
 import Services from './pages/services/Services'
-import Profile from './pages/myprofile/MyProfile'
+// import Profile from './pages/myprofile/MyProfile'
 import StickyNotes from './pages/apps/StickyApp/StickyNotes';
 import Footer from './components/footer/Footer'
 import { HashRouter, Route, Routes } from 'react-router-dom'
