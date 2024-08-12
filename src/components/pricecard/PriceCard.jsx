@@ -25,7 +25,7 @@ const PriceCard = ({ head, features, path, goToPay }) => {
           <ul className='list-none'>
             {feature.map((item) => {
               return (
-                <>
+              
                   <li key={item.id} onClick={() => goToPayment(goToPay, item.id, head)}>
                     <div className="d-flex align-items-center justify-content-between w-100">
                       <div>
@@ -37,7 +37,7 @@ const PriceCard = ({ head, features, path, goToPay }) => {
                       </div>
                     </div>
                   </li>
-                </>
+               
               )
             })}
           </ul>
