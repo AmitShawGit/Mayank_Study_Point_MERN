@@ -8,7 +8,7 @@ import StickyNotes from './pages/apps/StickyApp/StickyNotes';
 import Footer from './components/footer/Footer'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import Contact from './pages/contact/Contact'
-import AgeCal from './pages/apps/AgeCalculator/AgeCal'
+// import AgeCal from './pages/apps/AgeCalculator/AgeCal'
 import Study from './pages/services/studymat/Study';
 import Assignment from './pages/services/assignment/Assignment'
 // import ViewProd from './pages/services/freepdf/VIewProd';
@@ -32,7 +32,7 @@ const App = () => {
           <Route exact path='/contact' element={<Contact />} />
           <Route exact path='/notes' element={<StickyNotes />} />
           <Route exact path='/freepdf' element={<Study />} />
-          <Route exact path='/age-calculator' element={<AgeCal />} />
+          {/* <Route exact path='/age-calculator' element={<AgeCal />} /> */}
           <Route exact path='/assignment' element={<Assignment />} />
           <Route exact path='/view-free-pdf/:id' element={<ViewPdfs />} />
           <Route exact path='/view-pdf/:id' element={<ViewPdf />} />

@@ -23,7 +23,7 @@ const PriceCard = ({ head, features, path, goToPay }) => {
         <Card.Header className='feature'>{head}</Card.Header>
         <Card.Body className='body-section'>
           <ul className='list-none'>
-            {feature.map((item,index) => {
+            {feature.map((item) => {
               return (
                 <>
                   <li key={item.id} onClick={() => goToPayment(goToPay, item.id, head)}>
