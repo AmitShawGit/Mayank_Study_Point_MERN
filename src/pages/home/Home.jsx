@@ -4,8 +4,9 @@ import Learning from './learning/Learning'
 import Services from './services/Services'
 import Pricing from './pricing/Pricing'
 import Review from './reviews/Review'
-import Input from '../../components/formelement/Input.jsx'
-import Sliders from './hero/Slider.jsx'
+import Input from '../../components/formelement/Input.jsx';
+ //new_added
+import Sliders from './hero/Slider.jsx';
 
 import Modal from 'react-bootstrap/Modal';
 
@@ -128,6 +129,8 @@ const Home = () => {
       setEyes(prevEye => !prevEye);
     }
   }
+
+  //new_added
   const showSlider = () => {
     apiCall.get("/showSlider")
 
@@ -171,7 +174,12 @@ const Home = () => {
                 onBlur={handleBlur} name='password' id='password' ref={passwordTypeSign} />
               <i className="ri-eye-line" ref={eyeIconSign} onClick={showPasswordSign}></i>
             </div>
-            <p className='goToLogIn'>Already have account <span onClick={() => (setShowLogin(true), setShow(false))}>click here</span>  to login</p>
+            <p className='goToLogIn'>Already have account <span 
+            onClick={() => {
+              setShowLogin(true);
+               setShow(false)
+              }}
+            >click here</span>  to login</p>
           </Modal.Body>
 
 
@@ -197,7 +205,7 @@ const Home = () => {
                 name='password' id='password' ref={passwordType} value={logInCred.password} />
               <i className="ri-eye-line" ref={eyeIcon} onClick={showPassword}></i>
             </div>
-            <p className='goToSignUp'>Don't have account <span onClick={() => (setShow(true), setShowLogin(false))}>click here</span>  to Signup</p>
+            <p className='goToSignUp'>Don't have account <span onClick={() => {setShow(true); setShowLogin(false)}}>click here</span>  to Signup</p>
           </Modal.Body>
 
 
@@ -207,8 +215,6 @@ const Home = () => {
           </Modal.Footer>
         </form>
       </Modal>
-
-
 
       {slider ? <Sliders /> : <Hero />}
       <Services />
