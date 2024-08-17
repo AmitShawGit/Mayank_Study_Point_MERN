@@ -12,10 +12,18 @@ import { useFormik } from 'formik';
 
 import apiCall from "../../../services/index.ts";
 
+
+//setDate 
+let currDate = Date.now();
+let dateObj = new Date(currDate);
+const formatDate = {day:"numeric" , month:"long", year:"numeric"}
+let formattedDate = dateObj.toLocaleDateString(formatDate);
+
 let initialValues = {
     name: "",
     email: "",
     contact: "",
+    date: formattedDate
 }
 let Assignment = () => {
     let [subject, setSubject] = useState([])
@@ -105,7 +113,7 @@ let Assignment = () => {
     useEffect(() => {
         selectedRef.current.focus();
         setShow(true)
-        getUniversityList()
+        getUniversityList();    
     }, [])
 
     return (
