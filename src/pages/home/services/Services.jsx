@@ -55,7 +55,7 @@ const Services = () => {
                         return (
                             <Col key={item.id} md={4} >
 
-                                <Link to={item.route} target='_blank'> <Cards bgImg={item.img} cardText={item.text} icon={item.icon} /> </Link>
+                                <Link to={item.route} > <Cards bgImg={item.img} cardText={item.text} icon={item.icon} /> </Link>
 
                             </Col>
                         )
