@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import ContentWrapper from "../../../components/wrapper/ContentWrapper";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from 'react-bootstrap/Card'
@@ -13,17 +13,18 @@ import { useFormik } from 'formik';
 import apiCall from "../../../services/index.ts";
 
 
+
 //setDate 
 let currDate = Date.now();
 let dateObj = new Date(currDate);
-const formatDate = {day:"numeric" , month:"long", year:"numeric"}
+const formatDate = { day: "numeric", month: "long", year: "numeric" }
 let formattedDate = dateObj.toLocaleDateString(formatDate);
 
 let initialValues = {
     name: "",
     email: "",
     contact: "",
-    date:formattedDate
+    date: formattedDate
 }
 let Assignment = () => {
     let [subject, setSubject] = useState([])
@@ -31,6 +32,10 @@ let Assignment = () => {
     const navigate = useNavigate();
     const selectedRef = useRef();
     let [university, setUniversity] = useState([])
+
+    const location = useLocation();
+    let currentPath = location.pathname
+
     //formik
     const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: initialValues,
@@ -113,7 +118,9 @@ let Assignment = () => {
     useEffect(() => {
         selectedRef.current.focus();
         setShow(true)
-        getUniversityList()
+        getUniversityList();
+
+
     }, [])
 
     return (
@@ -187,10 +194,10 @@ let Assignment = () => {
                                 </Card.Body>
                                 <Row className="text-center">
                                     <Col>
-                                        <p onClick={() => goToViewProduct(subject?.id)} >Add to Cart</p>
+                                        <p onClick={() => goToViewProduct(subject?.id)}>{currentPath == "/freepdf" ? "" : "Add to Cart"}</p>
                                     </Col>
                                     <Col>
-                                        <p onClick={() => goToViewProduct(subject?.id)}>Buy Now</p>
+                                        <p onClick={() => goToViewProduct(subject?.id)}>{currentPath == "/freepdf" ? "View Now" : "Buy Now"}</p>
                                     </Col>
                                 </Row>
 
@@ -207,17 +214,19 @@ let Assignment = () => {
                 <div className="why-choose-us">
 
                     <h2 className="heading">Free Access to E-Book PDFs and Notes</h2>
-                    <p>We would like to clarify that all Ebook PDFs and notes provided on our website are available for free download or viewing. We believe in making educational resources accessible to all learners, regardless of financial constraints. <br />
+                    <ul className="unordered-list">
+                        <li>We would like to clarify that all Ebook PDFs and notes provided on our website are available for free download or viewing. We believe in making educational resources accessible to all learners, regardless of financial constraints.</li>
+                        <li>You are welcome to download or view these materials at your convenience, without any cost or obligation. Our aim is to support your learning journey and provide valuable resources to aid in your academic endeavors.</li>
+                        <li>Please feel free to explore and utilize the Ebook PDFs and notes to enhance your studies and broaden your knowledge base.</li>
+                        <li>If you have any questions or encounter any issues while accessing the materials,please don't hesitate to contact us. Your feedback is always appreciated as we strive to improve our services and offerings. </li>
 
-                        You are welcome to download or view these materials at your convenience, without any cost or obligation. Our aim is to support your learning journey and provide valuable resources to aid in your academic endeavors. <br />
-
-                        Please feel free to explore and utilize the Ebook PDFs and notes to enhance your studies and broaden your knowledge base. <br />
-
-                        If you have any questions or encounter any issues while accessing the materials,please don't hesitate to contact us. Your feedback is always appreciated as we strive to improve our services and offerings. <br />
-
-                        Thank you for choosing us as your educational partner. Happy learning!</p>
+                    </ul>
+                   
 
 
+
+                      <p>Thank you for choosing us as your educational partner. Happy learning!</p>
+                        
                     <Link to='/contact' className="btn btn-primary">Contact Us</Link>
 
                 </div>

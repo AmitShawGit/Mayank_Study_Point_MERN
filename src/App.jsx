@@ -18,11 +18,13 @@ import ViewPdf from './pages/services/studymat/ViewPdf'
 import ErrorPage from './pages/error/ErrorPage'
 import SampleWorks from './pages/home/services/SampleWorks';
 import OnDevelopment from './pages/OnDevelopment';
+import ScrollToTop from './components/ScrollToTop';
 const App = () => {
   return (
     <>
       <HashRouter>
         <Header />
+        <ScrollToTop />
         <Routes>
           
           <Route exact path='/' element={<Home />} />

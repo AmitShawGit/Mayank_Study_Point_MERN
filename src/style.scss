@@ -17,6 +17,9 @@
     background-color: $primary !important;
     border: $primary !important;
     box-shadow: $primary !important;
+    &:hover{
+        background-color: #dea32e !important;
+    }
 }
 
 .list-none {
@@ -338,4 +341,9 @@ a {
 
         margin-top: 10%;
     }
+}
+
+
+.unordered-list{
+    padding-left: 0;
 }

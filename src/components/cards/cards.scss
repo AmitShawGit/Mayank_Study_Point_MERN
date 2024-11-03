@@ -36,13 +36,13 @@
             margin: 0;
         }
     }
-    &:hover .title{
-        display: block;
-    }
+    // &:hover .title{
+    //     display: block;
+    // }
     @include lg{
-        .title{
-            display: block;
-        }
+        // .title{
+        //     display: block;
+        // }
     }
     .pink-overlay {
         content: "";
@@ -69,3 +69,7 @@
     }
 
 }
+
+
+
+

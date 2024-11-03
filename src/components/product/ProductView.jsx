@@ -27,7 +27,7 @@ const ProductView = (props) => {
 
                         <div>
                             <button className='btn btn-warning' >Add to cart</button>
-                            <button className='btn btn-success' onClick={props.buyNow}>{props.actualPrice !== "0000.00"? "Buy Now" : "Download"}</button>
+                            <button className='btn btn-success' onClick={props.buyNow}>{props.actualPrice !== "0000.00" ? "Buy Now" : "Download"}</button>
                         </div>
                     </div>
                 </div>
