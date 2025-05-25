@@ -5,7 +5,7 @@ import Services from './services/Services'
 import Pricing from './pricing/Pricing'
 import Review from './reviews/Review'
 import Input from '../../components/formelement/Input.jsx';
- //new_added
+//new_added
 import Sliders from './hero/Slider.jsx';
 
 import Modal from 'react-bootstrap/Modal';
@@ -13,6 +13,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useFormik } from 'formik';
 
 import apiCall from '../../services/index.ts'
+import Assignmentcycle from '../../components/cyclewise/Assignmentcycle.jsx'
 
 let initialValues = {
   uname: "",
@@ -145,7 +146,7 @@ const Home = () => {
     setShowLogin(true)
     setShow(false)
   }, [])
-  
+
   return (
     <>
       {/* Modal */}
@@ -174,10 +175,10 @@ const Home = () => {
                 onBlur={handleBlur} name='password' id='password' ref={passwordTypeSign} />
               <i className="ri-eye-line" ref={eyeIconSign} onClick={showPasswordSign}></i>
             </div>
-            <p className='goToLogIn'>Already have account <span 
-            onClick={() => {
-              setShowLogin(true);
-               setShow(false)
+            <p className='goToLogIn'>Already have account <span
+              onClick={() => {
+                setShowLogin(true);
+                setShow(false)
               }}
             >click here</span>  to login</p>
           </Modal.Body>
@@ -205,7 +206,7 @@ const Home = () => {
                 name='password' id='password' ref={passwordType} value={logInCred.password} />
               <i className="ri-eye-line" ref={eyeIcon} onClick={showPassword}></i>
             </div>
-            <p className='goToSignUp'>Don't have account <span onClick={() => {setShow(true); setShowLogin(false)}}>click here</span>  to Signup</p>
+            <p className='goToSignUp'>Don't have account <span onClick={() => { setShow(true); setShowLogin(false) }}>click here</span>  to Signup</p>
           </Modal.Body>
 
 
@@ -221,6 +222,7 @@ const Home = () => {
       <Learning />
       <Pricing />
       <Review />
+      <Assignmentcycle />
     </>
   )
 }

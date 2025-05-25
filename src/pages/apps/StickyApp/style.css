@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.notes-container {
+  position: absolute;
+  top: 7%;
+  left: 40%;
+  width: 300px;
+  transition: all 0.5s;
+  z-index: 9;
+}
+.notes-container .notepad-modal {
+  background-color: #0099f5;
+  padding: 20px;
+}
+
+.add-notes {
+  border: 1px solid silver;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  box-shadow: 1px 2px 6px rgba(217, 217, 217, 0.631372549);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.add-notes .icon-bg .add-note-plus {
+  background-color: #ffb319;
+  padding: 15px;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 30px;
+}
+
+.view-notes {
+  border: 1px solid silver;
+  min-height: 200px;
+  box-shadow: 1px 2px 6px rgba(217, 217, 217, 0.631372549);
+  border-radius: 5px;
+  position: relative;
+}
+.view-notes .notes-description {
+  margin-left: 15px;
+}
+.view-notes .notes-description .text-primary {
+  color: #ffb319 !important;
+}
+.view-notes .footer-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.ri-pencil-fill {
+  color: rgba(0, 128, 0, 0.425);
+}
+.ri-pencil-fill:hover {
+  color: green;
+}
+
+.ri-delete-bin-fill {
+  color: rgba(255, 0, 0, 0.589);
+  margin-right: 5px;
+}
+.ri-delete-bin-fill:hover {
+  color: red;
+}
+
+.date-section {
+  color: rgb(158, 156, 156);
+}
+.date-section:hover {
+  color: rgb(104, 104, 104);
+}/*# sourceMappingURL=style.css.map */

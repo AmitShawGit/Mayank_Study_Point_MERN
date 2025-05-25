@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.sub-footer {
+  background-color: #0099f5;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 15px;
+}
+.sub-footer .email-footer-form {
+  position: relative;
+}
+.sub-footer .btn {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+}
+
+.footer {
+  background-color: #054d78;
+}
+.footer .footer-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+.footer .footer-head {
+  color: #ffb319 !important;
+  font-size: 20px;
+}
+.footer .footer-item {
+  color: #ddd;
+  margin-top: 5px;
+}
+.footer .footer-item:hover {
+  color: #fff;
+}
+.footer p {
+  padding: 0;
+  margin-bottom: 0;
+  margin: 7px 0;
+  color: #fff;
+  text-decoration: none;
+}
+.footer p a {
+  color: #fff;
+}
+.footer .footer-logo {
+  color: #fff;
+}
+.footer .footer-logo .footer-list {
+  color: #ddd;
+}
+.footer .footer-logo .footer-list:hover {
+  color: #fff;
+}
+.footer .footer-icon {
+  font-size: 20px;
+  background: white;
+  padding: 5px 5px;
+  border-radius: 29%;
+}
+.footer .footer-icon-fb {
+  color: blue;
+}
+.footer .footer-icon-yt {
+  color: red;
+}
+.footer .footer-icon-insta {
+  color: #ec467e;
+}
+.footer .footer-icon-twitter {
+  color: #46beec;
+}/*# sourceMappingURL=footer.css.map */

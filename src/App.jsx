@@ -1,5 +1,6 @@
 import React from 'react';
-import './style.scss'
+// import './style.scss';
+import './style.css';
 import Header from './components/header/Header'
 import Home from './pages/home/Home'
 import Services from './pages/services/Services'

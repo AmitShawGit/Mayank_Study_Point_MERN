@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.border-primary {
+  border: 1px solid #0099f5;
+  box-shadow: 5px 6px 5px silver;
+  display: flex;
+  align-items: center;
+}
+.border-primary .feature {
+  background-color: #0099f5 !important;
+  color: #fff !important;
+  font-size: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.border-primary .body-section {
+  background-color: rgba(234, 253, 255, 0.4196078431);
+}
+.border-primary .body-section p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+.border-primary .body-section span, .border-primary .body-section del {
+  font-size: 12px;
+}
+.border-primary .price {
+  color: #ffb319;
+  font-size: 23px;
+  font-weight: 800;
+}
+.border-primary .list-none {
+  list-style: none;
+}
+.border-primary .list-none li {
+  margin: 1rem 0;
+  border-bottom: 1px solid #666464;
+  cursor: pointer;
+}
+.border-primary .links {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=style.css.map */
