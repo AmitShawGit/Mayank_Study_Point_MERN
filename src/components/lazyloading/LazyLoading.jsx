@@ -10,6 +10,7 @@ return(
         alt=""
         effect="blur"
         src={src}
+        loading="eager"
         />
     </div>
 )
