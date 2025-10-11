@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+.container-fluid {
+    max-width: 1200px;
+}
+
+.heading {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 0.84;
+    text-align: center;
+    color: #ffb319;
+    padding: 5%;
+}
+
+.btn-primary {
+    background-color: #ffb319 !important;
+    border: #ffb319 !important;
+    box-shadow: #ffb319 !important;
+}
+
+.btn-primary:hover {
+    background-color: #dea32e !important;
+}
+
+.list-none {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.text-primary {
+    color: #ffb319 !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+/*Home Page*/
+/*hero section*/
+.heroBg {
+    width: 100%;
+    margin-top: -70px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(240, 251, 255);
+    background: linear-gradient(128deg, rgb(240, 251, 255) 0%, rgb(213, 244, 255) 100%);
+    max-height: 600px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .heroBg {
+        margin-top: 0;
+        height: 778px;
+        overflow: hidden;
+    }
+}
+
+.heroBg .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+
+.heroBg .hero h1 {
+    font-size: 25px;
+}
+
+.heroBg .right-section {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin-bottom: -96px;
+}
+
+.heroBg .right-section .eclipse {
+    position: absolute;
+    content: "";
+    clip-path: ellipse(50% 47% at 50% 48%);
+    background-color: #ffb319;
+    width: 100%;
+    height: 100%;
+    bottom: -252px;
+}
+
+@media (max-width: 414px) {
+    .heroBg .right-section .men-img {
+        margin-left: -9%;
+    }
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-input .ri-eye-line,
+.password-input .ri-eye-off-line {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    cursor: pointer;
+}
+
+.goToLogIn {
+    transform: translate(19%, 0);
+    padding-top: 5%;
+}
+
+.goToLogIn span {
+    color: #6913b9;
+    cursor: pointer;
+}
+
+.goToSignUp {
+    padding-top: 5%;
+    font-size: 13px;
+}
+
+.goToSignUp span {
+    font-size: 13px;
+    color: #6913b9;
+    cursor: pointer;
+}
+
+/*learninsection*/
+.description {
+    line-height: 2.1;
+    text-align: justify;
+}
+
+@media (max-width: 576px) {
+    .description {
+        padding-top: 0% !important;
+    }
+}
+
+.text-orange {
+    color: #ffb319;
+}
+
+.text-pink {
+    color: #ec1d3f;
+}
+
+.text-blue {
+    color: #6913b9;
+}
+
+/*review  section*/
+.text-20 {
+    font-size: 20px;
+    line-height: 2;
+}
+
+.text-primary {
+    color: #ffb319 !important;
+}
+
+.review-container {
+    position: relative;
+}
+
+.review-container .add-review {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.review {
+    text-align: justify;
+    word-spacing: -1px;
+}
+
+@media (max-width: 576px) {
+    .review {
+        text-align: center;
+    }
+}
+
+.mySwiper {
+    cursor: grab;
+}
+
+/*servicesection*/
+.youtube-color {
+    color: #CD201F;
+}
+
+.projector {
+    color: #fff;
+}
+
+.assign-video {
+    color: #ec467e;
+}
+
+.service-icon {
+    color: #0099f5;
+}
+
+/*Free Pdf*/
+.select-university {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+    .select-university {
+        text-align: left;
+    }
+}
+
+.subject-card {
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.subject-card .card-text {
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+
+/*Product View*/
+.product-view-page {
+    margin-top: 5%;
+}
+
+.product-description h2 {
+    font-size: 30px;
+}
+
+.product-description span {
+    color: rgb(127, 127, 127);
+}
+
+.product-description ul {
+    list-style: none;
+    padding-left: 0;
+    color: #ffb319;
+    margin-bottom: 10px;
+}
+
+.product-description ul li {
+    display: inline-block;
+}
+
+.product-description ul li i {
+    font-size: 20px;
+}
+
+.product-description .btn-success {
+    margin-left: 10px;
+}
+
+.view-product-img {
+    max-width: 530px;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.payment-form {
+    background-color: rgba(135, 206, 235, 0.2117647059);
+    padding: 12px 5%;
+    margin-top: 3rem;
+}
+
+.barcode-img {
+    width: 50%;
+}
+
+.works-list {
+    list-style: numeric;
+    padding-left: 1.4%;
+}
+
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.error-page h3 {
+    font-size: 120px;
+}
+
+.error-page p {
+    font-size: 60px;
+}
+
+.myProfileContainer {
+    padding-top: 5%;
+}
+
+.myProfileContainer .myProfile h5 {
+    font-size: 25px;
+    color: #ffb319;
+}
+
+.myProfileContainer .myProfile .menu li {
+    padding: 3% 0;
+    border-bottom: 1px solid #0099f5;
+    cursor: pointer;
+}
+
+.myProfileContainer .myProfile .menu li .menuIcon {
+    color: #0099f5;
+}
+
+.myProfileContainer .tableSide {
+    margin-top: 10%;
+}
+
+.myProfileContainer .tableSide h5 {
+    color: #0099f5;
+}
+
+.unordered-list {
+    padding-left: 0;
+}
+
+.cycle-assignment-cad {
+    overflow: hidden;
+}
+
+.cycle-assignment-cad .assigmentImg {
+    width: 100%;
+    height: 300px;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+.cycle-assignment-cad .secure {
+    width: 80px;
+}
+
+.cycle-assignment-cad ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.cycle-assignment-cad ul li h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.cycle-assignment-cad ul li p {
+    margin-bottom: 0;
+}
+
+.cycle-assignment-cad ul li del {
+    color: silver;
+    font-size: 13px;
+}
+
+.cycle-assignment-cad ul li span {
+    color: green;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.cycle-assignment-cad button {
+    min-width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 5px;
+    border-radius: 0;
+    width: 100%;
+}
+
+.cycle-assignment-cad .ri-star-fill {
+    color: #dea32e;
+}
+
+.whatsapp_icon {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    right: 20px;
+    bottom: 30px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
