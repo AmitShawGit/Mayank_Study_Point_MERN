@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ContentWrapper from '../../../components/wrapper/ContentWrapper'
 import Img from '../../../components/lazyloading/LazyLoading'
-import sectionImg from '../../../assets/intro.png'
+import sectionImg from '../../../assets/intro.webp'
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
 import Row from 'react-bootstrap/Row';

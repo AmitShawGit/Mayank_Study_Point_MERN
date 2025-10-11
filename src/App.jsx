@@ -20,6 +20,7 @@ import ErrorPage from './pages/error/ErrorPage'
 import SampleWorks from './pages/home/services/SampleWorks';
 import OnDevelopment from './pages/OnDevelopment';
 import ScrollToTop from './components/ScrollToTop';
+import Whatsapp from './components/chat/Whatsapp.jsx';
 const App = () => {
   return (
     <>
@@ -43,6 +44,7 @@ const App = () => {
           <Route exact path='/SampleWorks' element={<SampleWorks />} />
           <Route exact path='*' element={<ErrorPage />} />
         </Routes>
+        <Whatsapp />
         <Footer />
       </HashRouter>
     </>

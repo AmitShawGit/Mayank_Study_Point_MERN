@@ -2,11 +2,11 @@ import React from 'react'
 import Cards from '../../../components/cards/Cards'
 import ContentWrapper from '../../../components/wrapper/ContentWrapper'
 import { Col, Row } from 'react-bootstrap'
-import freePdf from '../../../assets/service1.png'
-import video from '../../../assets/service2.png';
-import assVid from '../../../assets/service3.png'
+import freePdf from '../../../assets/service1.webp'
+import video from '../../../assets/service2.webp';
+import assVid from '../../../assets/service3.webp'
 import winner from '../../../assets/web.png';
-import free from '../../../assets/service4.png'
+import free from '../../../assets/service4.webp'
 import { Link } from 'react-router-dom';
 const Services = () => {
     let CardDetails = [

@@ -142,9 +142,23 @@ const Home = () => {
   }
 
   useEffect(() => {
+
     showSlider()
-    setShowLogin(true)
-    setShow(false)
+
+    const handleMouseLeave = (e) => {
+      if (e.clientY < 10) {
+
+        setShowLogin(true)
+      }
+    };
+
+    document.addEventListener("mouseout", handleMouseLeave);
+
+    return () => {
+      document.removeEventListener("mouseout", handleMouseLeave);
+    };
+
+
   }, [])
 
   return (
