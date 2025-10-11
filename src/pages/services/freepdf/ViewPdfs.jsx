@@ -49,4 +49,4 @@ const ViewPdf = () => {
     )
 }
 
-export default ViewPdf
+export default ViewPdf;

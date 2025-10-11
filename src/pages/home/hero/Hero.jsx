@@ -20,7 +20,7 @@ const Hero = () => {
 
               <div className="eclipse"></div>
               <div className="men-img">
-                <Img src={menHero} />
+                <Img src={menHero} className="img-fluid" />
               </div>
             </Col>
           </Row>

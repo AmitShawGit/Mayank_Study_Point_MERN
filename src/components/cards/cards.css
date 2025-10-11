@@ -1,73 +1,66 @@
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap);
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 * {
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-    font-size: 16px
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 .cards {
-    border: 1px solid #4a4a4a !important;
-    text-align: center;
-    position: relative !important;
-    background-position: center !important;
-    background-size: 100% 100% !important;
-    aspect-ratio: 3/2;
-    -o-object-fit: contain;
-    object-fit: contain;
-    margin: 5%
+  border: 1px solid #4a4a4a !important;
+  text-align: center;
+  position: relative !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  aspect-ratio: 3/2;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 5%;
 }
-
 .cards .card-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    width: 100%
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
 }
-
 .cards .title {
-    background-color: #ffb319;
-    padding: 15px;
-    border-radius: 10px;
-    display: none;
-    transition: all .1s ease
+  background-color: #ffb319;
+  padding: 15px;
+  border-radius: 10px;
+  display: none;
+  transition: all 0.1s ease;
 }
-
 .cards .title .icon {
-    font-size: 65px
+  font-size: 65px;
 }
-
 .cards .title .text {
-    font-size: 20px
+  font-size: 20px;
 }
-
-*,
 .cards .title p {
-    padding: 0;
-    margin: 0
+  padding: 0;
+  margin: 0;
 }
-
-.cards .blue-overlay,
 .cards .pink-overlay {
-    content: "";
-    border-radius: 5%;
-    position: absolute;
-    z-index: -1
+  content: "";
+  width: 200px;
+  height: 200px;
+  border-radius: 5%;
+  position: absolute;
+  z-index: -1;
+  background-color: #ec467e;
+  right: -6%;
+  top: -6%;
 }
-
-.cards .pink-overlay {
-    width: 200px;
-    height: 200px;
-    background-color: #ec467e;
-    right: -6%;
-    top: -6%
-}
-
 .cards .blue-overlay {
-    width: 110px;
-    height: 110px;
-    background-color: #0099f5;
-    left: -6%;
-    bottom: 18px
-}
+  content: "";
+  width: 110px;
+  height: 110px;
+  border-radius: 5%;
+  position: absolute;
+  z-index: -1;
+  background-color: #0099f5;
+  left: -6%;
+  bottom: 18px;
+}/*# sourceMappingURL=cards.css.map */
