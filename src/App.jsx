@@ -21,6 +21,7 @@ import SampleWorks from './pages/home/services/SampleWorks';
 import OnDevelopment from './pages/OnDevelopment';
 import ScrollToTop from './components/ScrollToTop';
 import Whatsapp from './components/chat/Whatsapp.jsx';
+
 const App = () => {
   return (
     <>
@@ -46,6 +47,7 @@ const App = () => {
         </Routes>
         <Whatsapp />
         <Footer />
+        
       </HashRouter>
     </>
   )

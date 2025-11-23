@@ -155,7 +155,7 @@ let Assignment = () => {
                 </Modal>
 
                 {/* Select University */}
-                <div className="select-university">
+                <div className="select-university p-4">
                     <Row>
                         <Col md={3}>
                             <label htmlFor="select">Select University</label>

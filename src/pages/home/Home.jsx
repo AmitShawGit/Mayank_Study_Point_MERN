@@ -15,6 +15,8 @@ import { useFormik } from 'formik';
 import apiCall from '../../services/index.ts'
 import Assignmentcycle from '../../components/cyclewise/Assignmentcycle.jsx'
 
+import StickyBottom from '../../components/sticky_bottom.jsx'
+
 let initialValues = {
   uname: "",
   email: "",
@@ -237,6 +239,8 @@ const Home = () => {
       <Pricing />
       <Review />
       <Assignmentcycle />
+
+      <StickyBottom />
     </>
   )
 }

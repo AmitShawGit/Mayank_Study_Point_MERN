@@ -432,3 +432,13 @@ a {
         transform: scale(1);
     }
 }
+
+.mob_pad{
+    padding-top: 5rem;
+}
+
+@media (max-width:991px) {
+    .mob_pad{
+        padding-top: 5rem;
+    }
+}

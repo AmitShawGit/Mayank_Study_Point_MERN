@@ -15,8 +15,8 @@ const SampleWorks = () => {
     return (
         <>
             <ContentWrapper>
-                <h2 className='heading'>Sample Assignments and Projects</h2>
-                <p>Please be aware that the sample assignments and projects showcased in the "Sample Assignments and Project" section of our website are provided for illustrative purposes only.<b> These samples are intentionally incomplete and may contain copied or partially plagiarized content. </b>
+                <h2 className='heading mob_pad'>Sample Assignments and Projects</h2>
+                <p className='text-justify'>Please be aware that the sample assignments and projects showcased in the "Sample Assignments and Project" section of our website are provided for illustrative purposes only.<b> These samples are intentionally incomplete and may contain copied or partially plagiarized content. </b>
 
                     The purpose of displaying these samples is to provide students with an idea of the structure and format of assignments and projects. They are intended to serve as a reference point to help students understand what a completed assignment or project may look like.
 
