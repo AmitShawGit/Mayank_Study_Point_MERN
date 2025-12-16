@@ -16,6 +16,7 @@ import apiCall from '../../services/index.ts'
 import Assignmentcycle from '../../components/cyclewise/Assignmentcycle.jsx'
 
 import StickyBottom from '../../components/sticky_bottom.jsx'
+import Blog from '../blog/Blog.jsx'
 
 let initialValues = {
   uname: "",
@@ -239,7 +240,7 @@ const Home = () => {
       <Pricing />
       <Review />
       <Assignmentcycle />
-
+<Blog />
       <StickyBottom />
     </>
   )

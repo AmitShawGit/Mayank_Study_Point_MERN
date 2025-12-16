@@ -417,53 +417,114 @@ a {
     }
 }
 
-.text-justify{
+.text-justify {
     text-align: justify;
 }
 
-.mob_pad{
+.mob_pad {
     padding-top: 5rem;
 }
 
-.sticky_btn{
+.sticky_btn {
     display: none;
 }
+
 @media (max-width:991px) {
-    .mob_pad{
+    .mob_pad {
         padding-top: 5rem;
         line-height: 42px;
     }
 
-    .sticky_btn{
+    .sticky_btn {
         z-index: 9;
         display: block;
         position: fixed;
-    bottom: 0;
-    background: #fff;
-    width: 100%;
-    padding: 1rem;
+        bottom: 0;
+        background: #fff;
+        width: 100%;
+        padding: 1rem;
     }
 
-    .sticky_btn .btn.btn-primary{
-width: 100%;
-animation: myAnim 2s ease-in-out 0s infinite normal forwards;
+    .sticky_btn .btn.btn-primary {
+        width: 100%;
+        animation: myAnim 2s ease-in-out 0s infinite normal forwards;
     }
 
-    .whatsapp_icon{
-            bottom: 83px;
+    .whatsapp_icon {
+        bottom: 83px;
     }
 }
 
 @keyframes myAnim {
-	0% {
-		transform: scale(1);
-	}
+    0% {
+        transform: scale(1);
+    }
 
-	50% {
-		transform: scale(1.1);
-	}
+    50% {
+        transform: scale(1.1);
+    }
 
-	100% {
-		transform: scale(1);
-	}
+    100% {
+        transform: scale(1);
+    }
+}
+
+.blog_card {
+
+    padding: 1rem;
+    background: #f2f6f9;
+    border-radius: 10px;
+
+
+    .blog_img {
+        margin: 0 auto;
+
+        text-align: center;
+
+        overflow: hidden;
+
+    }
+
+    .date {
+        font-size: 12px;
+        margin-bottom: 0.2rem;
+        padding: 1rem 0;
+        color: #a5a5a5;
+        padding: 0;
+        padding-top: 1rem;
+    }
+
+    p {
+        font-size: 14px;
+        color: #5e5e5e;
+        margin-bottom: 0.2rem;
+    }
+
+    h2 {
+        font-size: 17px;
+        margin-bottom: 0.2rem;
+    }
+
+    ul {
+        padding-left: 0;
+        margin-bottom: 0;
+
+        li {
+            display: inline-flex;
+            margin-right: 8px;
+            margin-bottom: 53x;
+            background-color: #eeeeee;
+            border-radius: 35px;
+            font-size: 11px;
+            padding: 2px 6px;
+            color: #5f5f5f;
+            border: 1px solid #a2a2a242;
+        }
+    }
+}
+
+.blog_more {
+
+    margin: 1rem auto;
+    width: fit-content;
 }
