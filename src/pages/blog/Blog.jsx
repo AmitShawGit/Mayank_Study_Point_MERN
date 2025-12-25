@@ -1,63 +1,43 @@
 import { useNavigate } from 'react-router-dom'
-import barcode from '../../assets/barcode.jpeg'
+import { useEffect, useState } from 'react'
+import apiCall from '../../services/index.ts'
+import RenderTags from '../../lib/RenderTags.js'
 export default function Blog() {
-    let navigate=useNavigate()
+        let imgURL = process.env.REACT_APP_BASE_URL + "upload/"
+    let navigate = useNavigate()
 
-    let blogs = [
-        {
-            id: 1,
-            blogTitle: "Blog Title",
-            shortDesc: "Short Description",
-            tags: ["#tag", "#tag", "#tag"],
-            date: "12/05/25",
-            img: "img"
-        },
-        {
-            id: 2,
-            blogTitle: "Blog Title",
-            shortDesc: "Short Description",
-            tags: ["#tag", "#tag", "#tag"],
-            date: "12/05/25",
-            img: "img"
-        },
-        {
-            id: 3,
-            blogTitle: "Blog Title",
-            shortDesc: "Short Description",
-            tags: ["#tag", "#tag", "#tag"],
-            date: "12/05/25",
-            img: "img"
-        },
-        {
-            id: 4,
-            blogTitle: "Blog Title",
-            shortDesc: "Short Description",
-            tags: ["#tag", "#tag", "#tag"],
-            date: "12/05/25",
-            img: "img"
-        },
-        {
-            id: 5,
-            blogTitle: "Blog Title",
-            shortDesc: "Short Description",
-            tags: ["#tag", "#tag", "#tag"],
-            date: "12/05/25",
-            img: "img"
-        },
-    ]
+    let [blog, setBlog] = useState([])
 
-    let goToMoreBlogs = ()=>{
-navigate('/')
+    let blogApi = () => {
+        try {
+            apiCall.get('/view-blog')
+                .then(res => setBlog(res?.data?.response))
+
+        }
+        catch (err) {
+            console.log(err);
+
+        }
     }
 
-    let blogLimit = blogs?.slice(0, 4)
+    let goToMoreBlogs = () => {
+        navigate('/')
+    }
 
+    console.log(blog);
+    let tagString
+
+    useEffect(() => {
+        blogApi()
+    }, [])
     return (
         <>
             <div className="container">
                 <h3 className='heading'>Latest Blogs</h3>
                 <div className="row">
-                    {blogLimit.map((item, index) => {
+                    {blog?.map((item, index) => {
+
+                        const formatDate = Date('day','month','year')
                         return (
                             <div className="col-lg-3" key={index}>
                                 <div className="blog_card">
@@ -66,11 +46,14 @@ navigate('/')
 
                                         <img src={item?.img} alt="blog-img" className="img-fluid" />
                                     </div>
-                                    <p className="date">{item?.date}</p>
+                                    <p className="date">
+                                        
+                                        {item?.date}</p>
                                     <h2>{item?.blogTitle}</h2>
                                     <p>{item?.shortDesc}</p>
                                     <ul>
-                                        {item.tags.map((tags) => (<li key={tags?.id}>{tags}</li>))}
+                                       {/* <li><RenderTags tags={item?.tags} /></li>  */}
+                                        {/* {item.tags.map((tags) => (<li key={tags?.id}>{tags}</li>))} */}
                                     </ul>
                                 </div>
                             </div>

@@ -148,18 +148,7 @@ const Home = () => {
 
     showSlider()
 
-    const handleMouseLeave = (e) => {
-      if (e.clientY < 10) {
 
-        setShowLogin(true)
-      }
-    };
-
-    document.addEventListener("mouseout", handleMouseLeave);
-
-    return () => {
-      document.removeEventListener("mouseout", handleMouseLeave);
-    };
 
 
   }, [])
@@ -239,8 +228,8 @@ const Home = () => {
       <Learning />
       <Pricing />
       <Review />
-      <Assignmentcycle />
-<Blog />
+      {/* <Assignmentcycle />
+      <Blog /> */}
       <StickyBottom />
     </>
   )
