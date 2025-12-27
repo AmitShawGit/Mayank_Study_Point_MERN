@@ -228,8 +228,8 @@ const Home = () => {
       <Learning />
       <Pricing />
       <Review />
-      {/* <Assignmentcycle />
-      <Blog /> */}
+      {/* <Assignmentcycle /> */}
+      <Blog /> 
       <StickyBottom />
     </>
   )
