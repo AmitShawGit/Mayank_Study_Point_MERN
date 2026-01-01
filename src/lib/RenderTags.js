@@ -2,9 +2,6 @@ export default function RenderTags({ tags }) {
 
     let json = JSON.parse(tags)
     
-    console.log(typeof(json));
-    
-
    return (
     <>
     <ul>

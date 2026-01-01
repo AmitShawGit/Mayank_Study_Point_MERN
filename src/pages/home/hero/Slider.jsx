@@ -4,10 +4,11 @@ import apiCall from '../../../services/index.ts';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import { Loader } from '../../../components/lazyloading/Loader.jsx';
 
 const Sliders = () => {
   let imgURL = process.env.REACT_APP_BASE_URL + "uploadSlider/"
- 
+
   let [sliderImage, setSliderImage] = useState([]);
 
   let getImages = () => {
@@ -17,7 +18,7 @@ const Sliders = () => {
   }
 
   useEffect(() => {
-    getImages()
+    getImages();
   }, [])
   return (
     <>
@@ -34,7 +35,7 @@ const Sliders = () => {
           className="mySwiper"
 
         >
-          {sliderImage.map((img, index) => (
+          {sliderImage.length < 0 ? <Loader /> : sliderImage.map((img, index) => (
             <SwiperSlide key={index}>
 
               <img src={img.sliderImage ? imgURL + img.sliderImage : ""} alt={img.alt} className='img-fluid w-100' loading='eager' />

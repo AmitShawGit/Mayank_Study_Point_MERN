@@ -46,7 +46,7 @@ const Review = () => {
             name: "user_comment",
         },
     ]
-    useEffect(() => { fetchServices() }, [])
+    useEffect(() => { fetchServices() }, [reviews])
 
 
     const handleChange = (e) => {
@@ -76,7 +76,7 @@ const Review = () => {
         }
 
         catch (err) {
-            alert(err)
+            alert(err.response)
         }
         setShow(false)
     }
@@ -156,7 +156,7 @@ const Review = () => {
                                 <SwiperSlide key={item.id}>
                                     <Row className='d-flex align-items-center'>
                                         <Col md={4}>
-                                            <Img src={item.image ? imgURL + item?.image : dummyuser} className="img-fluid" />
+                                            <Img src={item.image !== "no_image" ? imgURL + item?.image : dummyuser} className="img-fluid" />
                                         </Col>
                                         <Col md={8} className='review'>
                                             <p>{item.user_comment}</p>

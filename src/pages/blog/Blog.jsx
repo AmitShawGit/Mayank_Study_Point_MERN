@@ -2,7 +2,8 @@ import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import apiCall from '../../services/index.ts'
 import RenderTags from '../../lib/RenderTags.js'
-import { format, parseISO } from 'date-fns'
+import { format } from 'date-fns'
+import { Loader } from '../../components/lazyloading/Loader.jsx'
 export default function Blog() {
     let imgURL = process.env.REACT_APP_BASE_URL + "uploadBlog/"
     let navigate = useNavigate()
@@ -33,14 +34,17 @@ export default function Blog() {
 
     let showBlog = blog.slice(0, 4);
 
+
+
+
     return (
         <>
             <div className="container">
                 <h3 className='heading'>Latest Blogs</h3>
                 <div className="row">
-                    {showBlog.reverse().map((item, index) => (
+                    {showBlog.length < 0 ? <Loader /> : showBlog.reverse().map((item, index) => (
 
-                        <div className="col-lg-3" key={item.id || index}>
+                        <div className="col-lg-3" key={index}>
                             <div className="blog_card">
 
                                 <div className="blog_img">
