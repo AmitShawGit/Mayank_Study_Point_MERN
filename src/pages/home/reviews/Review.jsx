@@ -46,7 +46,7 @@ const Review = () => {
             name: "user_comment",
         },
     ]
-    useEffect(() => { fetchServices() }, [reviews])
+    useEffect(() => { fetchServices() }, [])
 
 
     const handleChange = (e) => {

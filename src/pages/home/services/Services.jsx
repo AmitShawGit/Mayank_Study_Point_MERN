@@ -43,7 +43,7 @@ const Services = () => {
             text: "Web Development",
             icon: "ri-medal-line projector",
             img: winner,
-            route: "/"
+            route: "https://amitshawgit.github.io/porfolio/"
         },
     ]
     return (

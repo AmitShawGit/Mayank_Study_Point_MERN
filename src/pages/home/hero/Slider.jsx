@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo, useCallback } from 'react'
 import apiCall from '../../../services/index.ts';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,44 +6,67 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import { Loader } from '../../../components/lazyloading/Loader.jsx';
 
+
+
+const MemoSlide = ({ image, alt, isFirst, key }) => {
+
+  return (
+    <SwiperSlide key={key}>
+
+      <img src={image} alt={alt} className='img-fluid w-100' loading={isFirst ? 'eager' : 'lazy'} />
+
+    </SwiperSlide>)
+}
+
 const Sliders = () => {
-  let imgURL = process.env.REACT_APP_BASE_URL + "uploadSlider/"
-
+  let imgURL = useMemo(() => { return process.env.REACT_APP_BASE_URL + "uploadSlider/" }, [])
   let [sliderImage, setSliderImage] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  let getImages = () => {
+  let getImages = useCallback(() => {
     apiCall.get("/view-slider")
-      .then((res) => { setSliderImage(res.data) })
+      .then((res) => { setSliderImage(res.data); setLoading(false) })
       .catch((error) => { console.log(error.message); })
-  }
+  }, [])
 
   useEffect(() => {
     getImages();
   }, [])
+
+  if (loading) return <Loader />
+
   return (
     <>
+
       <div className="hero-Bg">
         <Swiper
           modules={[Autoplay]}
           autoplay={{
-            delay: 2000,
+            delay: 4000,
             disableOnInteraction: false,
           }}
-
+          cssMode={true}
+          lazyPreloadPrevNext={1}
           slidesPerView={"1"}
-          spaceBetween={30}
+          spaceBetween={0}
           className="mySwiper"
 
         >
-          {sliderImage.length < 0 ? <Loader /> : sliderImage.map((img, index) => (
-            <SwiperSlide key={index}>
+          {sliderImage.map((img, index) => (
 
-              <img src={img.sliderImage ? imgURL + img.sliderImage : ""} alt={img.alt} className='img-fluid w-100' loading='eager' />
+            <MemoSlide
+              image={img.sliderImage ? imgURL + img.sliderImage : ""}
+              alt={img.alt || "img alternative"}
+              key={img.id}
+              isFirst={index == 0}
 
-            </SwiperSlide>
-          ))}
+            />
+          )
+
+          )}
         </Swiper>
       </div>
+
     </>
 
   )

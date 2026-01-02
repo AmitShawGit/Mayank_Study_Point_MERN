@@ -534,8 +534,9 @@ a {
 .loader {
   width: 48px;
   height: 48px;
-  display: inline-block;
+  display: block;
   position: relative;
+  margin: 0 auto;
 }
 .loader::after,
 .loader::before {

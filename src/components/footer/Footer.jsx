@@ -111,7 +111,7 @@ const Footer = () => {
             <hr style={{ color: "silver" }} />
             <div className="d-flex justify-content-between flex-sm-row flex-column">
               <p className='footer-text'>All right reserved by <Link to="/home">Mayank's Study Point</Link>  <i className="ri-copyright-line"></i> {new Date().getFullYear()}</p>
-              <p>Designed & Developed by <Link to="https://www.linkedin.com/in/amitshaw20/" target='_blank'> Amit Shaw</Link> </p>
+              <p>Designed & Developed by <Link to="https://amitshawgit.github.io/porfolio/" target='_blank'> Amit Shaw</Link> </p>
             </div>
           </ContentWrapper>
         </div>

@@ -5,7 +5,7 @@ export default function RenderTags({ tags }) {
    return (
     <>
     <ul>
-        {json ?.map((item)=><li key={item.index}>{item}</li>)}
+        {json?.map((item,index)=><li key={index}>{item}</li>)}
     </ul>
     </>
    )
