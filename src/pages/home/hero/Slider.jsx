@@ -8,15 +8,12 @@ import { Loader } from '../../../components/lazyloading/Loader.jsx';
 
 
 
-const SlideImage = ({ image, alt, isFirst, keys }) => {
+const SlideImage = React.memo(({ image, alt, isFirst, keys }) => {
 
   return (
-   
-
       <img src={image} alt={alt} className='img-fluid w-100' loading={isFirst ? 'eager' : 'lazy'} />
-
    )
-}
+})
 
 const Sliders = () => {
   let imgURL = useMemo(() => { return process.env.REACT_APP_BASE_URL + "uploadSlider/" }, [])

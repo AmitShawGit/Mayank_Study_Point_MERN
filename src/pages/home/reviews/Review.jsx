@@ -11,6 +11,21 @@ import Modal from 'react-bootstrap/Modal';
 import Input from '../../../components/formelement/Input.jsx'
 import dummyuser from '../../../assets/dummyuser.png'
 import { Loader } from '../../../components/lazyloading/Loader.jsx';
+
+let ReviewContent = React.memo(({ img, alt, comment, username, isFirst }) => {
+    return (
+        <Row className='d-flex align-items-center'>
+            <Col md={4}>
+                <Img src={img} className="img-fluid" alt={alt} loading={isFirst ? 'eager' : 'lazy'} />
+            </Col>
+            <Col md={8} className='review'>
+                <p>{comment}</p>
+                <p className='text-primary text-20'>- {username}</p>
+            </Col>
+        </Row>
+    )
+})
+
 const Review = () => {
     let imgURL = useMemo(() => process.env.REACT_APP_BASE_URL + "upload/", [])
     let [reviews, setReviews] = useState([]);
@@ -81,6 +96,8 @@ const Review = () => {
             alert(err.response)
         }
         setShow(false)
+
+        setAssignment({ id: "", user_name: "", user_comment: "" })
     }
 
     const handleClose = () => setShow(false);
@@ -97,8 +114,6 @@ const Review = () => {
                             <Modal.Title>Add Review</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-
-
                             <Row>
                                 <Col md={12}>
                                     <label>Upload Image</label>
@@ -155,18 +170,17 @@ const Review = () => {
                         className="mySwiper"
 
                     >
-                        {reviews.map((item) => {
+                        {reviews.map((item, index) => {
                             return (
                                 <SwiperSlide key={item.id}>
-                                    <Row className='d-flex align-items-center'>
-                                        <Col md={4}>
-                                            <Img src={item.image !== "no_image" ? imgURL + item?.image : dummyuser} className="img-fluid" />
-                                        </Col>
-                                        <Col md={8} className='review'>
-                                            <p>{item.user_comment}</p>
-                                            <p className='text-primary text-20'>- {item.user_name}</p>
-                                        </Col>
-                                    </Row>
+                                    <ReviewContent
+                                        img={item.image !== "no_image" ? imgURL + item?.image : dummyuser}
+                                        alt="alt name"
+                                        comment={item.user_comment}
+                                        username={item.user_name}
+                                        isFirst={index == 0}
+                                    />
+
                                 </SwiperSlide>
                             )
                         })}
