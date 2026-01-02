@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import ContentWrapper from '../../../components/wrapper/ContentWrapper';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -10,23 +10,25 @@ import apiCall from '../../../services/index.ts'
 import Modal from 'react-bootstrap/Modal';
 import Input from '../../../components/formelement/Input.jsx'
 import dummyuser from '../../../assets/dummyuser.png'
+import { Loader } from '../../../components/lazyloading/Loader.jsx';
 const Review = () => {
-    let imgURL = process.env.REACT_APP_BASE_URL + "upload/"
+    let imgURL = useMemo(() => process.env.REACT_APP_BASE_URL + "upload/", [])
     let [reviews, setReviews] = useState([]);
 
+    let [loading, setLoading] = useState(true)
     const [show, setShow] = useState(false);
     let [assignment, setAssignment] = useState({ id: "", user_name: "", user_comment: "" })
 
     //fetch reviews
-    let fetchServices = async () => {
+    let fetchServices = useCallback(() => {
         try {
-            await apiCall.get('/view-review')
-                .then((response) => setReviews(response.data))
+            apiCall.get('/view-review')
+                .then((response) => { setReviews(response.data); setLoading(false) })
                 .catch((err) => err)
         } catch (err) {
         }
 
-    }
+    }, [])
 
     let assignmentForm = [
         {
@@ -82,6 +84,7 @@ const Review = () => {
     }
 
     const handleClose = () => setShow(false);
+    if (loading) return <Loader />
     return (
         <>
             <ContentWrapper>
@@ -89,20 +92,20 @@ const Review = () => {
 
 
                 <Modal show={show} onHide={handleClose}>
-                <form onSubmit={handleSubmit} encType="multipart/form-data" method="post">
-                    <Modal.Header closeButton>
-                        <Modal.Title>Add Review</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
+                    <form onSubmit={handleSubmit} encType="multipart/form-data" method="post">
+                        <Modal.Header closeButton>
+                            <Modal.Title>Add Review</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
 
-                 
+
                             <Row>
                                 <Col md={12}>
                                     <label>Upload Image</label>
                                     <input type="file" id="image" name="image" onChange={handleChange} className='form-control mt-1 mb-3' />
 
                                 </Col>
-                            
+
                                 {
                                     assignmentForm.map((item) => {
                                         return (
@@ -122,16 +125,16 @@ const Review = () => {
                                 }
 
                             </Row>
-                        
-
-                      
 
 
-                    </Modal.Body>
-                    <Modal.Footer>
 
-                        <input className='btn btn-success' type="submit" value="Submit" />
-                    </Modal.Footer>
+
+
+                        </Modal.Body>
+                        <Modal.Footer>
+
+                            <input className='btn btn-success' type="submit" value="Submit" />
+                        </Modal.Footer>
                     </form>
                 </Modal>
 
@@ -145,7 +148,8 @@ const Review = () => {
                             delay: 1000,
                             disableOnInteraction: false,
                         }}
-
+                        cssMode={true}
+                        lazyPreloadPrevNext={true}
                         slidesPerView={"2"}
                         spaceBetween={30}
                         className="mySwiper"

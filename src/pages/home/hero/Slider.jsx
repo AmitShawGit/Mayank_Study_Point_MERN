@@ -8,14 +8,14 @@ import { Loader } from '../../../components/lazyloading/Loader.jsx';
 
 
 
-const MemoSlide = ({ image, alt, isFirst, key }) => {
+const SlideImage = ({ image, alt, isFirst, keys }) => {
 
   return (
-    <SwiperSlide key={key}>
+   
 
       <img src={image} alt={alt} className='img-fluid w-100' loading={isFirst ? 'eager' : 'lazy'} />
 
-    </SwiperSlide>)
+   )
 }
 
 const Sliders = () => {
@@ -50,20 +50,23 @@ const Sliders = () => {
           slidesPerView={"1"}
           spaceBetween={0}
           className="mySwiper"
-
         >
+
           {sliderImage.map((img, index) => (
-
-            <MemoSlide
-              image={img.sliderImage ? imgURL + img.sliderImage : ""}
-              alt={img.alt || "img alternative"}
-              key={img.id}
-              isFirst={index == 0}
-
-            />
+            <SwiperSlide    key={img.id}>
+              <SlideImage
+                image={img.sliderImage ? imgURL + img.sliderImage : ""}
+                alt={img.alt || "img alternative"}
+                keys={img.id}
+                isFirst={index == 0}
+             
+              />
+            </SwiperSlide>
           )
 
-          )}
+          )
+          }
+
         </Swiper>
       </div>
 
