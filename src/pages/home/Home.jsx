@@ -223,7 +223,9 @@ const Home = () => {
         </form>
       </Modal>
 
+<section className='hero-bg-h'>
       {slider ? <Sliders /> : <Hero />}
+      </section>
       <Services />
       <Learning />
       <Pricing />

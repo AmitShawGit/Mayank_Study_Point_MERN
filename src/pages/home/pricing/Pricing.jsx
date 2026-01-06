@@ -43,7 +43,7 @@ const Pricing = () => {
         },
     ]
     return (
-        <div>
+        
             <ContentWrapper>
                 <h2 className='heading'>Our Services</h2>
                 <Row>
@@ -60,7 +60,7 @@ const Pricing = () => {
                     </Col>   )}
                 </Row>
             </ContentWrapper>
-        </div>
+       
     )
 }
 
