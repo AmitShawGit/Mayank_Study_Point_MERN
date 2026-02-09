@@ -8,10 +8,11 @@ import { Loader } from '../../../components/lazyloading/Loader.jsx';
 
 
 
+
 const SlideImage = React.memo(({ image, alt, isFirst, keys }) => {
 
   return (
-      <img src={image} alt={alt} className='img-fluid w-100' loading={isFirst ? 'eager' : 'lazy'} />
+      <img src={image} alt={alt} className='img-fluid w-100' loading={isFirst ? 'eager' : 'lazy'}  />
    )
 })
 
@@ -19,6 +20,8 @@ const Sliders = () => {
   let imgURL = useMemo(() => { return process.env.REACT_APP_BASE_URL + "uploadSlider/" }, [])
   let [sliderImage, setSliderImage] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  
 
   let getImages = useCallback(() => {
     apiCall.get("/view-slider")
@@ -73,3 +76,6 @@ const Sliders = () => {
 }
 
 export default Sliders;
+
+
+
